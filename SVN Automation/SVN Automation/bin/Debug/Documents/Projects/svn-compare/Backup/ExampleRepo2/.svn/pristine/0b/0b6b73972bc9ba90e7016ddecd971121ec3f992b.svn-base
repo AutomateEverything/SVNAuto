@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<title>Compare C:\Repo1\New-Folder-1 with C:\Repo1\New-Folder-2</title>
+	<style type="text/css">
+	<!--
+		body {
+			font-family: sans-serif;
+			font-size: smaller;
+		}
+		table {
+			border-collapse: collapse;
+			border: 1px solid gray;
+		}
+		th,td {
+			padding: 3px;
+			text-align: left;
+			vertical-align: top;
+			border: 1px solid gray;
+		}
+		th {
+			color: black;
+			background: silver;
+		}
+	-->
+	</style>
+</head>
+<body>
+<h2>Compare C:\Repo1\New-Folder-1 with C:\Repo1\New-Folder-2</h2>
+<p>7/22/2013 4:49:27 PM</p>
+<table border="1">
+<tr>
+<th>Filename</th><th>Folder</th><th>Comparison result</th><th>Left Date</th><th>Right Date</th><th>Extension</th></tr>
+<tr><td>..</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>CaseManager_FUD.doc</td><td></td><td>Left only: C:\Repo1\New-Folder-1</td><td>* 7/16/2013 12:32:30 PM</td><td></td><td>doc</td></tr>
+<tr><td>RecordManager_FUD.doc</td><td></td><td>Binary files are different</td><td>7/18/2013 3:12:09 PM</td><td>* 7/22/2013 4:32:55 PM</td><td>doc</td></tr>
+</table>
+</body>
+</html>

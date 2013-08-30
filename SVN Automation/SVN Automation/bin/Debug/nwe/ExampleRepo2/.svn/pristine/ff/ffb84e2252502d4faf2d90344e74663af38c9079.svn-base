@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<log>
+<logentry
+   revision="3">
+<author>ramesh</author>
+<date>2013-07-18T10:12:18.734375Z</date>
+<paths>
+<path
+   kind="file"
+   action="A"
+   prop-mods="true"
+   text-mods="true">/RecordManager_FUD.doc</path>
+</paths>
+<msg></msg>
+</logentry>
+<logentry
+   revision="2">
+<author>VisualSVN Server</author>
+<date>2013-07-18T09:56:41.531250Z</date>
+<paths>
+<path
+   kind="dir"
+   action="D"
+   prop-mods="false"
+   text-mods="false">/Repo1</path>
+</paths>
+<msg>Deleted folder '/Repo1'.</msg>
+</logentry>
+<logentry
+   revision="1">
+<author>VisualSVN Server</author>
+<date>2013-07-18T09:54:33.546875Z</date>
+<paths>
+<path
+   kind="dir"
+   action="A"
+   prop-mods="false"
+   text-mods="false">/Repo1</path>
+</paths>
+<msg>Created folder 'Repo1'.</msg>
+</logentry>
+</log>
