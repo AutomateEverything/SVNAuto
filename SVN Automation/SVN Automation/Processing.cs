@@ -43,6 +43,7 @@ namespace SVN_Automation
 
             //txtVerificationLog.SelectedText = objVerify.Result.Text;
 
+            objVerify.Result.SelectedText = txtVerificationLog.SelectedText;
 
                 #region Create User
                 txtVerificationLog.SelectionColor = Color.Blue;

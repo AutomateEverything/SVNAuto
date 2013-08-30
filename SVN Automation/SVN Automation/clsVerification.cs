@@ -67,6 +67,7 @@ namespace SVN_Automation
         public string DltServer { get; set; }
 
         public string Error { get; set; }
+       
 
         public void execSVNcmd()
         {
@@ -87,7 +88,7 @@ namespace SVN_Automation
 
         public bool CheckLogin()
         {
-
+            System.Threading.Thread.Sleep(1000);
             try
             {
                 System.Diagnostics.Process chkLog = new System.Diagnostics.Process();
@@ -112,7 +113,7 @@ namespace SVN_Automation
                 chkLog = null;
                 startchkLog = null;
 
-                if (login.Contains("E175013"))
+                if (login.Contains("E175013")||string.IsNullOrEmpty(login.Trim()))
                 {
                     MessageBox.Show("User credentials or Live Repository URL is invalid.", "Invalid Input!");
                     return false;
@@ -282,6 +283,7 @@ namespace SVN_Automation
                 process.StartInfo.UseShellExecute = false;
                 process.Start();
 
+                
                 StringBuilder proc = new StringBuilder();
                 while (!process.HasExited)
                 {
