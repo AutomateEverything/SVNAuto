@@ -47,6 +47,8 @@
             this.dtpBackUpDate = new System.Windows.Forms.DateTimePicker();
             this.btnBack = new System.Windows.Forms.Button();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblUserName
@@ -65,6 +67,7 @@
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(153, 20);
             this.txtUserName.TabIndex = 1;
+            this.txtUserName.Text = "jay";
             this.txtUserName.Enter += new System.EventHandler(this.txtUserName_GotFocus);
             this.txtUserName.Leave += new System.EventHandler(this.txtUserName_Leave);
             // 
@@ -84,6 +87,7 @@
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(153, 20);
             this.txtPassword.TabIndex = 3;
+            this.txtPassword.Text = "jay";
             this.txtPassword.Enter += new System.EventHandler(this.txtPassword_GotFocus);
             this.txtPassword.Leave += new System.EventHandler(this.txtPassword_Leave);
             // 
@@ -102,6 +106,7 @@
             this.txtLiveURL.Name = "txtLiveURL";
             this.txtLiveURL.Size = new System.Drawing.Size(238, 20);
             this.txtLiveURL.TabIndex = 5;
+            this.txtLiveURL.Text = "https://ArunPrasadhPC/svn/JaySource/";
             this.txtLiveURL.Enter += new System.EventHandler(this.txtLiveURL_GotFocus);
             this.txtLiveURL.Leave += new System.EventHandler(this.txtLiveURL_Leave);
             // 
@@ -120,6 +125,7 @@
             this.txtBackUpURL.Name = "txtBackUpURL";
             this.txtBackUpURL.Size = new System.Drawing.Size(238, 20);
             this.txtBackUpURL.TabIndex = 7;
+            this.txtBackUpURL.Text = "https://ArunPrasadhPC/svn/Jbackup/";
             this.txtBackUpURL.Enter += new System.EventHandler(this.txtBackUpURL_GotFocus);
             this.txtBackUpURL.Leave += new System.EventHandler(this.txtBackUpURL_Leave);
             // 
@@ -147,13 +153,14 @@
             this.txtLocalDrive.Name = "txtLocalDrive";
             this.txtLocalDrive.Size = new System.Drawing.Size(153, 20);
             this.txtLocalDrive.TabIndex = 11;
+            this.txtLocalDrive.Text = "D:\\Testing\\temp";
             this.txtLocalDrive.Enter += new System.EventHandler(this.txtLocalDrive_GotFocus);
             this.txtLocalDrive.Leave += new System.EventHandler(this.txtLocalDrive_Leave);
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(188, 284);
+            this.button1.Location = new System.Drawing.Point(195, 10);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 16;
@@ -164,7 +171,7 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(388, 284);
+            this.button2.Location = new System.Drawing.Point(386, 10);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 18;
@@ -177,7 +184,7 @@
             this.lblDescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
             this.lblDescription.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblDescription.ForeColor = System.Drawing.Color.DimGray;
-            this.lblDescription.Location = new System.Drawing.Point(34, 323);
+            this.lblDescription.Location = new System.Drawing.Point(32, 258);
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new System.Drawing.Size(430, 123);
             this.lblDescription.TabIndex = 14;
@@ -185,7 +192,7 @@
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(287, 284);
+            this.button3.Location = new System.Drawing.Point(290, 10);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 17;
@@ -216,13 +223,14 @@
             this.dtpBackUpDate.Name = "dtpBackUpDate";
             this.dtpBackUpDate.Size = new System.Drawing.Size(113, 20);
             this.dtpBackUpDate.TabIndex = 10;
+            this.dtpBackUpDate.Value = new System.DateTime(2013, 9, 9, 0, 0, 0, 0);
             this.dtpBackUpDate.Enter += new System.EventHandler(this.dtpBackUpDate_GotFocus);
             this.dtpBackUpDate.Leave += new System.EventHandler(this.dtpBackUpDate_Leave);
             // 
             // btnBack
             // 
             this.btnBack.BackColor = System.Drawing.Color.White;
-            this.btnBack.Location = new System.Drawing.Point(33, 284);
+            this.btnBack.Location = new System.Drawing.Point(10, 10);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(75, 23);
             this.btnBack.TabIndex = 19;
@@ -230,19 +238,29 @@
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel1.Controls.Add(this.btnBack);
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.button3);
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Location = new System.Drawing.Point(2, 414);
+            this.panel1.Margin = new System.Windows.Forms.Padding(0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(487, 43);
+            this.panel1.TabIndex = 20;
+            // 
             // UserInput
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
             this.ClientSize = new System.Drawing.Size(492, 466);
-            this.Controls.Add(this.btnBack);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.dtpBackUpDate);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
             this.Controls.Add(this.lblDescription);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.txtLocalDrive);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -257,6 +275,7 @@
             this.Name = "UserInput";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SVN Backup Restoration Verifioncation";
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -283,6 +302,7 @@
         private System.Windows.Forms.DateTimePicker dtpBackUpDate;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 

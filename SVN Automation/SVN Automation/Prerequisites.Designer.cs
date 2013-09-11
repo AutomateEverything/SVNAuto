@@ -35,6 +35,9 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.linkLabel4 = new System.Windows.Forms.LinkLabel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // linkLabel1
@@ -51,7 +54,7 @@
             // linkLabel2
             // 
             this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Location = new System.Drawing.Point(195, 241);
+            this.linkLabel2.Location = new System.Drawing.Point(195, 228);
             this.linkLabel2.Name = "linkLabel2";
             this.linkLabel2.Size = new System.Drawing.Size(57, 13);
             this.linkLabel2.TabIndex = 1;
@@ -62,7 +65,7 @@
             // linkLabel3
             // 
             this.linkLabel3.AutoSize = true;
-            this.linkLabel3.Location = new System.Drawing.Point(195, 278);
+            this.linkLabel3.Location = new System.Drawing.Point(195, 257);
             this.linkLabel3.Name = "linkLabel3";
             this.linkLabel3.Size = new System.Drawing.Size(67, 13);
             this.linkLabel3.TabIndex = 2;
@@ -81,7 +84,7 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(294, 399);
+            this.button1.Location = new System.Drawing.Point(273, 11);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 4;
@@ -92,7 +95,7 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(392, 399);
+            this.button2.Location = new System.Drawing.Point(391, 11);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 5;
@@ -104,10 +107,34 @@
             // 
             this.label2.Location = new System.Drawing.Point(12, 134);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(307, 55);
+            this.label2.Size = new System.Drawing.Size(476, 55);
             this.label2.TabIndex = 6;
             this.label2.Text = "Welcome to SVN Automation on Restoration Verification. Please review below softwa" +
-                "re requirements before proceeding.";
+    "re requirements before proceeding.";
+            // 
+            // linkLabel4
+            // 
+            this.linkLabel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.linkLabel4.AutoSize = true;
+            this.linkLabel4.Location = new System.Drawing.Point(195, 286);
+            this.linkLabel4.Name = "linkLabel4";
+            this.linkLabel4.Size = new System.Drawing.Size(107, 13);
+            this.linkLabel4.TabIndex = 7;
+            this.linkLabel4.TabStop = true;
+            this.linkLabel4.Text = "Windows PowerShell";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Location = new System.Drawing.Point(1, 419);
+            this.panel1.Margin = new System.Windows.Forms.Padding(0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(487, 44);
+            this.panel1.TabIndex = 8;
             // 
             // Prerequisites
             // 
@@ -115,9 +142,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
             this.ClientSize = new System.Drawing.Size(492, 466);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.linkLabel4);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.linkLabel3);
             this.Controls.Add(this.linkLabel2);
@@ -126,6 +153,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Prerequisites";
             this.Load += new System.EventHandler(this.Prerequisites_Load);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -140,6 +168,8 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.LinkLabel linkLabel4;
+        private System.Windows.Forms.Panel panel1;
 
     }
 }
