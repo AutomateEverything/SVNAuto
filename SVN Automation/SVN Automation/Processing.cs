@@ -37,13 +37,6 @@ namespace SVN_Automation
 
         private void Processing_Load(object sender, EventArgs e)
         {
-            //objVerify.execSVNcmd();
-            //txtVerificationLog.SelectedRtf = objVerify.Result.SelectedRtf;
-            //txtVerificationLog.SelectionColor = objVerify.Result.SelectionColor;    
-
-            //txtVerificationLog.SelectedText = objVerify.Result.Text;
-
-            objVerify.Result.SelectedText = txtVerificationLog.SelectedText;
 
                 #region Create User
                 txtVerificationLog.SelectionColor = Color.Blue;

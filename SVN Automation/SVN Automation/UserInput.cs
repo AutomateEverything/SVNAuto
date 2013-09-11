@@ -54,17 +54,17 @@ namespace SVN_Automation
                 }
                 #endregion
 
-                if (objUserData.CheckLogin())
-                {
+                //if (objUserData.CheckLogin())
+                //{
                     var processing = new Processing(objUserData);
                     processing.Show();
                     this.Hide();
-                }
+                //}
 
-                else
-                {
-                    lblDescription.Text = "Please Check the user name, password and URL enter for comparition";
-                }
+                //else
+                //{
+                //    lblDescription.Text = "Please Check the user name, password and URL enter for comparition";
+                //}
               
             }
             catch (Exception ex)

@@ -71,7 +71,7 @@ namespace SVN_Automation
 
         public void execSVNcmd()
         {
-            CheckLogin();
+            //CheckLogin();
             mtdCreateUser();
             mtdCreateRepo();
             mtdGiveAccess();
@@ -206,15 +206,13 @@ namespace SVN_Automation
             ManagementClass repoClass = new ManagementClass("root\\VisualSVN", "VisualSVN_Repository", null);
 
             // Obtain in-parameters for the method
-            ManagementBaseObject oInRepository =
-                repoClass.GetMethodParameters("Create");
+            ManagementBaseObject oInRepository = repoClass.GetMethodParameters("Create");
 
             // Add the input parameters.
             oInRepository["Name"] = "Automation_Repo" + DateTime.Now.ToString().Replace("/", "").Replace(" ", "").Replace(":", "");
 
             // Execute the method and obtain the return values.
-            ManagementBaseObject oOutRepository =
-                repoClass.InvokeMethod("Create", oInRepository, null);
+            ManagementBaseObject oOutRepository = repoClass.InvokeMethod("Create", oInRepository, null);
 
             RepoName = "" + oInRepository["Name"];
 
@@ -224,7 +222,7 @@ namespace SVN_Automation
         public void mtdGiveAccess()
         {
             StreamWriter sw;
-            sw = File.CreateText("c:\\Repositories\\" + RepoName + "\\conf\\VisualSVN-SvnAuthz.ini");
+            sw = File.CreateText("D:\\Repositories\\" + RepoName + "\\conf\\VisualSVN-SvnAuthz.ini");
             sw.WriteLine("[/]");
             sw.WriteLine("*=rw");
             sw.Close();
