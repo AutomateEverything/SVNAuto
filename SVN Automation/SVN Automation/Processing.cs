@@ -26,7 +26,7 @@ namespace SVN_Automation
 
         private void button2_Click(object sender, EventArgs e)
         {
-            var reports = new ReportEntry(objVerify);
+            var reports = new frmReportEntry(objVerify);
             reports.Show();
             this.Hide();
         }

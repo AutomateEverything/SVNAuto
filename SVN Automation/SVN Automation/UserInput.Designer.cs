@@ -115,9 +115,9 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(31, 144);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(94, 13);
+            this.label4.Size = new System.Drawing.Size(140, 13);
             this.label4.TabIndex = 6;
-            this.label4.Text = "Backup SVN URL";
+            this.label4.Text = "Backup Restored SVN URL";
             // 
             // txtBackUpURL
             // 

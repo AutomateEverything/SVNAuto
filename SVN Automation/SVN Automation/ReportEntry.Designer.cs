@@ -1,6 +1,6 @@
 ﻿namespace SVN_Automation
 {
-    partial class ReportEntry
+    partial class frmReportEntry
     {
         /// <summary>
         /// Required designer variable.
@@ -34,22 +34,24 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtAcName = new System.Windows.Forms.TextBox();
+            this.txtProjName = new System.Windows.Forms.TextBox();
+            this.txtGITS = new System.Windows.Forms.TextBox();
+            this.dtRestored = new System.Windows.Forms.DateTimePicker();
+            this.txtBackupLoc = new System.Windows.Forms.TextBox();
+            this.txtCLName = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnGenerate = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(32, 54);
+            this.label1.Location = new System.Drawing.Point(19, 114);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(78, 13);
             this.label1.TabIndex = 0;
@@ -58,7 +60,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(32, 99);
+            this.label2.Location = new System.Drawing.Point(19, 149);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(71, 13);
             this.label2.TabIndex = 1;
@@ -67,7 +69,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(32, 145);
+            this.label3.Location = new System.Drawing.Point(19, 177);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(73, 13);
             this.label3.TabIndex = 2;
@@ -76,7 +78,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(32, 195);
+            this.label4.Location = new System.Drawing.Point(19, 212);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(99, 13);
             this.label4.TabIndex = 3;
@@ -85,7 +87,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(32, 246);
+            this.label5.Location = new System.Drawing.Point(19, 247);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(88, 13);
             this.label5.TabIndex = 4;
@@ -94,119 +96,131 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(32, 291);
+            this.label6.Location = new System.Drawing.Point(19, 276);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(51, 13);
             this.label6.TabIndex = 5;
             this.label6.Text = "CL Name";
             // 
-            // textBox1
+            // txtAcName
             // 
-            this.textBox1.Location = new System.Drawing.Point(148, 51);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(206, 20);
-            this.textBox1.TabIndex = 6;
+            this.txtAcName.Location = new System.Drawing.Point(135, 114);
+            this.txtAcName.Name = "txtAcName";
+            this.txtAcName.Size = new System.Drawing.Size(345, 20);
+            this.txtAcName.TabIndex = 6;
             // 
-            // textBox2
+            // txtProjName
             // 
-            this.textBox2.Location = new System.Drawing.Point(148, 99);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(206, 20);
-            this.textBox2.TabIndex = 7;
+            this.txtProjName.Location = new System.Drawing.Point(135, 149);
+            this.txtProjName.Name = "txtProjName";
+            this.txtProjName.Size = new System.Drawing.Size(345, 20);
+            this.txtProjName.TabIndex = 7;
             // 
-            // textBox3
+            // txtGITS
             // 
-            this.textBox3.Location = new System.Drawing.Point(148, 142);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(206, 20);
-            this.textBox3.TabIndex = 8;
+            this.txtGITS.Location = new System.Drawing.Point(135, 177);
+            this.txtGITS.Name = "txtGITS";
+            this.txtGITS.Size = new System.Drawing.Size(345, 20);
+            this.txtGITS.TabIndex = 8;
             // 
-            // dateTimePicker1
+            // dtRestored
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(148, 191);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(117, 20);
-            this.dateTimePicker1.TabIndex = 9;
+            this.dtRestored.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtRestored.Location = new System.Drawing.Point(135, 212);
+            this.dtRestored.Name = "dtRestored";
+            this.dtRestored.Size = new System.Drawing.Size(117, 20);
+            this.dtRestored.TabIndex = 9;
             // 
-            // textBox4
+            // txtBackupLoc
             // 
-            this.textBox4.Location = new System.Drawing.Point(148, 239);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(206, 20);
-            this.textBox4.TabIndex = 10;
+            this.txtBackupLoc.Location = new System.Drawing.Point(135, 247);
+            this.txtBackupLoc.Name = "txtBackupLoc";
+            this.txtBackupLoc.Size = new System.Drawing.Size(345, 20);
+            this.txtBackupLoc.TabIndex = 10;
             // 
-            // textBox5
+            // txtCLName
             // 
-            this.textBox5.Location = new System.Drawing.Point(148, 291);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(206, 20);
-            this.textBox5.TabIndex = 11;
+            this.txtCLName.Location = new System.Drawing.Point(135, 276);
+            this.txtCLName.Name = "txtCLName";
+            this.txtCLName.Size = new System.Drawing.Size(345, 20);
+            this.txtCLName.TabIndex = 11;
             // 
             // label7
             // 
             this.label7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label7.Location = new System.Drawing.Point(35, 392);
+            this.label7.Location = new System.Drawing.Point(12, 312);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(410, 56);
+            this.label7.Size = new System.Drawing.Size(468, 60);
             this.label7.TabIndex = 12;
             // 
-            // button1
+            // btnGenerate
             // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(148, 341);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(114, 23);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Generate Report";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnGenerate.BackColor = System.Drawing.Color.White;
+            this.btnGenerate.Location = new System.Drawing.Point(192, 11);
+            this.btnGenerate.Name = "btnGenerate";
+            this.btnGenerate.Size = new System.Drawing.Size(114, 23);
+            this.btnGenerate.TabIndex = 13;
+            this.btnGenerate.Text = "Generate Report";
+            this.btnGenerate.UseVisualStyleBackColor = false;
+            this.btnGenerate.Click += new System.EventHandler(this.btnGenerate_Click);
             // 
-            // button2
+            // btnClear
             // 
-            this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(279, 341);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 14;
-            this.button2.Text = "Clear";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnClear.BackColor = System.Drawing.Color.White;
+            this.btnClear.Location = new System.Drawing.Point(318, 12);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(75, 23);
+            this.btnClear.TabIndex = 14;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // btnCancel
             // 
-            this.button3.BackColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(370, 341);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 15;
-            this.button3.Text = "Cancel";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnCancel.BackColor = System.Drawing.Color.White;
+            this.btnCancel.Location = new System.Drawing.Point(403, 12);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 15;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = false;
             // 
-            // ReportEntry
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel1.Controls.Add(this.btnGenerate);
+            this.panel1.Controls.Add(this.btnCancel);
+            this.panel1.Controls.Add(this.btnClear);
+            this.panel1.Location = new System.Drawing.Point(2, 384);
+            this.panel1.Margin = new System.Windows.Forms.Padding(0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(487, 44);
+            this.panel1.TabIndex = 16;
+            // 
+            // frmReportEntry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
-            this.ClientSize = new System.Drawing.Size(492, 466);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(492, 429);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtCLName);
+            this.Controls.Add(this.txtBackupLoc);
+            this.Controls.Add(this.dtRestored);
+            this.Controls.Add(this.txtGITS);
+            this.Controls.Add(this.txtProjName);
+            this.Controls.Add(this.txtAcName);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "ReportEntry";
+            this.Name = "frmReportEntry";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "SVN Backup Restoration Verifioncation";
+            this.Text = "CSS AutoSVNDiff Report Generation";
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -220,15 +234,16 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtAcName;
+        private System.Windows.Forms.TextBox txtProjName;
+        private System.Windows.Forms.TextBox txtGITS;
+        private System.Windows.Forms.DateTimePicker dtRestored;
+        private System.Windows.Forms.TextBox txtBackupLoc;
+        private System.Windows.Forms.TextBox txtCLName;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnGenerate;
+        private System.Windows.Forms.Panel panel1;
     }
 }
