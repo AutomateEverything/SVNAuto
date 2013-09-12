@@ -71,7 +71,8 @@ namespace SVN_Automation
 
         public void execSVNcmd()
         {
-            //CheckLogin();
+            CheckLoginLive();
+            CheckLoginBack();
             mtdCreateUser();
             mtdCreateRepo();
             mtdGiveAccess();
@@ -86,7 +87,8 @@ namespace SVN_Automation
 
         }
 
-        public bool CheckLogin()
+        #region Check Login
+        public bool CheckLoginLive()
         {
             System.Threading.Thread.Sleep(1000);
             try
@@ -96,10 +98,11 @@ namespace SVN_Automation
                 startchkLog.CreateNoWindow = true;
                 startchkLog.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
                 startchkLog.FileName = "cmd.exe";
-                startchkLog.Arguments = "/C svn list \"" + BackupURL + "\" --username " + UserName + " --password " + Password;
+                startchkLog.Arguments = "/C svn list \"" + LiveURL + "\" --username " + UserName + " --password " + Password;
                 chkLog.StartInfo = startchkLog;
 
                 chkLog.StartInfo.RedirectStandardOutput = true;
+                chkLog.StartInfo.RedirectStandardError = true;
                 chkLog.StartInfo.UseShellExecute = false;
                 chkLog.Start();
 
@@ -107,13 +110,17 @@ namespace SVN_Automation
                 while (!chkLog.HasExited)
                 {
                     ch.Append(chkLog.StandardOutput.ReadToEnd());
+                    ch.Append(chkLog.StandardError.ReadToEnd());
                 }
 
                 String login = ch.ToString().Trim();
+                chkLog.WaitForExit();
+
                 chkLog = null;
                 startchkLog = null;
 
-                if (login.Contains("E175013")||string.IsNullOrEmpty(login.Trim()))
+                //if (login.Contains("E175013")||string.IsNullOrEmpty(login.Trim()))
+                if (login.Contains("E175013"))
                 {
                     MessageBox.Show("User credentials or Live Repository URL is invalid.", "Invalid Input!");
                     return false;
@@ -128,51 +135,57 @@ namespace SVN_Automation
             {
                 return false;
             }
-
-
-   //         try
-   //         {
-   //             string cmdOutput = "";
-   //             System.Diagnostics.Process chkLog = new System.Diagnostics.Process();
-   //             System.Diagnostics.ProcessStartInfo startChkLog = new System.Diagnostics.ProcessStartInfo();
-   //             startChkLog.CreateNoWindow = true;
-   //             startChkLog.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
-   //             startChkLog.FileName = "cmd.exe";
-   //             startChkLog.Arguments = "/C svn info " + LiveURL + " --username " + UserName + " --password " + Password;
-                
-   //             chkLog.StartInfo = startChkLog;
-                
-             
-
-   //             chkLog.StartInfo.RedirectStandardOutput = true;
-   //             chkLog.StartInfo.RedirectStandardError = true;
-   //             chkLog.StartInfo.UseShellExecute = false;
-   //chkLog.Start();
-                          
-
-   //             StringBuilder x = new StringBuilder();
-   //             while (chkLog.HasExited)
-   //             {
-   //                 x.Append(chkLog.StandardOutput.ReadToEnd());
-   //             }
-   //             chkLog.WaitForExit(); 
-   //             cmdOutput = x.ToString().Trim();
-
-   //             if (cmdOutput.Contains("E175013"))
-   //             {
-   //                 MessageBox.Show("User credentials or Live Repository URL is invalid.", "Invalid Input!");
-   //                 return false;
-   //             }
-   //             else
-   //             return true;
-   //         }
-
-   //         catch (Exception chklog)
-   //         {
-   //             MessageBox.Show("Exception has occurred: " + chklog.ToString());
-   //             return false;
-   //         }
         }
+
+        public bool CheckLoginBack()
+        {
+            System.Threading.Thread.Sleep(1000);
+            try
+            {
+                System.Diagnostics.Process chkLog = new System.Diagnostics.Process();
+                System.Diagnostics.ProcessStartInfo startchkLog = new System.Diagnostics.ProcessStartInfo();
+                startchkLog.CreateNoWindow = true;
+                startchkLog.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+                startchkLog.FileName = "cmd.exe";
+                startchkLog.Arguments = "/C svn list \"" + BackupURL + "\" --username " + UserName + " --password " + Password;
+                chkLog.StartInfo = startchkLog;
+
+                chkLog.StartInfo.RedirectStandardOutput = true;
+                chkLog.StartInfo.RedirectStandardError = true;
+                chkLog.StartInfo.UseShellExecute = false;
+                chkLog.Start();
+
+                StringBuilder ch = new StringBuilder();
+                while (!chkLog.HasExited)
+                {
+                    ch.Append(chkLog.StandardOutput.ReadToEnd());
+                    ch.Append(chkLog.StandardError.ReadToEnd());
+                }
+
+                String login = ch.ToString().Trim();
+                chkLog.WaitForExit();
+
+                chkLog = null;
+                startchkLog = null;
+
+                //if (login.Contains("E175013")||string.IsNullOrEmpty(login.Trim()))
+                if (login.Contains("E175013"))
+                {
+                    MessageBox.Show("User credentials or Backup Repository URL is invalid.", "Invalid Input!");
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+
+            }
+            catch (Exception loginback)
+            {
+                return false;
+            }
+        }
+        #endregion
 
         public void mtdCreateUser()
         {
@@ -222,7 +235,7 @@ namespace SVN_Automation
         public void mtdGiveAccess()
         {
             StreamWriter sw;
-            sw = File.CreateText("D:\\Repositories\\" + RepoName + "\\conf\\VisualSVN-SvnAuthz.ini");
+            sw = File.CreateText("C:\\Repositories\\" + RepoName + "\\conf\\VisualSVN-SvnAuthz.ini");
             sw.WriteLine("[/]");
             sw.WriteLine("*=rw");
             sw.Close();
