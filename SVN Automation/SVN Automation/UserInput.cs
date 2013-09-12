@@ -25,8 +25,7 @@ namespace SVN_Automation
         private void button1_Click(object sender, EventArgs e)
         {
             try
-            {
-                    
+            {                    
 
                 clsVerification objUserData = new clsVerification();
 
@@ -54,17 +53,17 @@ namespace SVN_Automation
                 }
                 #endregion
 
-                //if (objUserData.CheckLogin())
-                //{
+                if (objUserData.CheckLoginLive() && objUserData.CheckLoginBack())
+                {
                     var processing = new Processing(objUserData);
                     processing.Show();
                     this.Hide();
-                //}
+                }
 
-                //else
-                //{
-                //    lblDescription.Text = "Please Check the user name, password and URL enter for comparition";
-                //}
+                else
+                {
+                    lblDescription.Text = "Please Check the user name, password and URL enter for comparition";
+                }
               
             }
             catch (Exception ex)
