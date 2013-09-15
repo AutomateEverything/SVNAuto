@@ -58,6 +58,7 @@ namespace SVN_Automation
                     var processing = new Processing(objUserData);
                     processing.Show();
                     this.Hide();
+                    this.Close();
                 }
 
                 else

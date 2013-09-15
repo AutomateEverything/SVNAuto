@@ -26,6 +26,7 @@ namespace SVN_Automation
 
         private void button2_Click(object sender, EventArgs e)
         {
+            objVerify.VerificationLog = txtVerificationLog.Text;
             var reports = new frmReportEntry(objVerify);
             reports.Show();
             this.Hide();
@@ -42,7 +43,7 @@ namespace SVN_Automation
                 txtVerificationLog.SelectionColor = Color.Blue;
                 txtVerificationLog.SelectedText = "\nTrying to create User: " + objVerify.UserName;
                 txtVerificationLog.Refresh();
-                Processing.ActiveForm.Update();
+                Application.OpenForms["Processing"].Update();
                 txtVerificationLog.ScrollToCaret();
 
                 objVerify.mtdCreateUser();
@@ -50,7 +51,7 @@ namespace SVN_Automation
                 txtVerificationLog.SelectionColor = Color.Green;
                 txtVerificationLog.SelectedText = objVerify.CreateUser;
                 txtVerificationLog.Refresh();
-                Processing.ActiveForm.Update();
+                Application.OpenForms["Processing"].Update();
                 txtVerificationLog.ScrollToCaret();
                 #endregion
 
@@ -58,7 +59,7 @@ namespace SVN_Automation
                 txtVerificationLog.SelectionColor = Color.Blue;
                 txtVerificationLog.SelectedText = "\nCreating temporary repository: " + objVerify.RepoName;
                 txtVerificationLog.Refresh();
-                Processing.ActiveForm.Update();
+                Application.OpenForms["Processing"].Update();
                 txtVerificationLog.ScrollToCaret();
 
                 objVerify.mtdCreateRepo();
@@ -66,7 +67,7 @@ namespace SVN_Automation
                 txtVerificationLog.SelectionColor = Color.Green;
                 txtVerificationLog.SelectedText = objVerify.CreateRepo;
                 txtVerificationLog.Refresh();
-                Processing.ActiveForm.Update();
+                Application.OpenForms["Processing"].Update();
                 txtVerificationLog.ScrollToCaret();
                 #endregion
 
@@ -74,7 +75,7 @@ namespace SVN_Automation
                 txtVerificationLog.SelectionColor = Color.Blue;
                 txtVerificationLog.SelectedText = "\nProviding access to: " + objVerify.RepoName + "\n";
                 txtVerificationLog.Refresh();
-                Processing.ActiveForm.Update();
+                Application.OpenForms["Processing"].Update();
                 txtVerificationLog.ScrollToCaret();
 
                 objVerify.mtdGiveAccess();
@@ -85,7 +86,7 @@ namespace SVN_Automation
                 txtVerificationLog.SelectionColor = Color.Blue;
                 txtVerificationLog.SelectedText = "\nGetting SVN Repository URL of: " + objVerify.RepoName;
                 txtVerificationLog.Refresh();
-                Processing.ActiveForm.Update();
+                Application.OpenForms["Processing"].Update();
                 txtVerificationLog.ScrollToCaret();
 
                 objVerify.mtdGetUrl();
@@ -93,13 +94,13 @@ namespace SVN_Automation
                 txtVerificationLog.SelectionColor = Color.Gray;
                 txtVerificationLog.SelectedText = objVerify.GetURLCmd;
                 txtVerificationLog.Refresh();
-                Processing.ActiveForm.Update();
+                Application.OpenForms["Processing"].Update();
                 txtVerificationLog.ScrollToCaret();
 
                 txtVerificationLog.SelectionColor = Color.Green;
                 txtVerificationLog.SelectedText = objVerify.GetURL;
                 txtVerificationLog.Refresh();
-                Processing.ActiveForm.Update();
+                Application.OpenForms["Processing"].Update();
                 txtVerificationLog.ScrollToCaret();
 
                 #endregion
@@ -108,7 +109,7 @@ namespace SVN_Automation
                 txtVerificationLog.SelectionColor = Color.Blue;
                 txtVerificationLog.SelectedText = "\nChecking-out files from Live SVN Server for the date: " + objVerify.BackupDate;
                 txtVerificationLog.Refresh();
-                Processing.ActiveForm.Update();
+                Application.OpenForms["Processing"].Update();
                 txtVerificationLog.ScrollToCaret();
 
                 objVerify.mtdChkLive();
@@ -116,13 +117,13 @@ namespace SVN_Automation
                 txtVerificationLog.SelectionColor = Color.Gray;
                 txtVerificationLog.SelectedText = objVerify.ChkLiveCmd;
                 txtVerificationLog.Refresh();
-                Processing.ActiveForm.Update();
+                Application.OpenForms["Processing"].Update();
                 txtVerificationLog.ScrollToCaret();
 
                 txtVerificationLog.SelectionColor = Color.Green;
                 txtVerificationLog.SelectedText = objVerify.ChkLive;
                 txtVerificationLog.Refresh();
-                Processing.ActiveForm.Update();
+                Application.OpenForms["Processing"].Update();
                 txtVerificationLog.ScrollToCaret();
 
                 #endregion
@@ -131,7 +132,7 @@ namespace SVN_Automation
                 txtVerificationLog.SelectionColor = Color.Blue;
                 txtVerificationLog.SelectedText = "\nChecking-out files from Backup SVN Server for the same date...";
                 txtVerificationLog.Refresh();
-                Processing.ActiveForm.Update();
+                Application.OpenForms["Processing"].Update();
                 txtVerificationLog.ScrollToCaret();
 
                 objVerify.mtdChkBack();
@@ -139,13 +140,13 @@ namespace SVN_Automation
                 txtVerificationLog.SelectionColor = Color.Gray;
                 txtVerificationLog.SelectedText = objVerify.ChkBackCmd;
                 txtVerificationLog.Refresh();
-                Processing.ActiveForm.Update();
+                Application.OpenForms["Processing"].Update();
                 txtVerificationLog.ScrollToCaret();
 
                 txtVerificationLog.SelectionColor = Color.Green;
                 txtVerificationLog.SelectedText = objVerify.ChkBack;
                 txtVerificationLog.Refresh();
-                Processing.ActiveForm.Update();
+                Application.OpenForms["Processing"].Update();
                 txtVerificationLog.ScrollToCaret();
 
                 #endregion
@@ -154,7 +155,7 @@ namespace SVN_Automation
                 txtVerificationLog.SelectionColor = Color.Blue;
                 txtVerificationLog.SelectedText = "\nImporting Live repository files to Temp Local SVN Server...";
                 txtVerificationLog.Refresh();
-                Processing.ActiveForm.Update();
+                Application.OpenForms["Processing"].Update();
                 txtVerificationLog.ScrollToCaret();
 
                 objVerify.mtdImpLive();
@@ -162,13 +163,13 @@ namespace SVN_Automation
                 txtVerificationLog.SelectionColor = Color.Gray;
                 txtVerificationLog.SelectedText = objVerify.ImpLiveCmd;
                 txtVerificationLog.Refresh();
-                Processing.ActiveForm.Update();
+                Application.OpenForms["Processing"].Update();
                 txtVerificationLog.ScrollToCaret();
 
                 txtVerificationLog.SelectionColor = Color.Green;
                 txtVerificationLog.SelectedText = objVerify.ImpLive;
                 txtVerificationLog.Refresh();
-                Processing.ActiveForm.Update();
+                Application.OpenForms["Processing"].Update();
                 txtVerificationLog.ScrollToCaret();
 
                 #endregion
@@ -177,7 +178,7 @@ namespace SVN_Automation
                 txtVerificationLog.SelectionColor = Color.Blue;
                 txtVerificationLog.SelectedText = "\nImporting Backup repository files to Temp Local SVN Server...";
                 txtVerificationLog.Refresh();
-                Processing.ActiveForm.Update();
+                Application.OpenForms["Processing"].Update();
                 txtVerificationLog.ScrollToCaret();
 
                 objVerify.mtdImpBack();
@@ -185,13 +186,13 @@ namespace SVN_Automation
                 txtVerificationLog.SelectionColor = Color.Gray;
                 txtVerificationLog.SelectedText = objVerify.ImpBackCmd;
                 txtVerificationLog.Refresh();
-                Processing.ActiveForm.Update();
+                Application.OpenForms["Processing"].Update();
                 txtVerificationLog.ScrollToCaret();
 
                 txtVerificationLog.SelectionColor = Color.Green;
                 txtVerificationLog.SelectedText = objVerify.ImpBack;
                 txtVerificationLog.Refresh();
-                Processing.ActiveForm.Update();
+                Application.OpenForms["Processing"].Update();
                 txtVerificationLog.ScrollToCaret();
                 #endregion
 
@@ -199,7 +200,7 @@ namespace SVN_Automation
                 txtVerificationLog.SelectionColor = Color.Blue;
                 txtVerificationLog.SelectedText = "\nFinding the Differences between two repositories...";
                 txtVerificationLog.Refresh();
-                Processing.ActiveForm.Update();
+                Application.OpenForms["Processing"].Update();
                 txtVerificationLog.ScrollToCaret();
 
                 objVerify.mtdFindDiff();
@@ -207,13 +208,13 @@ namespace SVN_Automation
                 txtVerificationLog.SelectionColor = Color.Gray;
                 txtVerificationLog.SelectedText = objVerify.FindDiffCmd;
                 txtVerificationLog.Refresh();
-                Processing.ActiveForm.Update();
+                Application.OpenForms["Processing"].Update();
                 txtVerificationLog.ScrollToCaret();
 
                 txtVerificationLog.SelectionColor = Color.Red;
                 txtVerificationLog.SelectedText = objVerify.FindDiff;
                 txtVerificationLog.Refresh();
-                Processing.ActiveForm.Update();
+                Application.OpenForms["Processing"].Update();
                 txtVerificationLog.ScrollToCaret();
                 #endregion
 
@@ -221,7 +222,7 @@ namespace SVN_Automation
                 txtVerificationLog.SelectionColor = Color.Blue;
                 txtVerificationLog.SelectedText = "\nDeleting Temp Local files/folders...";
                 txtVerificationLog.Refresh();
-                Processing.ActiveForm.Update();
+                Application.OpenForms["Processing"].Update();
                 txtVerificationLog.ScrollToCaret();        
 
                 objVerify.mtdDltLocal();
@@ -232,7 +233,7 @@ namespace SVN_Automation
                 txtVerificationLog.SelectionColor = Color.Blue;
                 txtVerificationLog.SelectedText = "\nDeleting Temporary repository...";
                 txtVerificationLog.Refresh();
-                Processing.ActiveForm.Update();
+                Application.OpenForms["Processing"].Update();
                 txtVerificationLog.ScrollToCaret();
 
                 objVerify.mtdDltServer();
@@ -241,7 +242,7 @@ namespace SVN_Automation
 
                 txtVerificationLog.SelectedText = "\n---------------- Done ----------------";
                 txtVerificationLog.Refresh();
-                Processing.ActiveForm.Update();
+                Application.OpenForms["Processing"].Update();
                 txtVerificationLog.ScrollToCaret();
             
 

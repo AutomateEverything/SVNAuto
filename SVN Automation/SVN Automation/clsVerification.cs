@@ -28,7 +28,7 @@ namespace SVN_Automation
 
         public string repourl { get; set; }
 
-        public RichTextBox Result { get; set; }
+        public string VerificationLog { get; set; }
 
         public string RepoName { get; set; }
 
@@ -192,7 +192,7 @@ namespace SVN_Automation
         public void mtdCreateUser()
         {
             try
-            {
+            {                  
 
                 ManagementClass userClass = new ManagementClass("root\\VisualSVN", "VisualSVN_User", null);
 
@@ -230,7 +230,7 @@ namespace SVN_Automation
                 }
 
             }
-            if (dr.Contains("d:")) RepoPath = "D:\\Repositories";
+            if (dr.Contains("D:")) RepoPath = "D:\\Repositories";
             else RepoPath = "C:\\Repositories";            
 
 
