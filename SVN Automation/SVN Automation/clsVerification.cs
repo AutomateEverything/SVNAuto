@@ -68,7 +68,9 @@ namespace SVN_Automation
 
         public string Error { get; set; }
 
-        public string RepoPath { get; set; }       
+        public string RepoPath { get; set; }
+
+        public bool DiffResult { get; set; }       
        
 
         public void execSVNcmd()
@@ -461,10 +463,12 @@ namespace SVN_Automation
                 if (String.IsNullOrEmpty(d.ToString().Trim()))
                 {
                     FindDiff = "\nBoth the Repositories are Same";
+                    DiffResult = true;
                 }
                 else
                 {
                     FindDiff = "\n" + d.ToString().Trim() + "\n\nBoth the Repositories are Different\n";
+                    DiffResult = false;
                 }
                 startSvnDiff = null;
                 svnDiff = null;

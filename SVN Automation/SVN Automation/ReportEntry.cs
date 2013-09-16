@@ -1,11 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.IO;
+using System.Collections.Generic;
 
 namespace SVN_Automation
 {
@@ -51,12 +52,30 @@ namespace SVN_Automation
             sbReport.Append("<tr><td bgcolor='#99CCFF'>CL Name (or the person who performs the verification)</td><td bgcolor='white'>" + txtCLName.Text + "</td></tr>");
             sbReport.Append("<tr><td bgcolor='#99CCFF'>Tool used to perform the verification</td><td bgcolor='white'> CSS EasySVNDiff</td></tr>");
             sbReport.Append("</table><br/><br/><table border='0' bgcolor='047CC1' cellpadding='1' cellspacing='1' width='70%' align='center'><tr><td width='100%'><p style='color:#D4FFFF; font-weight:bold'>Verification Log:</p></td></tr>");
-            sbReport.Append("<tr><td bgcolor='white'><div style='border:1 solid #002776;width:100%'>" + objProjData.VerificationLog.Replace("\n","<br>") + "</div></td></tr>");
+            sbReport.Append("<tr><td bgcolor='white'><div style='border:1 solid #002776;width:100%;font-family:courier new'>" + objProjData.VerificationLog.Replace("\n","<br>") + "</div></td></tr>");
             sbReport.Append("</table><br/><br/><table border='0' bgcolor='047CC1' cellpadding='1' cellspacing='1' width='70%' align='center'><tr><td width='100%'><p style='color:#D4FFFF; font-weight:bold'>Verification Result:</p></td></tr>");
-            sbReport.Append("<tr><td bgcolor='white'><div style='border:1 solid #002776;width:100%'>" + objProjData.FindDiff +"</div></td></tr></table><br/><br/></body></html>");
+            sbReport.Append("<tr><td bgcolor='white'><div style='border:1 solid #002776;width:100%; font-weight:bold;");
+            
+            if (objProjData.DiffResult==true)
+            {
+                sbReport.Append("color:green;'>");
+            }
+            else
+            {
+                sbReport.Append("color:red;'>");
+            }
 
+            sbReport.Append(objProjData.FindDiff +"</div></td></tr></table><br/><br/><br><br><hr style='color:gray;height:1px' noshade/><p style='color:#0ABCDE;font-size:11px;text-align:center'>This is an auto-generated report by CSS EasySVNDiff tool</p></body></html>");
 
+            string mydocpath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + @"\EasySVNDiff_Report" + DateTime.Now.ToString().Replace("/", "").Replace(" ", "").Replace(":", "") + ".html";
+            using (StreamWriter outfile = new StreamWriter(mydocpath))
+            {
+                outfile.Write(sbReport.ToString());
+            }
+            
+            System.Diagnostics.Process.Start("IExplore.exe", mydocpath);
 
+            MessageBox.Show("The Restoration verification report is available in your Desktop for your references.", "EasySVNDiff- SVN Repository verification", MessageBoxButtons.OK);
         }
 
         #region FocusIN
