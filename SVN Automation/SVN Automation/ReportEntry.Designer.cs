@@ -40,18 +40,17 @@
             this.dtRestored = new System.Windows.Forms.DateTimePicker();
             this.txtBackupLoc = new System.Windows.Forms.TextBox();
             this.txtCLName = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblDescription = new System.Windows.Forms.Label();
             this.btnGenerate = new System.Windows.Forms.Button();
-            this.btnClear = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel1.SuspendLayout();
+            this.rtbStatus = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(19, 114);
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Location = new System.Drawing.Point(32, 56);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(78, 13);
             this.label1.TabIndex = 0;
@@ -60,7 +59,8 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(19, 149);
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Location = new System.Drawing.Point(32, 89);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(71, 13);
             this.label2.TabIndex = 1;
@@ -69,7 +69,8 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(19, 177);
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Location = new System.Drawing.Point(32, 122);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(73, 13);
             this.label3.TabIndex = 2;
@@ -78,7 +79,8 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(19, 212);
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Location = new System.Drawing.Point(32, 152);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(99, 13);
             this.label4.TabIndex = 3;
@@ -87,7 +89,8 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(19, 247);
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Location = new System.Drawing.Point(32, 185);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(88, 13);
             this.label5.TabIndex = 4;
@@ -96,7 +99,8 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(19, 276);
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Location = new System.Drawing.Point(32, 218);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(51, 13);
             this.label6.TabIndex = 5;
@@ -104,107 +108,128 @@
             // 
             // txtAcName
             // 
-            this.txtAcName.Location = new System.Drawing.Point(135, 114);
+            this.txtAcName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtAcName.Location = new System.Drawing.Point(137, 51);
             this.txtAcName.Name = "txtAcName";
-            this.txtAcName.Size = new System.Drawing.Size(345, 20);
+            this.txtAcName.Size = new System.Drawing.Size(328, 20);
             this.txtAcName.TabIndex = 6;
+            this.txtAcName.Enter += new System.EventHandler(this.txtAcName_Enter);
+            this.txtAcName.Leave += new System.EventHandler(this.txtAcName_Leave);
             // 
             // txtProjName
             // 
-            this.txtProjName.Location = new System.Drawing.Point(135, 149);
+            this.txtProjName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtProjName.Location = new System.Drawing.Point(137, 84);
             this.txtProjName.Name = "txtProjName";
-            this.txtProjName.Size = new System.Drawing.Size(345, 20);
+            this.txtProjName.Size = new System.Drawing.Size(328, 20);
             this.txtProjName.TabIndex = 7;
+            this.txtProjName.Enter += new System.EventHandler(this.txtProjName_Enter);
+            this.txtProjName.Leave += new System.EventHandler(this.txtProjName_Leave);
             // 
             // txtGITS
             // 
-            this.txtGITS.Location = new System.Drawing.Point(135, 177);
+            this.txtGITS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtGITS.Location = new System.Drawing.Point(135, 119);
             this.txtGITS.Name = "txtGITS";
-            this.txtGITS.Size = new System.Drawing.Size(345, 20);
+            this.txtGITS.Size = new System.Drawing.Size(328, 20);
             this.txtGITS.TabIndex = 8;
+            this.txtGITS.Enter += new System.EventHandler(this.txtGITS_Enter);
+            this.txtGITS.Leave += new System.EventHandler(this.txtGITS_Leave);
             // 
             // dtRestored
             // 
+            this.dtRestored.CalendarTitleBackColor = System.Drawing.Color.YellowGreen;
             this.dtRestored.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtRestored.Location = new System.Drawing.Point(135, 212);
+            this.dtRestored.Location = new System.Drawing.Point(137, 150);
             this.dtRestored.Name = "dtRestored";
             this.dtRestored.Size = new System.Drawing.Size(117, 20);
             this.dtRestored.TabIndex = 9;
+            this.dtRestored.Enter += new System.EventHandler(this.dtRestored_Enter);
+            this.dtRestored.Leave += new System.EventHandler(this.dtRestored_Leave);
             // 
             // txtBackupLoc
             // 
-            this.txtBackupLoc.Location = new System.Drawing.Point(135, 247);
+            this.txtBackupLoc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtBackupLoc.Location = new System.Drawing.Point(137, 181);
             this.txtBackupLoc.Name = "txtBackupLoc";
-            this.txtBackupLoc.Size = new System.Drawing.Size(345, 20);
+            this.txtBackupLoc.Size = new System.Drawing.Size(328, 20);
             this.txtBackupLoc.TabIndex = 10;
+            this.txtBackupLoc.Enter += new System.EventHandler(this.txtBackupLoc_Enter);
+            this.txtBackupLoc.Leave += new System.EventHandler(this.txtBackupLoc_Leave);
             // 
             // txtCLName
             // 
-            this.txtCLName.Location = new System.Drawing.Point(135, 276);
+            this.txtCLName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCLName.Location = new System.Drawing.Point(137, 214);
             this.txtCLName.Name = "txtCLName";
-            this.txtCLName.Size = new System.Drawing.Size(345, 20);
+            this.txtCLName.Size = new System.Drawing.Size(328, 20);
             this.txtCLName.TabIndex = 11;
+            this.txtCLName.Enter += new System.EventHandler(this.txtCLName_Enter);
+            this.txtCLName.Leave += new System.EventHandler(this.txtCLName_Leave);
             // 
-            // label7
+            // lblDescription
             // 
-            this.label7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label7.Location = new System.Drawing.Point(12, 312);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(468, 60);
-            this.label7.TabIndex = 12;
+            this.lblDescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(255)))), ((int)(((byte)(204)))));
+            this.lblDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblDescription.ForeColor = System.Drawing.Color.DimGray;
+            this.lblDescription.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblDescription.Location = new System.Drawing.Point(135, 246);
+            this.lblDescription.Name = "lblDescription";
+            this.lblDescription.Size = new System.Drawing.Size(338, 123);
+            this.lblDescription.TabIndex = 12;
             // 
             // btnGenerate
             // 
             this.btnGenerate.BackColor = System.Drawing.Color.White;
-            this.btnGenerate.Location = new System.Drawing.Point(192, 11);
+            this.btnGenerate.BackgroundImage = global::SVN_Automation.Properties.Resources.button;
+            this.btnGenerate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnGenerate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGenerate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGenerate.Location = new System.Drawing.Point(361, 399);
             this.btnGenerate.Name = "btnGenerate";
             this.btnGenerate.Size = new System.Drawing.Size(114, 23);
-            this.btnGenerate.TabIndex = 13;
+            this.btnGenerate.TabIndex = 17;
             this.btnGenerate.Text = "Generate Report";
             this.btnGenerate.UseVisualStyleBackColor = false;
-            this.btnGenerate.Click += new System.EventHandler(this.btnGenerate_Click);
-            // 
-            // btnClear
-            // 
-            this.btnClear.BackColor = System.Drawing.Color.White;
-            this.btnClear.Location = new System.Drawing.Point(318, 12);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(75, 23);
-            this.btnClear.TabIndex = 14;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnGenerate.Click += new System.EventHandler(this.btnGenerate_Click_1);
             // 
             // btnCancel
             // 
             this.btnCancel.BackColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(403, 12);
+            this.btnCancel.BackgroundImage = global::SVN_Automation.Properties.Resources.button;
+            this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Location = new System.Drawing.Point(275, 399);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 15;
+            this.btnCancel.TabIndex = 19;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // panel1
+            // rtbStatus
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel1.Controls.Add(this.btnGenerate);
-            this.panel1.Controls.Add(this.btnCancel);
-            this.panel1.Controls.Add(this.btnClear);
-            this.panel1.Location = new System.Drawing.Point(2, 384);
-            this.panel1.Margin = new System.Windows.Forms.Padding(0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(487, 44);
-            this.panel1.TabIndex = 16;
+            this.rtbStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(255)))), ((int)(((byte)(204)))));
+            this.rtbStatus.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtbStatus.Location = new System.Drawing.Point(33, 12);
+            this.rtbStatus.Name = "rtbStatus";
+            this.rtbStatus.Size = new System.Drawing.Size(330, 20);
+            this.rtbStatus.TabIndex = 20;
+            this.rtbStatus.Text = "";
             // 
             // frmReportEntry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
+            this.BackgroundImage = global::SVN_Automation.Properties.Resources.bg;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(492, 429);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label7);
+            this.Controls.Add(this.rtbStatus);
+            this.Controls.Add(this.btnGenerate);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.lblDescription);
             this.Controls.Add(this.txtCLName);
             this.Controls.Add(this.txtBackupLoc);
             this.Controls.Add(this.dtRestored);
@@ -217,10 +242,11 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
             this.Name = "frmReportEntry";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CSS AutoSVNDiff Report Generation";
-            this.panel1.ResumeLayout(false);
+            this.Load += new System.EventHandler(this.frmReportEntry_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -240,10 +266,9 @@
         private System.Windows.Forms.DateTimePicker dtRestored;
         private System.Windows.Forms.TextBox txtBackupLoc;
         private System.Windows.Forms.TextBox txtCLName;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Label lblDescription;
         private System.Windows.Forms.Button btnGenerate;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.RichTextBox rtbStatus;
     }
 }

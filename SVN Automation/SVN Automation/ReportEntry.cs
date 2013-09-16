@@ -18,8 +18,27 @@ namespace SVN_Automation
             this.objProjData = reportEntry;
         }
 
-        private void btnGenerate_Click(object sender, EventArgs e)
+        private void btnGenerate_Click_1(object sender, EventArgs e)
         {
+            #region Valitaion Input Feilds
+            string RequiredFields = string.Empty;
+            if (String.IsNullOrEmpty(txtAcName.Text.Trim())) RequiredFields += "* Account Name \r\n";
+            if (String.IsNullOrEmpty(txtProjName.Text.Trim())) RequiredFields += "* Project Name \r\n";
+            if (String.IsNullOrEmpty(txtGITS.Text.Trim())) RequiredFields += "* GITS Case ID \r\n";
+            if (String.IsNullOrEmpty(dtRestored.Text.Trim())) RequiredFields += "* Date of Restored \r\n";
+            if (String.IsNullOrEmpty(txtBackupLoc.Text.Trim())) RequiredFields += "* Backup Location \r\n";
+            if (String.IsNullOrEmpty(txtCLName.Text.Trim())) RequiredFields += "* CL Name \r\n";    
+
+            if (!String.IsNullOrEmpty(RequiredFields))
+            {
+                lblDescription.Text = "Please enter the following fields \r\n";
+                lblDescription.Text += RequiredFields;
+                return;
+            }
+
+            #endregion
+
+
             StringBuilder sbReport = new StringBuilder();
             sbReport.Append("<!DOCTYPE html><html lang='en'><head><meta charset='utf-8' /><title>SVN Repository Restoration Verification</title></head>");
             sbReport.Append("<body style='font-family:Segoe UI, arial,verdana;'><h2><p align='center'>SVN Repository Restoration Verification</p></h2>");
@@ -38,6 +57,100 @@ namespace SVN_Automation
 
 
 
+        }
+
+        #region FocusIN
+
+        private void txtAcName_Enter(object sender, EventArgs e)
+        {
+            lblDescription.Text = "Please enter the Account Name";
+            txtAcName.BackColor = Color.LightYellow;
+        }
+        
+        private void txtProjName_Enter(object sender, EventArgs e)
+        {
+            lblDescription.Text = "Please enter the Project Name";
+            txtProjName.BackColor = Color.LightYellow;
+        }
+
+        private void txtGITS_Enter(object sender, EventArgs e)
+        {
+            lblDescription.Text = "Please enter the GITS Case ID";
+            txtGITS.BackColor = Color.LightYellow;
+        }
+
+        private void dtRestored_Enter(object sender, EventArgs e)
+        {
+            lblDescription.Text = "Please select the Date of Restored";
+            dtRestored.BackColor = Color.LightYellow;
+        }
+
+        private void txtBackupLoc_Enter(object sender, EventArgs e)
+        {
+            lblDescription.Text = "Please enter the Backup Location";
+            txtBackupLoc.BackColor = Color.LightYellow;
+        }
+
+        private void txtCLName_Enter(object sender, EventArgs e)
+        {
+            lblDescription.Text = "Please enter the CL Name";
+            txtCLName.BackColor = Color.LightYellow;
+        }
+
+        #endregion
+
+        #region FocusOUT
+
+        private void txtAcName_Leave(object sender, EventArgs e)
+        {
+            lblDescription.Text = "";
+            txtAcName.BackColor = Color.White;
+        }
+
+        private void txtProjName_Leave(object sender, EventArgs e)
+        {
+            lblDescription.Text = "";
+            txtProjName.BackColor = Color.White;
+        }
+
+        private void txtGITS_Leave(object sender, EventArgs e)
+        {
+            lblDescription.Text = "";
+            txtGITS.BackColor = Color.White;
+        }
+
+        private void dtRestored_Leave(object sender, EventArgs e)
+        {
+            lblDescription.Text = "";
+            dtRestored.BackColor = Color.White;
+        }
+
+        private void txtBackupLoc_Leave(object sender, EventArgs e)
+        {
+            lblDescription.Text = "";
+            txtBackupLoc.BackColor = Color.White;
+        }
+
+        private void txtCLName_Leave(object sender, EventArgs e)
+        {
+            lblDescription.Text = "";
+            txtCLName.BackColor = Color.White;
+        }
+
+        #endregion
+
+        private void frmReportEntry_Load(object sender, EventArgs e)
+        {
+            rtbStatus.SelectionColor = Color.DarkSeaGreen;
+            rtbStatus.SelectedText = " Pre-Request > User Inputs > Find Diff > ";
+            rtbStatus.SelectionColor = Color.Black;
+            rtbStatus.SelectedText = "Generate Report";            
+            rtbStatus.Refresh();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

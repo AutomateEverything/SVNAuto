@@ -19,25 +19,32 @@ namespace SVN_Automation
             this.objVerify = mVerify;                              
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnDone_Click(object sender, EventArgs e)
         {
             Close();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnReport_Click(object sender, EventArgs e)
         {
             objVerify.VerificationLog = txtVerificationLog.Text;
             var reports = new frmReportEntry(objVerify);
             reports.Show();
             this.Hide();
         }
-        private void button3_Click(object sender, EventArgs e)
+        private void btnCancel_Click(object sender, EventArgs e)
         {
             Close();
         }
 
         private void Processing_Load(object sender, EventArgs e)
         {
+            rtbStatus.SelectionColor = Color.DarkSeaGreen;
+            rtbStatus.SelectedText = " Pre-Request > User Inputs > ";
+            rtbStatus.SelectionColor = Color.Black;
+            rtbStatus.SelectedText = "Find Diff";
+            rtbStatus.SelectionColor = Color.DarkSeaGreen;
+            rtbStatus.SelectedText = " > Generate Report";
+            rtbStatus.Refresh();
 
                 #region Create User
                 txtVerificationLog.SelectionColor = Color.Blue;
@@ -254,5 +261,6 @@ namespace SVN_Automation
             Form.ActiveForm.Refresh();
             txtVerificationLog.ScrollToCaret();
         }
+
     }
 }

@@ -9,4 +9,4 @@ C:\Documents and Settings\css99846\Desktop\Ramesh\SVN Automation\SVN Automation\
 C:\Documents and Settings\css99846\Desktop\Ramesh\SVN Automation\SVN Automation\obj\x86\Debug\SVN Automation.exe
 C:\Documents and Settings\css99846\Desktop\Ramesh\SVN Automation\SVN Automation\obj\x86\Debug\SVN Automation.pdb
 C:\Documents and Settings\css99846\Desktop\Ramesh\SVN Automation\SVN Automation\obj\x86\Debug\SVN_Automation.Processing.resources
-C:\Documents and Settings\css99846\Desktop\Ramesh\SVN Automation\SVN Automation\obj\x86\Debug\SVN_Automation.ReportEntry.resources
+C:\Documents and Settings\css99846\Desktop\Ramesh\SVN Automation\SVN Automation\obj\x86\Debug\SVN_Automation.frmReportEntry.resources

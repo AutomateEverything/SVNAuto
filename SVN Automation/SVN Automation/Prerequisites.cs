@@ -19,15 +19,15 @@ namespace SVN_Automation
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
+        private void btnNext_Click(object sender, EventArgs e)
+        {        
             var userinput = new UserInput();
             userinput.Show();
             this.Hide(); 
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
+        private void btnCancel_Click_1(object sender, EventArgs e)
+        {        
             Close();
         }
 
@@ -45,6 +45,14 @@ namespace SVN_Automation
 
         private void Prerequisites_Load(object sender, EventArgs e)
         {
+
+            rtbStatus.SelectionColor = Color.Black;
+            rtbStatus.SelectedText = " Pre-Request";
+            rtbStatus.SelectionColor = Color.DarkSeaGreen;
+            rtbStatus.SelectedText = " > User Inputs > Find Diff > Generate Report";
+            rtbStatus.Refresh();
+
+
             LinkLabel.Link linkNet = new LinkLabel.Link();
             linkNet.LinkData = "http://www.microsoft.com/en-us/download/details.aspx?id=17718";
             linkLabel1.Links.Add(linkNet);

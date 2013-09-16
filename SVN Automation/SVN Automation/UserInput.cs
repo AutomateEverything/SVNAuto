@@ -22,8 +22,11 @@ namespace SVN_Automation
             lblDescription.Text = "";                  
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnNext_Click_1(object sender, EventArgs e)
         {
+            lblDescription.Text = "Please wait...";
+            lblDescription.Refresh();
+
             try
             {                    
 
@@ -50,7 +53,8 @@ namespace SVN_Automation
                     lblDescription.Text = "Please enter the following fields \r\n";
                     lblDescription.Text += RequiredFields;
                     return;
-                }
+                }                
+
                 #endregion
 
                 if (objUserData.CheckLoginLive() && objUserData.CheckLoginBack())
@@ -79,38 +83,38 @@ namespace SVN_Automation
         private void txtUserName_GotFocus(object sender, EventArgs e)
         {
             lblDescription.Text = "Please enter the User Name for SVN Server";
-            txtUserName.BackColor = Color.AliceBlue;
+            txtUserName.BackColor = Color.LightYellow;
         }      
 
         private void txtPassword_GotFocus(Object sender, EventArgs e)
         {
             lblDescription.Text = "Please enter the Password for SVN Server";
-            txtPassword.BackColor = Color.AliceBlue;
+            txtPassword.BackColor = Color.LightYellow;
             
         }
 
         private void txtLiveURL_GotFocus(Object sender, EventArgs e)
         {
             lblDescription.Text = "Please enter the Live server URL";
-            txtLiveURL.BackColor = Color.AliceBlue;
+            txtLiveURL.BackColor = Color.LightYellow;
         }
 
         private void txtBackUpURL_GotFocus(Object sender, EventArgs e)
         {
             lblDescription.Text = "Please enter the Restored server URL";
-            txtBackUpURL.BackColor = Color.AliceBlue;
+            txtBackUpURL.BackColor = Color.LightYellow;
         }
 
         private void dtpBackUpDate_GotFocus(Object sender, EventArgs e)
         {
             lblDescription.Text = "Please Select the Backup Date of Restoration";
-            dtpBackUpDate.BackColor = Color.AliceBlue;
+            dtpBackUpDate.BackColor = Color.LightYellow;
         }
 
         private void txtLocalDrive_GotFocus(Object sender, EventArgs e)
         {
             lblDescription.Text = "Please Select the Temporary Folder for Comparison from the Drive which has the free space twice the SVN Server";
-            txtLocalDrive.BackColor = Color.AliceBlue;
+            txtLocalDrive.BackColor = Color.LightYellow;
         }
 
         #endregion
@@ -155,12 +159,12 @@ namespace SVN_Automation
 
         #endregion
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnCancel_Click(object sender, EventArgs e)
         {
             Close();
-        }  
+        }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnClear_Click_1(object sender, EventArgs e)
         {
             txtUserName.Text = "";
             txtPassword.Text = "";
@@ -170,19 +174,31 @@ namespace SVN_Automation
 
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void btnBrowse_Click(object sender, EventArgs e)
         {
             folderBrowserDialog1.ShowNewFolderButton = true;
             folderBrowserDialog1.ShowDialog();
             txtLocalDrive.Text = folderBrowserDialog1.SelectedPath;
         }
 
-        private void btnBack_Click(object sender, EventArgs e)
+        private void btnBack_Click_1(object sender, EventArgs e)
         {
             var prerequest = new Prerequisites();
             prerequest.Show();
             this.Hide();
         }
+
+        private void UserInput_Load(object sender, EventArgs e)
+        {
+            rtbStatus.SelectionColor = Color.DarkSeaGreen;
+            rtbStatus.SelectedText = " Pre-Request > ";
+            rtbStatus.SelectionColor = Color.Black;
+            rtbStatus.SelectedText = "User Inputs";
+            rtbStatus.SelectionColor = Color.DarkSeaGreen;
+            rtbStatus.SelectedText = " > Find Diff > Generate Report";
+            rtbStatus.Refresh();
+        }
+      
 
 
     }
