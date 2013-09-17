@@ -94,7 +94,7 @@ namespace SVN_Automation
         #region Check Login
         public bool CheckLoginLive()
         {
-            System.Threading.Thread.Sleep(1000);
+            //System.Threading.Thread.Sleep(1000);
             try
             {
                 System.Diagnostics.Process chkLog = new System.Diagnostics.Process();
@@ -108,7 +108,7 @@ namespace SVN_Automation
                 chkLog.StartInfo.RedirectStandardOutput = true;
                 chkLog.StartInfo.RedirectStandardError = true;
                 chkLog.StartInfo.UseShellExecute = false;
-                chkLog.Start();
+                chkLog.Start();      
 
                 StringBuilder ch = new StringBuilder();
                 while (!chkLog.HasExited)
@@ -123,8 +123,7 @@ namespace SVN_Automation
                 chkLog = null;
                 startchkLog = null;
 
-                //if (login.Contains("E175013")||string.IsNullOrEmpty(login.Trim()))
-                if (login.Contains("E175013"))
+                if (login.Contains("E175013") || login.Contains("E155007") || login.Contains("E230001") || login.Contains("E175002") || login.Contains("E731004") || login.Contains("E120171") || login.Contains("E020024"))                
                 {
                     MessageBox.Show("User credentials or Live Repository URL is invalid.", "Invalid Input!");
                     return false;
@@ -143,7 +142,7 @@ namespace SVN_Automation
 
         public bool CheckLoginBack()
         {
-            System.Threading.Thread.Sleep(1000);
+            //System.Threading.Thread.Sleep(1000);
             try
             {
                 System.Diagnostics.Process chkLog = new System.Diagnostics.Process();
@@ -172,8 +171,7 @@ namespace SVN_Automation
                 chkLog = null;
                 startchkLog = null;
 
-                //if (login.Contains("E175013")||string.IsNullOrEmpty(login.Trim()))
-                if (login.Contains("E175013"))
+                if (login.Contains("E175013") || login.Contains("E155007") || login.Contains("E230001") || login.Contains("E175002") || login.Contains("E731004") || login.Contains("E120171") || login.Contains("E020024"))                
                 {
                     MessageBox.Show("User credentials or Backup Repository URL is invalid.", "Invalid Input!");
                     return false;
