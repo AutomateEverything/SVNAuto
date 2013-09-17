@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserInput));
             this.lblUserName = new System.Windows.Forms.Label();
             this.txtUserName = new System.Windows.Forms.TextBox();
             this.lblPwd = new System.Windows.Forms.Label();
@@ -280,6 +281,7 @@
             this.Controls.Add(this.txtUserName);
             this.Controls.Add(this.lblUserName);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "UserInput";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

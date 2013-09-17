@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Processing));
             this.label1 = new System.Windows.Forms.Label();
             this.txtVerificationLog = new System.Windows.Forms.RichTextBox();
             this.btnDone = new System.Windows.Forms.Button();
@@ -127,6 +128,7 @@
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.txtVerificationLog);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Processing";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Verification Process";
