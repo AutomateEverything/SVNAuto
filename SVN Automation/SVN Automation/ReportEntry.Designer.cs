@@ -45,6 +45,7 @@
             this.btnGenerate = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.rtbStatus = new System.Windows.Forms.RichTextBox();
+            this.chkSaveToFile = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -93,9 +94,9 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Location = new System.Drawing.Point(32, 185);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(88, 13);
+            this.label5.Size = new System.Drawing.Size(78, 13);
             this.label5.TabIndex = 4;
-            this.label5.Text = "Backup Location";
+            this.label5.Text = "Backup Server";
             // 
             // label6
             // 
@@ -155,6 +156,7 @@
             this.txtBackupLoc.Name = "txtBackupLoc";
             this.txtBackupLoc.Size = new System.Drawing.Size(328, 20);
             this.txtBackupLoc.TabIndex = 10;
+            this.txtBackupLoc.Text = "PRIMARYBACKUP";
             this.txtBackupLoc.Enter += new System.EventHandler(this.txtBackupLoc_Enter);
             this.txtBackupLoc.Leave += new System.EventHandler(this.txtBackupLoc_Leave);
             // 
@@ -176,7 +178,7 @@
             this.lblDescription.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblDescription.Location = new System.Drawing.Point(135, 246);
             this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(338, 123);
+            this.lblDescription.Size = new System.Drawing.Size(338, 81);
             this.lblDescription.TabIndex = 12;
             // 
             // btnGenerate
@@ -186,11 +188,11 @@
             this.btnGenerate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnGenerate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGenerate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGenerate.Location = new System.Drawing.Point(361, 399);
+            this.btnGenerate.Location = new System.Drawing.Point(237, 398);
             this.btnGenerate.Name = "btnGenerate";
-            this.btnGenerate.Size = new System.Drawing.Size(114, 23);
+            this.btnGenerate.Size = new System.Drawing.Size(139, 23);
             this.btnGenerate.TabIndex = 17;
-            this.btnGenerate.Text = "Generate Report";
+            this.btnGenerate.Text = "Generate HTML Report";
             this.btnGenerate.UseVisualStyleBackColor = false;
             this.btnGenerate.Click += new System.EventHandler(this.btnGenerate_Click_1);
             // 
@@ -201,7 +203,7 @@
             this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Location = new System.Drawing.Point(275, 399);
+            this.btnCancel.Location = new System.Drawing.Point(403, 398);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 19;
@@ -219,6 +221,17 @@
             this.rtbStatus.TabIndex = 20;
             this.rtbStatus.Text = "";
             // 
+            // chkSaveToFile
+            // 
+            this.chkSaveToFile.AutoSize = true;
+            this.chkSaveToFile.BackColor = System.Drawing.Color.White;
+            this.chkSaveToFile.Location = new System.Drawing.Point(137, 346);
+            this.chkSaveToFile.Name = "chkSaveToFile";
+            this.chkSaveToFile.Size = new System.Drawing.Size(223, 17);
+            this.chkSaveToFile.TabIndex = 21;
+            this.chkSaveToFile.Text = "Save detailed log information to a Text file";
+            this.chkSaveToFile.UseVisualStyleBackColor = false;
+            // 
             // frmReportEntry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -227,6 +240,7 @@
             this.BackgroundImage = global::SVN_Automation.Properties.Resources.bg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(492, 429);
+            this.Controls.Add(this.chkSaveToFile);
             this.Controls.Add(this.rtbStatus);
             this.Controls.Add(this.btnGenerate);
             this.Controls.Add(this.btnCancel);
@@ -247,7 +261,7 @@
             this.MaximizeBox = false;
             this.Name = "frmReportEntry";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CSS AutoSVNDiff Report Generation";
+            this.Text = "EasySVNdiff: Report Generation";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmReportEntry_FormClosing);
             this.Load += new System.EventHandler(this.frmReportEntry_Load);
             this.ResumeLayout(false);
@@ -273,5 +287,6 @@
         private System.Windows.Forms.Button btnGenerate;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.RichTextBox rtbStatus;
+        private System.Windows.Forms.CheckBox chkSaveToFile;
     }
 }

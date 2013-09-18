@@ -30,6 +30,8 @@ namespace SVN_Automation
 
         public string VerificationLog { get; set; }
 
+        public string LogSummary { get; set; }
+
         public string RepoName { get; set; }
 
         public string CreateUser { get; set; }
