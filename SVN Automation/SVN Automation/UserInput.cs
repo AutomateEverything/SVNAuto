@@ -58,11 +58,11 @@ namespace SVN_Automation
                 #endregion
 
                 if (objUserData.CheckLoginLive() && objUserData.CheckLoginBack())
-                {
+                {    
+                    
                     var processing = new Processing(objUserData);
                     processing.Show();
                     this.Hide();
-                    this.Close();
                 }
 
                 else
@@ -161,6 +161,7 @@ namespace SVN_Automation
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            Application.Exit();
             Close();
         }
 
@@ -185,7 +186,7 @@ namespace SVN_Automation
         {
             var prerequest = new Prerequisites();
             prerequest.Show();
-            this.Hide();
+            this.Dispose();            
         }
 
         private void UserInput_Load(object sender, EventArgs e)
@@ -197,6 +198,12 @@ namespace SVN_Automation
             rtbStatus.SelectionColor = Color.DarkSeaGreen;
             rtbStatus.SelectedText = " > Find Diff > Generate Report";
             rtbStatus.Refresh();
+        }
+
+        private void UserInput_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+            
         }
       
 

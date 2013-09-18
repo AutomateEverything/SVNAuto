@@ -248,6 +248,7 @@
             this.Name = "frmReportEntry";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CSS AutoSVNDiff Report Generation";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmReportEntry_FormClosing);
             this.Load += new System.EventHandler(this.frmReportEntry_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

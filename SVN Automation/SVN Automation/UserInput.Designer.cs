@@ -210,7 +210,7 @@
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(75, 23);
             this.btnBack.TabIndex = 24;
-            this.btnBack.Text = "Back";
+            this.btnBack.Text = "<< Back";
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click_1);
             // 
@@ -225,7 +225,7 @@
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(75, 23);
             this.btnNext.TabIndex = 21;
-            this.btnNext.Text = "Next";
+            this.btnNext.Text = "Next >>";
             this.btnNext.UseVisualStyleBackColor = false;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click_1);
             // 
@@ -286,6 +286,7 @@
             this.Name = "UserInput";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SVN Backup Restoration Verifioncation";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UserInput_FormClosing);
             this.Load += new System.EventHandler(this.UserInput_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

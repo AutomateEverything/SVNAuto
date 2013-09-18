@@ -122,7 +122,7 @@
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(75, 23);
             this.btnNext.TabIndex = 9;
-            this.btnNext.Text = "Next";
+            this.btnNext.Text = "Next >>";
             this.btnNext.UseVisualStyleBackColor = false;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
@@ -186,6 +186,7 @@
             this.Name = "Prerequisites";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Prerequisites";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Prerequisites_FormClosing);
             this.Load += new System.EventHandler(this.Prerequisites_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

@@ -169,7 +169,14 @@ namespace SVN_Automation
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            Application.Exit();
             Close();
+        }
+
+        private void frmReportEntry_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+            
         }
     }
 }

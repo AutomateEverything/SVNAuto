@@ -20,15 +20,18 @@ namespace SVN_Automation
         }
 
         private void btnNext_Click(object sender, EventArgs e)
-        {        
+        {
+            //UserInput.ActiveForm.Show();
+            //UserInput.ActiveForm.Activate();
             var userinput = new UserInput();
             userinput.Show();
-            this.Hide(); 
+            this.Hide();          
         }
 
         private void btnCancel_Click_1(object sender, EventArgs e)
-        {        
-            Close();
+        {
+            Application.Exit();
+            Close();            
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -69,6 +72,12 @@ namespace SVN_Automation
         private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Process.Start(e.Link.LinkData as string);
+        }
+
+        private void Prerequisites_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+            
         }
 
 

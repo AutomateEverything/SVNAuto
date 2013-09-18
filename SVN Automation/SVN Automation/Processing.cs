@@ -21,18 +21,21 @@ namespace SVN_Automation
 
         private void btnDone_Click(object sender, EventArgs e)
         {
+            Application.Exit();
             Close();
         }
 
         private void btnReport_Click(object sender, EventArgs e)
         {
+            
             objVerify.VerificationLog = txtVerificationLog.Text;
             var reports = new frmReportEntry(objVerify);
             reports.Show();
-            this.Hide();
+            this.Hide();            
         }
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            Application.Exit();             
             Close();
         }
 
@@ -260,6 +263,12 @@ namespace SVN_Automation
             Form.ActiveForm.Cursor = Cursors.WaitCursor;
             Form.ActiveForm.Refresh();
             txtVerificationLog.ScrollToCaret();
+        }
+
+        private void Processing_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+            
         }
 
     }
