@@ -185,7 +185,7 @@
             this.MaximizeBox = false;
             this.Name = "Prerequisites";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Prerequisites";
+            this.Text = "EasySVNdiff: Prerequisites";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Prerequisites_FormClosing);
             this.Load += new System.EventHandler(this.Prerequisites_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

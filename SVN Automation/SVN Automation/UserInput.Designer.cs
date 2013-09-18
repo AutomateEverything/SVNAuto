@@ -285,7 +285,7 @@
             this.MaximizeBox = false;
             this.Name = "UserInput";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "SVN Backup Restoration Verifioncation";
+            this.Text = "EasySVNdiff: SVN Repositories information";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UserInput_FormClosing);
             this.Load += new System.EventHandler(this.UserInput_Load);
             this.ResumeLayout(false);

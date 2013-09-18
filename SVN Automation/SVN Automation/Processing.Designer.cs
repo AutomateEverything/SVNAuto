@@ -131,7 +131,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Processing";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Verification Process";
+            this.Text = "EasySVNdiff: Verification Process";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Processing_FormClosing);
             this.Load += new System.EventHandler(this.Processing_Load_1);
             this.Shown += new System.EventHandler(this.Processing_Load);

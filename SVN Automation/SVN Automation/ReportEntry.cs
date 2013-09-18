@@ -50,24 +50,24 @@ namespace SVN_Automation
             sbReport.Append("<tr><td bgcolor='#99CCFF'> Date of Verification</td><td bgcolor='white'> " + System.DateTime.Today + "</td></tr><tr><td bgcolor='#99CCFF'> Backup location (including server name) / Local machine path</td><td bgcolor='white'> " +txtBackupLoc.Text + "</td></tr>");
             sbReport.Append("<tr><td bgcolor='#99CCFF'> Restored location (including server name) / Local machine path</td><td bgcolor='white'> " + objProjData.BackupURL + "</td></tr><tr><td bgcolor='#99CCFF'> Date of Restoration</td><td bgcolor='white'> " + dtRestored.Value + "</td></tr>");
             sbReport.Append("<tr><td bgcolor='#99CCFF'> CL Name (or the person who performs the verification)</td><td bgcolor='white'> " + txtCLName.Text + "</td></tr>");
-            sbReport.Append("<tr><td bgcolor='#99CCFF'> Tool used to perform the verification</td><td bgcolor='white'> CSS EasySVNdiff</td></tr>");
+            sbReport.Append("<tr><td bgcolor='#99CCFF'> Tool used to perform the verification</td><td bgcolor='white'> EasySVNdiff</td></tr>");
             sbReport.Append("</table><br/><br/><table border='0' bgcolor='047CC1' cellpadding='1' cellspacing='1' width='70%' align='center'><tr height='15'><td width='100%'><p style='color:#D4FFFF; font-weight:bold'> Verification Log:</p></td></tr>");
             sbReport.Append("<tr><td bgcolor='white'><div style='border:1 solid #002776;width:100%;font-family:courier new'> " + objProjData.LogSummary.Replace("\n","<br>") + "</div></td></tr>");
             sbReport.Append("</table><br/><br/><table border='0' bgcolor='047CC1' cellpadding='1' cellspacing='1' width='70%' align='center'><tr><td width='100%' height='15'><p style='color:#D4FFFF; font-weight:bold'> Verification Result:</p></td></tr>");
-            sbReport.Append("<tr><td bgcolor='white'><div style='border:1 solid #002776;width:100%; font-weight:bold;");
+            sbReport.Append("<tr><td bgcolor='white'><div style='border:1 solid #002776;width:100%;'");
             
             if (objProjData.DiffResult==true)
             {
-                sbReport.Append("color:green;'> Both the following SVN repositories are SAME.");
-                sbReport.Append("<br><font color='#000066'>Live Repository: " + objProjData.LiveURL + "<br>Backup Restored Repository: " + objProjData.BackupURL + "</font><br>");
+                sbReport.Append("<font color='green'><b> Both the following SVN repositories are SAME.</b></font><br>");
+                sbReport.Append("<br><font color='#000044'>Live Repository: </font><font color='#440000'>" + objProjData.LiveURL + "</font><br>Backup Restored Repository: " + objProjData.BackupURL + "</font><br>");
             }
             else
             {
-                sbReport.Append("color:red;'> Both the following SVN repositories are DIFFERENT.");
-                sbReport.Append("<br><font color='#000066'>Live Repository: " + objProjData.LiveURL + "<br>Backup Restored Repository: " + objProjData.BackupURL + "</font><br>");
+                sbReport.Append("<font color='red'><b>Both the following SVN repositories are DIFFERENT.</b></font><br>");
+                sbReport.Append("<br><font color='#000044'>Live Repository: </font><font color='#440000'>" + objProjData.LiveURL + "</font><br>Backup Restored Repository: " + objProjData.BackupURL + "</font><br>");
             }
 
-            sbReport.Append("</div></td></tr></table><br/><br/><br><br><hr style='color:gray;height:1px' noshade/><p style='color:#0ABCDE;font-size:11px;text-justify:justify'>This is an auto-generated report by CSS EasySVNDiff tool</p></body></html>");
+            sbReport.Append("</div></td></tr></table><br/><br/><br><br><hr style='color:gray;height:1px' noshade/><br><div style='color:#0ABCDE;font-size:11px;text-align:center'>This is an auto-generated report by EasySVNdiff tool. Copyright CSS Corp. Pvt Ltd.</div></body></html>");
 
             string mydocpath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + @"\EasySVNdiff_Report" + DateTime.Now.ToString().Replace("/", "").Replace(" ", "").Replace(":", "") + ".html";
             using (StreamWriter outfile = new StreamWriter(mydocpath))
@@ -83,7 +83,13 @@ namespace SVN_Automation
                 mydocpath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + @"\EasySVNdiff_DetailedLog" + DateTime.Now.ToString().Replace("/", "").Replace(" ", "").Replace(":", "") + ".txt";
                 using (StreamWriter outfile = new StreamWriter(mydocpath))
                 {
-                    outfile.Write(sbReport.ToString());
+                    outfile.WriteLine("EasySVNdiff Detailed Log:");
+                    outfile.WriteLine("-------------------------" + System.Environment.NewLine);
+                    outfile.WriteLine(objProjData.VerificationLog.Replace("\n",System.Environment.NewLine));
+                    outfile.WriteLine("");
+                    outfile.WriteLine("Differences found between the Repositories (if any):");
+                    outfile.WriteLine("----------------------------------------------------" + System.Environment.NewLine);
+                    outfile.WriteLine(objProjData.FindDiff.Replace("\n", System.Environment.NewLine));
                 }
                 
                 MessageBox.Show("The Restoration Verification report and the text file containing detailed log have been placed on your Desktop folder for your future references.", "EasySVNdiff- SVN Repository Verification Report", MessageBoxButtons.OK, MessageBoxIcon.Information);
