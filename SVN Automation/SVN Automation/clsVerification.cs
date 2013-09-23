@@ -251,7 +251,8 @@ namespace SVN_Automation
             ManagementBaseObject oInRepository = repoClass.GetMethodParameters("Create");
 
             // Add the input parameters.
-            oInRepository["Name"] = RepoPath + "\\Automation_Repo" + DateTime.Now.ToString().Replace("/", "").Replace(" ", "").Replace(":", "");
+            //oInRepository["Name"] = RepoPath + "\\Automation_Repo" + DateTime.Now.ToString().Replace("/", "").Replace(" ", "").Replace(":", "");
+            oInRepository["Name"] = "\\Automation_Repo" + DateTime.Now.ToString().Replace("/", "").Replace(" ", "").Replace(":", "");
 
             // Execute the method and obtain the return values.
             ManagementBaseObject oOutRepository = repoClass.InvokeMethod("Create", oInRepository, null);

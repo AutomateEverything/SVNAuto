@@ -231,6 +231,7 @@
             this.chkSaveToFile.TabIndex = 21;
             this.chkSaveToFile.Text = "Save detailed log information to a Text file";
             this.chkSaveToFile.UseVisualStyleBackColor = false;
+            this.chkSaveToFile.Enter += new System.EventHandler(this.chkSaveToFile_Enter);
             // 
             // frmReportEntry
             // 

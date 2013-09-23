@@ -32,7 +32,7 @@ namespace SVN_Automation
 
             if (!String.IsNullOrEmpty(RequiredFields))
             {
-                lblDescription.Text = "Please enter the following fields \r\n";
+                lblDescription.Text = "Please enter the following mandatory fields: \r\n";
                 lblDescription.Text += RequiredFields;
                 return;
             }
@@ -103,38 +103,44 @@ namespace SVN_Automation
 
         private void txtAcName_Enter(object sender, EventArgs e)
         {
-            lblDescription.Text = "Please enter the Account Name";
+            lblDescription.Text = "Please enter your Account Name";
             txtAcName.BackColor = Color.LightYellow;
         }
         
         private void txtProjName_Enter(object sender, EventArgs e)
         {
-            lblDescription.Text = "Please enter the Project Name";
+            lblDescription.Text = "Please enter your Project Name";
             txtProjName.BackColor = Color.LightYellow;
         }
 
         private void txtGITS_Enter(object sender, EventArgs e)
         {
-            lblDescription.Text = "Please enter the GITS Case ID";
+            lblDescription.Text = "Please enter the GITS Case ID that you might have created for getting your backup/ restored URL.";
             txtGITS.BackColor = Color.LightYellow;
         }
 
         private void dtRestored_Enter(object sender, EventArgs e)
         {
-            lblDescription.Text = "Please select the Date of Restored";
+            lblDescription.Text = "Please select the date on which IT team has restored the backup.";
             dtRestored.BackColor = Color.LightYellow;
         }
 
         private void txtBackupLoc_Enter(object sender, EventArgs e)
         {
-            lblDescription.Text = "Please enter the Backup Location";
+            lblDescription.Text = "Please enter the Server location details such as Server Name or IP address(es) etc.";
             txtBackupLoc.BackColor = Color.LightYellow;
         }
 
         private void txtCLName_Enter(object sender, EventArgs e)
         {
-            lblDescription.Text = "Please enter the CL Name";
+            lblDescription.Text = "Please enter the name of CL or the one who does this process.";
             txtCLName.BackColor = Color.LightYellow;
+        }
+
+        private void chkSaveToFile_Enter(object sender, EventArgs e)
+        {
+            lblDescription.Text = "Please select this option if you want detailed log to be written to a text file for your later references. Because, the HTML report has only the summary of actions carried out during the verification process.";
+            chkSaveToFile.BackColor = Color.LightYellow;
         }
 
         #endregion
@@ -197,7 +203,8 @@ namespace SVN_Automation
         private void frmReportEntry_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
-            
+
         }
+   
     }
 }

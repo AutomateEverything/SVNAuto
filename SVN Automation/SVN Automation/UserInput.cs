@@ -82,38 +82,38 @@ namespace SVN_Automation
 
         private void txtUserName_GotFocus(object sender, EventArgs e)
         {
-            lblDescription.Text = "Please enter the User Name for SVN Server";
+            lblDescription.Text = "Please enter the User Name of your live SVN Server";
             txtUserName.BackColor = Color.LightYellow;
         }      
 
         private void txtPassword_GotFocus(Object sender, EventArgs e)
         {
-            lblDescription.Text = "Please enter the Password for SVN Server";
+            lblDescription.Text = "Please enter the Password of your live SVN Server";
             txtPassword.BackColor = Color.LightYellow;
             
         }
 
         private void txtLiveURL_GotFocus(Object sender, EventArgs e)
         {
-            lblDescription.Text = "Please enter the Live server URL";
+            lblDescription.Text = "Please enter the SVN Server URL of your live repository. " + System.Environment.NewLine + "Example: https://HDC0005254.ad.csscorp.com/svn/LiveRepo/";
             txtLiveURL.BackColor = Color.LightYellow;
         }
 
         private void txtBackUpURL_GotFocus(Object sender, EventArgs e)
         {
-            lblDescription.Text = "Please enter the Restored server URL";
+            lblDescription.Text = "Please enter the SVN server URL of the backup-restored repository." + System.Environment.NewLine + "Example: https://HDC0005254.ad.csscorp.com/svn/RestoredRepo/";
             txtBackUpURL.BackColor = Color.LightYellow;
         }
 
         private void dtpBackUpDate_GotFocus(Object sender, EventArgs e)
         {
-            lblDescription.Text = "Please Select the Backup Date of Restoration";
+            lblDescription.Text = "Please select the Date of Backup data.";
             dtpBackUpDate.BackColor = Color.LightYellow;
         }
 
         private void txtLocalDrive_GotFocus(Object sender, EventArgs e)
         {
-            lblDescription.Text = "Please Select the Temporary Folder for Comparison from the Drive which has the free space twice the SVN Server";
+            lblDescription.Text = "Please select any folder path for temporary usage such as getting files from both live and restored repositories for comparison activity. Also, please make sure that the drive has sufficient space." ;
             txtLocalDrive.BackColor = Color.LightYellow;
         }
 
