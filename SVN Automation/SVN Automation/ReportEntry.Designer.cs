@@ -225,6 +225,8 @@
             // 
             this.chkSaveToFile.AutoSize = true;
             this.chkSaveToFile.BackColor = System.Drawing.Color.White;
+            this.chkSaveToFile.Checked = true;
+            this.chkSaveToFile.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkSaveToFile.Location = new System.Drawing.Point(137, 346);
             this.chkSaveToFile.Name = "chkSaveToFile";
             this.chkSaveToFile.Size = new System.Drawing.Size(223, 17);
