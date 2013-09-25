@@ -29,54 +29,58 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Prerequisites));
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel3 = new System.Windows.Forms.LinkLabel();
+            this.llblFrame = new System.Windows.Forms.LinkLabel();
+            this.llblVisual = new System.Windows.Forms.LinkLabel();
+            this.llblTortoise = new System.Windows.Forms.LinkLabel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.linkLabel4 = new System.Windows.Forms.LinkLabel();
+            this.llblPower = new System.Windows.Forms.LinkLabel();
             this.btnNext = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.rtbStatus = new System.Windows.Forms.RichTextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.chkboxVisual = new System.Windows.Forms.CheckBox();
+            this.chkboxTortoise = new System.Windows.Forms.CheckBox();
+            this.chkboxFrame = new System.Windows.Forms.CheckBox();
+            this.chkboxPower = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // linkLabel1
+            // llblFrame
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel1.Location = new System.Drawing.Point(195, 220);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(105, 13);
-            this.linkLabel1.TabIndex = 0;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = ".NET Framework 4.0";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            this.llblFrame.AutoSize = true;
+            this.llblFrame.BackColor = System.Drawing.Color.Transparent;
+            this.llblFrame.Location = new System.Drawing.Point(195, 220);
+            this.llblFrame.Name = "llblFrame";
+            this.llblFrame.Size = new System.Drawing.Size(105, 13);
+            this.llblFrame.TabIndex = 0;
+            this.llblFrame.TabStop = true;
+            this.llblFrame.Text = ".NET Framework 4.0";
+            this.llblFrame.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
-            // linkLabel2
+            // llblVisual
             // 
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel2.Location = new System.Drawing.Point(195, 248);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(57, 13);
-            this.linkLabel2.TabIndex = 1;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "VisualSVN";
-            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
+            this.llblVisual.AutoSize = true;
+            this.llblVisual.BackColor = System.Drawing.Color.Transparent;
+            this.llblVisual.Location = new System.Drawing.Point(195, 248);
+            this.llblVisual.Name = "llblVisual";
+            this.llblVisual.Size = new System.Drawing.Size(57, 13);
+            this.llblVisual.TabIndex = 1;
+            this.llblVisual.TabStop = true;
+            this.llblVisual.Text = "VisualSVN";
+            this.llblVisual.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             // 
-            // linkLabel3
+            // llblTortoise
             // 
-            this.linkLabel3.AutoSize = true;
-            this.linkLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel3.Location = new System.Drawing.Point(195, 277);
-            this.linkLabel3.Name = "linkLabel3";
-            this.linkLabel3.Size = new System.Drawing.Size(67, 13);
-            this.linkLabel3.TabIndex = 2;
-            this.linkLabel3.TabStop = true;
-            this.linkLabel3.Text = "TortoiseSVN";
-            this.linkLabel3.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel3_LinkClicked);
+            this.llblTortoise.AutoSize = true;
+            this.llblTortoise.BackColor = System.Drawing.Color.Transparent;
+            this.llblTortoise.Location = new System.Drawing.Point(195, 277);
+            this.llblTortoise.Name = "llblTortoise";
+            this.llblTortoise.Size = new System.Drawing.Size(67, 13);
+            this.llblTortoise.TabIndex = 2;
+            this.llblTortoise.TabStop = true;
+            this.llblTortoise.Text = "TortoiseSVN";
+            this.llblTortoise.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel3_LinkClicked);
             // 
             // label1
             // 
@@ -97,19 +101,19 @@
             this.label2.Text = "Welcome to SVN Automation on Restoration Verification. Please review below softwa" +
     "re requirements before proceeding.";
             // 
-            // linkLabel4
+            // llblPower
             // 
-            this.linkLabel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.llblPower.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.linkLabel4.AutoSize = true;
-            this.linkLabel4.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel4.Location = new System.Drawing.Point(195, 306);
-            this.linkLabel4.Name = "linkLabel4";
-            this.linkLabel4.Size = new System.Drawing.Size(125, 13);
-            this.linkLabel4.TabIndex = 7;
-            this.linkLabel4.TabStop = true;
-            this.linkLabel4.Text = "Windows PowerShell 2.0";
+            this.llblPower.AutoSize = true;
+            this.llblPower.BackColor = System.Drawing.Color.Transparent;
+            this.llblPower.Location = new System.Drawing.Point(195, 306);
+            this.llblPower.Name = "llblPower";
+            this.llblPower.Size = new System.Drawing.Size(125, 13);
+            this.llblPower.TabIndex = 7;
+            this.llblPower.TabStop = true;
+            this.llblPower.Text = "Windows PowerShell 2.0";
             // 
             // btnNext
             // 
@@ -163,6 +167,46 @@
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
+            // chkboxVisual
+            // 
+            this.chkboxVisual.AutoSize = true;
+            this.chkboxVisual.Enabled = false;
+            this.chkboxVisual.Location = new System.Drawing.Point(174, 248);
+            this.chkboxVisual.Name = "chkboxVisual";
+            this.chkboxVisual.Size = new System.Drawing.Size(15, 14);
+            this.chkboxVisual.TabIndex = 13;
+            this.chkboxVisual.UseVisualStyleBackColor = true;
+            // 
+            // chkboxTortoise
+            // 
+            this.chkboxTortoise.AutoSize = true;
+            this.chkboxTortoise.Enabled = false;
+            this.chkboxTortoise.Location = new System.Drawing.Point(174, 277);
+            this.chkboxTortoise.Name = "chkboxTortoise";
+            this.chkboxTortoise.Size = new System.Drawing.Size(15, 14);
+            this.chkboxTortoise.TabIndex = 14;
+            this.chkboxTortoise.UseVisualStyleBackColor = true;
+            // 
+            // chkboxFrame
+            // 
+            this.chkboxFrame.AutoSize = true;
+            this.chkboxFrame.Enabled = false;
+            this.chkboxFrame.Location = new System.Drawing.Point(174, 220);
+            this.chkboxFrame.Name = "chkboxFrame";
+            this.chkboxFrame.Size = new System.Drawing.Size(15, 14);
+            this.chkboxFrame.TabIndex = 15;
+            this.chkboxFrame.UseVisualStyleBackColor = true;
+            // 
+            // chkboxPower
+            // 
+            this.chkboxPower.AutoSize = true;
+            this.chkboxPower.Enabled = false;
+            this.chkboxPower.Location = new System.Drawing.Point(174, 306);
+            this.chkboxPower.Name = "chkboxPower";
+            this.chkboxPower.Size = new System.Drawing.Size(15, 14);
+            this.chkboxPower.TabIndex = 16;
+            this.chkboxPower.UseVisualStyleBackColor = true;
+            // 
             // Prerequisites
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -171,16 +215,20 @@
             this.BackgroundImage = global::SVN_Automation.Properties.Resources.bg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(492, 466);
+            this.Controls.Add(this.chkboxPower);
+            this.Controls.Add(this.chkboxFrame);
+            this.Controls.Add(this.chkboxTortoise);
+            this.Controls.Add(this.chkboxVisual);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.rtbStatus);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.linkLabel4);
+            this.Controls.Add(this.llblPower);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.linkLabel3);
-            this.Controls.Add(this.linkLabel2);
-            this.Controls.Add(this.linkLabel1);
+            this.Controls.Add(this.llblTortoise);
+            this.Controls.Add(this.llblVisual);
+            this.Controls.Add(this.llblFrame);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Prerequisites";
@@ -196,16 +244,20 @@
 
         #endregion
 
-        private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.LinkLabel linkLabel2;
-        private System.Windows.Forms.LinkLabel linkLabel3;
+        private System.Windows.Forms.LinkLabel llblFrame;
+        private System.Windows.Forms.LinkLabel llblVisual;
+        private System.Windows.Forms.LinkLabel llblTortoise;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.LinkLabel linkLabel4;
+        private System.Windows.Forms.LinkLabel llblPower;
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.RichTextBox rtbStatus;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.CheckBox chkboxVisual;
+        private System.Windows.Forms.CheckBox chkboxTortoise;
+        private System.Windows.Forms.CheckBox chkboxFrame;
+        private System.Windows.Forms.CheckBox chkboxPower;
 
     }
 }

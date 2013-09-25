@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Management;
 using System.IO;
+using Microsoft.Win32;
 
 namespace SVN_Automation
 {
@@ -72,11 +73,12 @@ namespace SVN_Automation
 
         public string RepoPath { get; set; }
 
-        public bool DiffResult { get; set; }       
+        public bool DiffResult { get; set; }        
        
 
         public void execSVNcmd()
         {
+            setEvnVariable();
             CheckLoginLive();
             CheckLoginBack();
             mtdCreateUser();
@@ -91,6 +93,14 @@ namespace SVN_Automation
             mtdDltLocal();
             mtdDltServer();
 
+        }
+
+        public void setEvnVariable()
+        {
+            string keyName1 = "HKEY_LOCAL_MACHINE\\SOFTWARE\\VisualSVN\\VisualSVN Server";
+            string rootSVN = (string)Registry.GetValue(keyName1, "InstallDir", "") + "bin";
+
+            Environment.SetEnvironmentVariable("path", rootSVN);
         }
 
         #region Check Login
@@ -218,32 +228,36 @@ namespace SVN_Automation
             }
         }
 
+
         public void mtdCreateRepo()
         {
-            var drives = DriveInfo.GetDrives();
-            string dr = string.Empty;
+            string keyName = "HKEY_LOCAL_MACHINE\\SOFTWARE\\VisualSVN\\VisualSVN Server";
+            RepoPath = (string)Registry.GetValue(keyName, "RepositoriesRoot", "");
+
+            //var drives = DriveInfo.GetDrives();
+            //string dr = string.Empty;
                        
-            foreach (var drive in drives)
-            {
+            //foreach (var drive in drives)
+            //{
 
-                if (drive.DriveType == DriveType.Fixed)
-                {
-                    dr += drive.Name;                    
-                }
+            //    if (drive.DriveType == DriveType.Fixed)
+            //    {
+            //        dr += drive.Name;                    
+            //    }
 
-            }
-            if (dr.Contains("D:")) RepoPath = "D:\\Repositories";
-            else RepoPath = "C:\\Repositories";            
+            //}
+            //if (dr.Contains("D:")) RepoPath = "D:\\Repositories";
+            //else RepoPath = "C:\\Repositories";            
 
 
-            System.Diagnostics.Process CreateRep = new System.Diagnostics.Process();
-            System.Diagnostics.ProcessStartInfo startCreateRepo = new System.Diagnostics.ProcessStartInfo();
-            startCreateRepo.CreateNoWindow = true;
-            startCreateRepo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
-            startCreateRepo.FileName = "cmd.exe";
-            startCreateRepo.Arguments = "/c mkdir " + RepoPath;
-            CreateRep.StartInfo = startCreateRepo;
-            CreateRep.Start();
+            //System.Diagnostics.Process CreateRep = new System.Diagnostics.Process();
+            //System.Diagnostics.ProcessStartInfo startCreateRepo = new System.Diagnostics.ProcessStartInfo();
+            //startCreateRepo.CreateNoWindow = true;
+            //startCreateRepo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            //startCreateRepo.FileName = "cmd.exe";
+            //startCreateRepo.Arguments = "/c mkdir " + RepoPath;
+            //CreateRep.StartInfo = startCreateRepo;
+            //CreateRep.Start();
 
             ManagementClass repoClass = new ManagementClass("root\\VisualSVN", "VisualSVN_Repository", null);
 
@@ -252,12 +266,13 @@ namespace SVN_Automation
 
             // Add the input parameters.
             //oInRepository["Name"] = RepoPath + "\\Automation_Repo" + DateTime.Now.ToString().Replace("/", "").Replace(" ", "").Replace(":", "");
-            oInRepository["Name"] = "\\Automation_Repo" + DateTime.Now.ToString().Replace("/", "").Replace(" ", "").Replace(":", "");
+            oInRepository["Name"] = "Automation_Repo" + DateTime.Now.ToString().Replace("/", "").Replace(" ", "").Replace(":", "");
 
             // Execute the method and obtain the return values.
             ManagementBaseObject oOutRepository = repoClass.InvokeMethod("Create", oInRepository, null);
 
-            RepoName = new DirectoryInfo("" + oInRepository["Name"]).Name; 
+            //RepoName = new DirectoryInfo("" + oInRepository["Name"]).Name;
+            RepoName = "" + oInRepository["Name"];
 
             CreateRepo = "\nTemp Repository '" + RepoName + "' created.";
         }
@@ -265,7 +280,7 @@ namespace SVN_Automation
         public void mtdGiveAccess()
         {
             StreamWriter sw;
-            sw = File.CreateText(RepoPath + "\\" + RepoName + "\\conf\\VisualSVN-SvnAuthz.ini");
+            sw = File.CreateText(RepoPath + RepoName + "\\conf\\VisualSVN-SvnAuthz.ini");
             sw.WriteLine("[/]");
             sw.WriteLine("*=rw");
             sw.Close();
@@ -317,7 +332,7 @@ namespace SVN_Automation
                 startInfo.CreateNoWindow = true;
                 startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
                 startInfo.FileName = "cmd.exe";
-                startInfo.Arguments = "/C svn co -r {" + BackupDate + "} " + LiveURL + " \"" + LocalDrive + "\\svn-compare\\checkout\" --username " + UserName + " --password " + Password;
+                startInfo.Arguments = "/C svn co -r {\"" + BackupDate + " 23:59:59\"} " + LiveURL + " \"" + LocalDrive + "\\svn-compare\\checkout\" --username " + UserName + " --password " + Password;
                 process.StartInfo = startInfo;
 
                 process.StartInfo.RedirectStandardOutput = true;
@@ -333,11 +348,12 @@ namespace SVN_Automation
 
                 ChkLiveCmd = "\n" + startInfo.Arguments;
                 ChkLive = "\n" + proc.ToString().Trim();
+
                 startInfo = null;
                 process = null;
             }
             catch (Exception chklive)
-            {
+            { 
                 Error = chklive.Message.ToString();
             }
         }
@@ -365,6 +381,7 @@ namespace SVN_Automation
                 }
                 ChkBackCmd = "\n" + startChkBackup.Arguments;
                 ChkBack = "\n" + chkb.ToString().Trim();
+
                 startChkBackup = null;
                 chkBackup = null;
             }
@@ -503,18 +520,24 @@ namespace SVN_Automation
 
         public void mtdDltServer()
         {
-            ManagementClass repoClassDelete = new ManagementClass("root\\VisualSVN", "VisualSVN_Repository", null);
+            try
+            {
+                ManagementClass repoClassDelete = new ManagementClass("root\\VisualSVN", "VisualSVN_Repository", null);
 
-            // Obtain in-parameters for the method
-            ManagementBaseObject oInRepositoryDelete =
-                repoClassDelete.GetMethodParameters("Delete");
+                // Obtain in-parameters for the method
+                ManagementBaseObject oInRepositoryDelete =
+                    repoClassDelete.GetMethodParameters("Delete");
 
-            // Add the input parameters.
-            oInRepositoryDelete["Name"] = RepoName;
+                // Add the input parameters.
+                oInRepositoryDelete["Name"] = RepoName;
 
-            // Execute the method and obtain the return values.
-            ManagementBaseObject oOutRepositoryDelete =
-                repoClassDelete.InvokeMethod("Delete", oInRepositoryDelete, null);
+                // Execute the method and obtain the return values.
+                ManagementBaseObject oOutRepositoryDelete =
+                    repoClassDelete.InvokeMethod("Delete", oInRepositoryDelete, null);
+            }
+            catch (Exception dltre)
+            { 
+            }
         }
 
 

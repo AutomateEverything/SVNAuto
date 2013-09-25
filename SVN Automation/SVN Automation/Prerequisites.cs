@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Diagnostics;
+using Microsoft.Win32;
 
 namespace SVN_Automation
 {
@@ -56,17 +57,59 @@ namespace SVN_Automation
             rtbStatus.Refresh();
 
 
+            string keyName1 = "HKEY_LOCAL_MACHINE\\SOFTWARE\\VisualSVN\\VisualSVN Server";
+            string visual = (string)Registry.GetValue(keyName1, "InstallDir", "");
+
+            if (String.IsNullOrEmpty(visual.Trim()))
+            {
+                btnNext.Enabled = false;
+            }
+            else {
+                chkboxVisual.Checked = true;
+                llblVisual.Enabled = false;
+            }
+
+            string keyName2 = "HKEY_LOCAL_MACHINE\\SOFTWARE\\TortoiseSVN";
+            string tortoise = (string)Registry.GetValue(keyName2, "ProcPath", "");
+
+            if (String.IsNullOrEmpty(tortoise.Trim()))
+            {
+                btnNext.Enabled = false;
+            }
+            else
+            {
+                chkboxTortoise.Checked = true;
+                llblTortoise.Enabled = false;
+            }
+
+            string keyName3 = "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\PowerShell\\1\\PowerShellEngine";
+            string power = (string)Registry.GetValue(keyName3, "PowerShellVersion", "");
+
+            if (String.IsNullOrEmpty(power.Trim())|| (Convert.ToDouble(power)<2))
+            {
+                btnNext.Enabled = false;
+            }
+            else
+            {
+                chkboxPower.Checked = true;
+                llblPower.Enabled = false;
+            }
+
+            //string keyName4 = "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\.NETFramework\\v4.0.30319";
+            //textBox1.Text = (string)Registry.GetValue(keyName4, "PowerShellVersion", "");
+
+
             LinkLabel.Link linkNet = new LinkLabel.Link();
             linkNet.LinkData = "http://www.microsoft.com/en-us/download/details.aspx?id=17718";
-            linkLabel1.Links.Add(linkNet);
+            llblFrame.Links.Add(linkNet);
 
             LinkLabel.Link linkSVN = new LinkLabel.Link();
             linkSVN.LinkData = "http://www.visualsvn.com/server/download/";
-            linkLabel2.Links.Add(linkSVN);
+            llblVisual.Links.Add(linkSVN);
 
             LinkLabel.Link linkTortoise = new LinkLabel.Link();
             linkTortoise.LinkData = "http://tortoisesvn.net/downloads.html";
-            linkLabel3.Links.Add(linkTortoise);
+            llblTortoise.Links.Add(linkTortoise);
         }
 
         private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
