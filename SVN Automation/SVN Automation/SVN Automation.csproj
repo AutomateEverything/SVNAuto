@@ -55,6 +55,7 @@
     <StartupObject>SVN_Automation.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
@@ -70,6 +71,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clsVerification.cs" />
+    <Compile Include="GetShowOnDisabled.cs" />
     <Compile Include="ReportEntry.cs">
       <SubType>Form</SubType>
     </Compile>

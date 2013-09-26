@@ -62,7 +62,7 @@ namespace SVN_Automation
 
             if (String.IsNullOrEmpty(visual.Trim()))
             {
-                btnNext.Enabled = false;
+                btnNext.Enabled = false;                                
             }
             else {
                 chkboxVisual.Checked = true;
@@ -95,8 +95,17 @@ namespace SVN_Automation
                 llblPower.Enabled = false;
             }
 
-            //string keyName4 = "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\.NETFramework\\v4.0.30319";
-            //textBox1.Text = (string)Registry.GetValue(keyName4, "PowerShellVersion", "");
+            int frame = Environment.Version.Major;
+
+            if (frame < 4)
+            {
+                btnNext.Enabled = false;
+            }
+            else
+            {
+                chkboxFrame.Checked = true;
+                llblFrame.Enabled = false; 
+            }
 
 
             LinkLabel.Link linkNet = new LinkLabel.Link();
@@ -120,7 +129,7 @@ namespace SVN_Automation
         private void Prerequisites_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
-            
+
         }
 
 

@@ -43,13 +43,16 @@
             this.chkboxTortoise = new System.Windows.Forms.CheckBox();
             this.chkboxFrame = new System.Windows.Forms.CheckBox();
             this.chkboxPower = new System.Windows.Forms.CheckBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // llblFrame
             // 
             this.llblFrame.AutoSize = true;
             this.llblFrame.BackColor = System.Drawing.Color.Transparent;
+            this.llblFrame.LinkColor = System.Drawing.Color.Red;
             this.llblFrame.Location = new System.Drawing.Point(195, 220);
             this.llblFrame.Name = "llblFrame";
             this.llblFrame.Size = new System.Drawing.Size(105, 13);
@@ -62,6 +65,7 @@
             // 
             this.llblVisual.AutoSize = true;
             this.llblVisual.BackColor = System.Drawing.Color.Transparent;
+            this.llblVisual.LinkColor = System.Drawing.Color.Red;
             this.llblVisual.Location = new System.Drawing.Point(195, 248);
             this.llblVisual.Name = "llblVisual";
             this.llblVisual.Size = new System.Drawing.Size(57, 13);
@@ -74,6 +78,7 @@
             // 
             this.llblTortoise.AutoSize = true;
             this.llblTortoise.BackColor = System.Drawing.Color.Transparent;
+            this.llblTortoise.LinkColor = System.Drawing.Color.Red;
             this.llblTortoise.Location = new System.Drawing.Point(195, 277);
             this.llblTortoise.Name = "llblTortoise";
             this.llblTortoise.Size = new System.Drawing.Size(67, 13);
@@ -108,6 +113,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.llblPower.AutoSize = true;
             this.llblPower.BackColor = System.Drawing.Color.Transparent;
+            this.llblPower.LinkColor = System.Drawing.Color.Red;
             this.llblPower.Location = new System.Drawing.Point(195, 306);
             this.llblPower.Name = "llblPower";
             this.llblPower.Size = new System.Drawing.Size(125, 13);
@@ -136,6 +142,7 @@
             this.btnCancel.BackgroundImage = global::SVN_Automation.Properties.Resources.button;
             this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(244)))), ((int)(((byte)(255)))));
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Location = new System.Drawing.Point(244, 434);
             this.btnCancel.Name = "btnCancel";
@@ -161,7 +168,7 @@
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImage = global::SVN_Automation.Properties.Resources.logo;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(82, 11);
+            this.pictureBox1.Location = new System.Drawing.Point(106, 23);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(300, 55);
             this.pictureBox1.TabIndex = 12;
@@ -207,6 +214,17 @@
             this.chkboxPower.TabIndex = 16;
             this.chkboxPower.UseVisualStyleBackColor = true;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.BackgroundImage = global::SVN_Automation.Properties.Resources.icon_big;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(37, 20);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(63, 63);
+            this.pictureBox2.TabIndex = 17;
+            this.pictureBox2.TabStop = false;
+            // 
             // Prerequisites
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -215,6 +233,7 @@
             this.BackgroundImage = global::SVN_Automation.Properties.Resources.bg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(492, 466);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.chkboxPower);
             this.Controls.Add(this.chkboxFrame);
             this.Controls.Add(this.chkboxTortoise);
@@ -237,6 +256,7 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Prerequisites_FormClosing);
             this.Load += new System.EventHandler(this.Prerequisites_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -258,6 +278,7 @@
         private System.Windows.Forms.CheckBox chkboxTortoise;
         private System.Windows.Forms.CheckBox chkboxFrame;
         private System.Windows.Forms.CheckBox chkboxPower;
+        private System.Windows.Forms.PictureBox pictureBox2;
 
     }
 }

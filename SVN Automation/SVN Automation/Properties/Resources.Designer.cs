@@ -81,6 +81,13 @@ namespace SVN_Automation.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap icon_big {
+            get {
+                object obj = ResourceManager.GetObject("icon_big", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap logo {
             get {
                 object obj = ResourceManager.GetObject("logo", resourceCulture);
