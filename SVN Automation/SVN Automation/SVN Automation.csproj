@@ -71,7 +71,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clsVerification.cs" />
-    <Compile Include="GetShowOnDisabled.cs" />
     <Compile Include="ReportEntry.cs">
       <SubType>Form</SubType>
     </Compile>

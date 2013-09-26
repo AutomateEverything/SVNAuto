@@ -42,8 +42,8 @@ namespace SVN_Automation
 
             StringBuilder sbReport = new StringBuilder();
             sbReport.Append("<!DOCTYPE html><html lang='en'><head><meta charset='utf-8' /><title>SVN Repository Backup Restoration Verification</title></head>");
-            sbReport.Append("<body style='font-family:Segoe UI, arial,verdana;'><table border='0' width='70%'><tr><td align='left'><img src='https://www.csscorp.com/sites/all/themes/csscorp/images/css_corp_logo.jpg'/></td><td align='left'><h2><p align='center' nowrap>SVN Repository Backup Restoration Verification</p></h2></td></tr></table>");
-            sbReport.Append("<table border='0' bgcolor='047CC1' cellpadding='1' cellspacing='1' width='70%' align='center'><tr height='15'><td colspan='2'><p style='color:#D4FFFF; font-weight:bold'> Project Info:</p></td></tr>");
+            sbReport.Append("<body style='font-family:Segoe UI, arial,verdana;'><table border='0' width='70%'><tr><td align='left'><img src='https://www.csscorp.com/sites/all/themes/csscorp/images/css_corp_logo.jpg'/></td><td align='left'><h2><p align='center' nowrap><font color='#545456'>SVN Repository Backup Restoration Verification</font></p></h2></td></tr></table>");
+            sbReport.Append("<table border='0' bgcolor='047CC1' cellpadding='1' cellspacing='1' width='70%' align='center'><tr height='15'><td colspan='2'><div style='color:#D4FFFF; font-weight:bold'> Project Info:</div></td></tr>");
             sbReport.Append("<tr><td bgcolor='#99CCFF' width='50%'> Account Name</td><td bgcolor='white' width='50%'> " + txtAcName.Text + "</td></tr><tr><td bgcolor='#99CCFF'> Project Name</td><td bgcolor='white'> " + txtProjName.Text +"</td></tr>");
             sbReport.Append("<tr><td bgcolor='#99CCFF'> Repository URL</td><td bgcolor='white'> " + objProjData.LiveURL +"</td></tr><tr><td bgcolor='#99CCFF'> GITS Case ID</td><td bgcolor='white'> " + txtGITS.Text +"</td></tr>");
             sbReport.Append("<tr><td bgcolor='#99CCFF'> Back-Up Date</td><td bgcolor='white'> "+ objProjData.BackupDate +"</td></tr><tr><td bgcolor='#99CCFF'> Date of Restoration</td><td bgcolor='white'> " + dtRestored.Value + "</td></tr>");
@@ -51,9 +51,9 @@ namespace SVN_Automation
             sbReport.Append("<tr><td bgcolor='#99CCFF'> Restored location (including server name) / Local machine path</td><td bgcolor='white'> " + objProjData.BackupURL + "</td></tr><tr><td bgcolor='#99CCFF'> Date of Restoration</td><td bgcolor='white'> " + dtRestored.Value + "</td></tr>");
             sbReport.Append("<tr><td bgcolor='#99CCFF'> CL Name (or the person who performs the verification)</td><td bgcolor='white'> " + txtCLName.Text + "</td></tr>");
             sbReport.Append("<tr><td bgcolor='#99CCFF'> Tool used to perform the verification</td><td bgcolor='white'> EasySVNdiff</td></tr>");
-            sbReport.Append("</table><br/><br/><table border='0' bgcolor='047CC1' cellpadding='1' cellspacing='1' width='70%' align='center'><tr height='15'><td width='100%'><p style='color:#D4FFFF; font-weight:bold'> Verification Log:</p></td></tr>");
+            sbReport.Append("</table><br/><br/><table border='0' bgcolor='047CC1' cellpadding='1' cellspacing='1' width='70%' align='center'><tr height='15'><td width='100%'><div style='color:#D4FFFF; font-weight:bold'> Verification Log:</div></td></tr>");
             sbReport.Append("<tr><td bgcolor='white'><div style='border:1 solid #002776;width:100%;font-family:courier new'> " + objProjData.LogSummary.Replace("\n","<br>") + "</div></td></tr>");
-            sbReport.Append("</table><br/><br/><table border='0' bgcolor='047CC1' cellpadding='1' cellspacing='1' width='70%' align='center'><tr><td width='100%' height='15'><p style='color:#D4FFFF; font-weight:bold'> Verification Result:</p></td></tr>");
+            sbReport.Append("</table><br/><br/><table border='0' bgcolor='047CC1' cellpadding='1' cellspacing='1' width='70%' align='center'><tr><td width='100%' height='15'><div style='color:#D4FFFF; font-weight:bold'> Verification Result:</div></td></tr>");
             sbReport.Append("<tr><td bgcolor='white'>");
             
             if (objProjData.DiffResult==true)
@@ -65,7 +65,7 @@ namespace SVN_Automation
                 sbReport.Append("<div style='border:1 solid #002776;width:100%;color:red'><b>Both the following SVN repositories are DIFFERENT.</b></div><br>");
             }
             
-            sbReport.Append("<table border='1'><tr><td bgcolor='#8cc8ea'>Live Repository URL </td><td><a href='" + objProjData.LiveURL + "'>" + objProjData.LiveURL + "</a></td></tr><tr><td bgcolor='#8cc8ea'>Backup Restored Repository URL </td><td><a href='" + objProjData.BackupURL + "'>" + objProjData.BackupURL + "</a><br>");
+            sbReport.Append("<table border='1' borderColorLight='#EAEAEE' borderColorDark='#EAEAEE'><tr><td bgcolor='#8cc8ea'>Live Repository URL </td><td><a href='" + objProjData.LiveURL + "'>" + objProjData.LiveURL + "</a></td></tr><tr><td bgcolor='#8cc8ea'>Backup Restored Repository URL </td><td><a href='" + objProjData.BackupURL + "'>" + objProjData.BackupURL + "</a><br>");
             sbReport.Append("</td></tr></table><br></td></tr></table><br><br><hr style='color:gray;height:1px' noshade/><div style='background-color:#666666;color:#c2b497;font-size:11px;text-align:center;line-height:25px;'>This is an auto-generated report by EasySVNdiff tool. &copy; CSS Corp.</div></body></html>");
 
             string mydocpath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + @"\EasySVNdiff_Report" + DateTime.Now.ToString().Replace("/", "").Replace(" ", "").Replace(":", "") + ".html";
