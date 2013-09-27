@@ -346,7 +346,7 @@ namespace SVN_Automation
                     proc.Append(process.StandardOutput.ReadToEnd());
                 }
 
-                ChkLiveCmd = "\n" + startInfo.Arguments;
+                ChkLiveCmd = "\n" + startInfo.Arguments.Replace(" --password " + Password, " --password *******");
                 ChkLive = "\n" + proc.ToString().Trim();
 
                 startInfo = null;
@@ -379,7 +379,7 @@ namespace SVN_Automation
                 {
                     chkb.Append(chkBackup.StandardOutput.ReadToEnd());
                 }
-                ChkBackCmd = "\n" + startChkBackup.Arguments;
+                ChkBackCmd = "\n" + startChkBackup.Arguments.Replace(" --password " + Password, " --password *******");
                 ChkBack = "\n" + chkb.ToString().Trim();
 
                 startChkBackup = null;
