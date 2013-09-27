@@ -187,7 +187,7 @@ namespace SVN_Automation
         private void frmReportEntry_Load(object sender, EventArgs e)
         {
             rtbStatus.SelectionColor = Color.DarkSeaGreen;
-            rtbStatus.SelectedText = " Pre-Request > User Inputs > Find Diff > ";
+            rtbStatus.SelectedText = " Pre-Requisite > User Inputs > Find Diff > ";
             rtbStatus.SelectionColor = Color.Black;
             rtbStatus.SelectedText = "Generate Report";            
             rtbStatus.Refresh();

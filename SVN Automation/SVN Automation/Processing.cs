@@ -27,7 +27,7 @@ namespace SVN_Automation
             {
 
                 rtbStatus.SelectionColor = Color.DarkSeaGreen;
-                rtbStatus.SelectedText = " Pre-Request > User Inputs > ";
+                rtbStatus.SelectedText = " Pre-Requisite > User Inputs > ";
                 rtbStatus.SelectionColor = Color.Black;
                 rtbStatus.SelectedText = "Find Diff";
                 rtbStatus.SelectionColor = Color.DarkSeaGreen;

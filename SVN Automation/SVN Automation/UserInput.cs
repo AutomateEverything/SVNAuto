@@ -192,7 +192,7 @@ namespace SVN_Automation
         private void UserInput_Load(object sender, EventArgs e)
         {
             rtbStatus.SelectionColor = Color.DarkSeaGreen;
-            rtbStatus.SelectedText = " Pre-Request > ";
+            rtbStatus.SelectedText = " Pre-Requisite > ";
             rtbStatus.SelectionColor = Color.Black;
             rtbStatus.SelectedText = "User Inputs";
             rtbStatus.SelectionColor = Color.DarkSeaGreen;
