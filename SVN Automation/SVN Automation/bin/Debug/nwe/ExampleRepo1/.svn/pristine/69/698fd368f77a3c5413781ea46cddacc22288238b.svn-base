@@ -1,7 +1,0 @@
-Compare C:\Repo1\New-Folder-1 with C:\Repo1\New-Folder-2
-7/23/2013 10:32:43 AM
-Filename,Folder,Comparison result,Left Date,Right Date,Extension
-..,,,,,
-New Folder,,,7/22/2013 5:16:33 PM,* 7/22/2013 5:24:54 PM,
-CaseManager_FUD.doc,,Left only: C:\Repo1\New-Folder-1,* 7/16/2013 12:32:30 PM,,doc
-RecordManager_FUD.doc,,Binary files are different,7/18/2013 3:12:09 PM,* 7/22/2013 4:32:55 PM,doc
