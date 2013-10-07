@@ -12,21 +12,38 @@ using Microsoft.Win32;
 
 namespace SVN_Automation
 {
+    /// <summary>
+    /// Class file for process
+    /// </summary>
     public class clsVerification
     {
-
+        /// <summary>
+        /// Property for username
+        /// </summary>
         public string UserName { get; set; }
-
+        /// <summary>
+        /// Property for Password
+        /// </summary>
         public string Password { get; set; }
-
+        /// <summary>
+        /// Property for Live URL
+        /// </summary>
         public string LiveURL { get; set; }
-
+        /// <summary>
+        /// Property for Backup URL
+        /// </summary>
         public string BackupURL { get; set; }
-
+        /// <summary>
+        /// Property for Backup/Restored Date
+        /// </summary>
         public string BackupDate { get; set; }
-
+        /// <summary>
+        /// Property for Local drive detials
+        /// </summary>
         public string LocalDrive { get; set; }
-
+        /// <summary>
+        /// Property for repo URL that we are getting run time
+        /// </summary>
         public string repourl { get; set; }
 
         public string VerificationLog { get; set; }
@@ -73,8 +90,9 @@ namespace SVN_Automation
 
         public string RepoPath { get; set; }
 
-        public bool DiffResult { get; set; }        
-       
+        public bool DiffResult { get; set; }
+
+        public string TextFile { get; set; }       
 
         public void execSVNcmd()
         {
@@ -94,7 +112,11 @@ namespace SVN_Automation
             mtdDltServer();
 
         }
-
+        /// <summary>
+        /// TO set the Environmental variable for SVN to executes its commands.
+        /// Input: Finding the visualSVN path by using registry and adding "bin" to that path
+        /// Output: Setting the environment for SVN
+        /// </summary>
         public void setEvnVariable()
         {
             string keyName1 = "HKEY_LOCAL_MACHINE\\SOFTWARE\\VisualSVN\\VisualSVN Server";
@@ -102,8 +124,14 @@ namespace SVN_Automation
 
             Environment.SetEnvironmentVariable("path", rootSVN);
         }
-
+        
         #region Check Login
+        /// <summary>
+        /// Check whether the user and Live server URL enter is valid or not
+        /// Input: User given data Username, password and Live Server URL
+        /// Output: Check the given compination of username, password and URL are correct or not
+        /// </summary>
+        /// <returns></returns>
         public bool CheckLoginLive()
         {
             //System.Threading.Thread.Sleep(1000);
@@ -114,7 +142,7 @@ namespace SVN_Automation
                 startchkLog.CreateNoWindow = true;
                 startchkLog.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
                 startchkLog.FileName = "cmd.exe";
-                startchkLog.Arguments = "/C svn list \"" + LiveURL + "\" --username " + UserName + " --password " + Password;
+                startchkLog.Arguments = "/C svn list \"" + LiveURL.Trim() + "\" --username " + UserName.Trim() + " --password " + Password.Trim();
                 chkLog.StartInfo = startchkLog;
 
                 chkLog.StartInfo.RedirectStandardOutput = true;
@@ -151,7 +179,12 @@ namespace SVN_Automation
                 return false;
             }
         }
-
+        /// <summary>
+        /// Check whether the user and Backup/Restored server URL enter is valid or not
+        /// Input: User given data Username, password and Backup/Restored Server URL
+        /// Output: Check the given compination of username, password and URL are correct or not
+        /// </summary>
+        /// <returns></returns>
         public bool CheckLoginBack()
         {
             //System.Threading.Thread.Sleep(1000);
@@ -162,7 +195,7 @@ namespace SVN_Automation
                 startchkLog.CreateNoWindow = true;
                 startchkLog.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
                 startchkLog.FileName = "cmd.exe";
-                startchkLog.Arguments = "/C svn list \"" + BackupURL + "\" --username " + UserName + " --password " + Password;
+                startchkLog.Arguments = "/C svn list \"" + BackupURL.Trim() + "\" --username " + UserName.Trim() + " --password " + Password.Trim();
                 chkLog.StartInfo = startchkLog;
 
                 chkLog.StartInfo.RedirectStandardOutput = true;
@@ -200,7 +233,11 @@ namespace SVN_Automation
             }
         }
         #endregion
-
+        /// <summary>
+        /// If user doesn't exist, it will create the user in local VisualSVN server.
+        /// Input: User given data user name, password
+        /// Output: Creating the user in Local Visual SVN server
+        /// </summary>
         public void mtdCreateUser()
         {
             try
@@ -228,7 +265,11 @@ namespace SVN_Automation
             }
         }
 
-
+        /// <summary>
+        /// Create a temporary Repository for Comparison
+        /// Input: Name of the repository which is created at run time
+        /// Output: Temporary repository is created
+        /// </summary>
         public void mtdCreateRepo()
         {
             string keyName = "HKEY_LOCAL_MACHINE\\SOFTWARE\\VisualSVN\\VisualSVN Server";
@@ -276,7 +317,11 @@ namespace SVN_Automation
 
             CreateRepo = "\nTemp Repository '" + RepoName + "' created.";
         }
-
+        /// <summary>
+        /// Providing access to created repository
+        /// Input: Repository path where its created at run time
+        /// Output: creating the access file to the repository
+        /// </summary>
         public void mtdGiveAccess()
         {
             StreamWriter sw;
@@ -287,7 +332,11 @@ namespace SVN_Automation
 
             //GiveAccess = "Giving Access to Temp Repo " + RepoName + "\n";
         }
-
+        /// <summary>
+        /// Get the URL for the created repository
+        /// Input: Temporary repository name
+        /// Output: URL for that repository
+        /// </summary>
         public void mtdGetUrl()
         {
             try
@@ -322,7 +371,11 @@ namespace SVN_Automation
                 Error = geturl.Message.ToString();
             }
         }
-
+        /// <summary>
+        /// Check out the files from Live SVN repository for particular date, here we had used commandprompt command to do so
+        /// Input: User details username, password, backup/restored date and live svn server url
+        /// Output: Checking out the files from Live SVN repository
+        /// </summary>
         public void mtdChkLive()
         {
             try
@@ -332,7 +385,7 @@ namespace SVN_Automation
                 startInfo.CreateNoWindow = true;
                 startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
                 startInfo.FileName = "cmd.exe";
-                startInfo.Arguments = "/C svn co -r {\"" + BackupDate + " 23:59:59\"} " + LiveURL + " \"" + LocalDrive + "\\svn-compare\\checkout\" --username " + UserName + " --password " + Password;
+                startInfo.Arguments = "/C svn co -r {\"" + BackupDate + " 23:59:59\"} " + LiveURL.Trim() + " \"" + LocalDrive.Trim() + "\\svn-compare\\checkout\" --username " + UserName.Trim() + " --password " + Password.Trim();
                 process.StartInfo = startInfo;
 
                 process.StartInfo.RedirectStandardOutput = true;
@@ -357,7 +410,11 @@ namespace SVN_Automation
                 Error = chklive.Message.ToString();
             }
         }
-
+        /// <summary>
+        /// Check out the files from Backup/Restored SVN repository for particular date, here we had used commandprompt command to do so
+        /// Input: User details username, password, backup/restored date and Backup/Restored svn server url
+        /// Output: Checking out the files from Backup/Restored SVN repository
+        /// </summary>
         public void mtdChkBack()
         {
             try
@@ -367,7 +424,7 @@ namespace SVN_Automation
                 startChkBackup.CreateNoWindow = true;
                 startChkBackup.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
                 startChkBackup.FileName = "cmd.exe";
-                startChkBackup.Arguments = "/C svn co " + BackupURL + " \"" + LocalDrive + "\\svn-compare\\Backup\" --username " + UserName + " --password " + Password;
+                startChkBackup.Arguments = "/C svn co " + BackupURL.Trim() + " \"" + LocalDrive.Trim() + "\\svn-compare\\Backup\" --username " + UserName.Trim() + " --password " + Password.Trim();
                 chkBackup.StartInfo = startChkBackup;
 
                 chkBackup.StartInfo.RedirectStandardOutput = true;
@@ -390,7 +447,11 @@ namespace SVN_Automation
                 Error = chkback.Message.ToString();
             }
         }
-
+        /// <summary>
+        /// Importing the check outed live repository file to local VisualSVN server for comparison 
+        /// Input: Check out files from live svn repository
+        /// Output: File are imported to local repository
+        /// </summary>
         public void mtdImpLive()
         {
             try
@@ -400,7 +461,7 @@ namespace SVN_Automation
                 startImpLive.CreateNoWindow = true;
                 startImpLive.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
                 startImpLive.FileName = "cmd.exe";
-                startImpLive.Arguments = "/C svn import -m \"Import live files to server\" \"" + LocalDrive + "\\svn-compare\\checkout\" " + repourl + "Checkout";
+                startImpLive.Arguments = "/C svn import -m \"Import live files to server\" \"" + LocalDrive + "\\svn-compare\\checkout\" " + repourl + "Checkout --username " + UserName.Trim() + " --password " + Password.Trim();;
                 impLive.StartInfo = startImpLive;
 
                 impLive.StartInfo.RedirectStandardOutput = true;
@@ -412,7 +473,7 @@ namespace SVN_Automation
                 {
                     impl.Append(impLive.StandardOutput.ReadToEnd());
                 }
-                ImpLiveCmd = "\n" + startImpLive.Arguments;
+                ImpLiveCmd = "\n" + startImpLive.Arguments.Replace(" --password " + Password, " --password *******");
                 ImpLive = "\n" + impl.ToString().Trim();
                 impLive = null;
                 startImpLive = null;
@@ -422,7 +483,11 @@ namespace SVN_Automation
                 Error = implive.Message.ToString();
             }
         }
-
+        /// <summary>
+        /// Importing the check outed backup/restored repository file to local VisualSVN server for comparison 
+        /// Input: Check out files from backup/restored svn repository
+        /// Output: File are imported to local repository
+        /// </summary>
         public void mtdImpBack()
         {
             try
@@ -432,7 +497,7 @@ namespace SVN_Automation
                 startImpBackup.CreateNoWindow = true;
                 startImpBackup.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
                 startImpBackup.FileName = "cmd.exe";
-                startImpBackup.Arguments = "/C svn import -m \"Import backup files to server\" \"" + LocalDrive + "\\svn-compare\\Backup\" " + repourl + "Backup";
+                startImpBackup.Arguments = "/C svn import -m \"Import backup files to server\" \"" + LocalDrive + "\\svn-compare\\Backup\" " + repourl + "Backup --username " + UserName.Trim() + " --password " + Password.Trim();;
                 impBackup.StartInfo = startImpBackup;
                 //impBackup.Start();
 
@@ -445,7 +510,7 @@ namespace SVN_Automation
                 {
                     impb.Append(impBackup.StandardOutput.ReadToEnd());
                 }
-                ImpBackCmd = "\n" + startImpBackup.Arguments;
+                ImpBackCmd = "\n" + startImpBackup.Arguments.Replace(" --password " + Password, " --password *******");
                 ImpBack = "\n" + impb.ToString().Trim();
                 startImpBackup = null;
                 impBackup = null;
@@ -455,7 +520,11 @@ namespace SVN_Automation
                 Error = impback.Message.ToString();
             }
         }
-
+        /// <summary>
+        /// Finding the diffrence between two folders in the local repository
+        /// Input: Imported files in two folder "Live" and "Backup/Restored"
+        /// Output: Getting the difference between this two folders
+        /// </summary>
         public void mtdFindDiff()
         {
             try
@@ -496,7 +565,11 @@ namespace SVN_Automation
                 FindDiff = diff.Message.ToString();
             }
         }
-
+        /// <summary>
+        /// 
+        /// Input:
+        /// Output:
+        /// </summary>
         public void mtdDltLocal()
         {
             try
@@ -517,7 +590,11 @@ namespace SVN_Automation
                 
             }
         }
-
+        /// <summary>
+        /// 
+        /// Input:
+        /// Output:
+        /// </summary>
         public void mtdDltServer()
         {
             try

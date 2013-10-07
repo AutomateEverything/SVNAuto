@@ -120,6 +120,7 @@
             this.llblPower.TabIndex = 7;
             this.llblPower.TabStop = true;
             this.llblPower.Text = "Windows PowerShell 2.0";
+            this.llblPower.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblPower_LinkClicked);
             // 
             // btnNext
             // 
@@ -255,6 +256,7 @@
             this.Text = "EasySVNdiff: Prerequisites";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Prerequisites_FormClosing);
             this.Load += new System.EventHandler(this.Prerequisites_Load);
+            this.Shown += new System.EventHandler(this.Prerequisites_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);

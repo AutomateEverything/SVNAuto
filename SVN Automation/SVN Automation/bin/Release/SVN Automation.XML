@@ -1,0 +1,237 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SVN Automation</name>
+    </assembly>
+    <members>
+        <member name="F:SVN_Automation.Prerequisites.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SVN_Automation.Prerequisites.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SVN_Automation.Prerequisites.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:SVN_Automation.Program.Main">
+            <summary>
+            The main entry point for the application.
+            </summary>
+        </member>
+        <member name="F:SVN_Automation.Processing.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SVN_Automation.Processing.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SVN_Automation.Processing.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:SVN_Automation.frmReportEntry.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SVN_Automation.frmReportEntry.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SVN_Automation.frmReportEntry.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:SVN_Automation.UserInput.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SVN_Automation.UserInput.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SVN_Automation.UserInput.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:SVN_Automation.clsVerification">
+            <summary>
+            Class file for process
+            </summary>
+        </member>
+        <member name="M:SVN_Automation.clsVerification.setEvnVariable">
+            <summary>
+            TO set the Environmental variable for SVN to executes its commands.
+            Input: Finding the visualSVN path by using registry and adding "bin" to that path
+            Output: Setting the environment for SVN
+            </summary>
+        </member>
+        <member name="M:SVN_Automation.clsVerification.CheckLoginLive">
+            <summary>
+            Check whether the user and Live server URL enter is valid or not
+            Input: User given data Username, password and Live Server URL
+            Output: Check the given compination of username, password and URL are correct or not
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SVN_Automation.clsVerification.CheckLoginBack">
+            <summary>
+            Check whether the user and Backup/Restored server URL enter is valid or not
+            Input: User given data Username, password and Backup/Restored Server URL
+            Output: Check the given compination of username, password and URL are correct or not
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SVN_Automation.clsVerification.mtdCreateUser">
+            <summary>
+            If user doesn't exist, it will create the user in local VisualSVN server.
+            Input: User given data user name, password
+            Output: Creating the user in Local Visual SVN server
+            </summary>
+        </member>
+        <member name="M:SVN_Automation.clsVerification.mtdCreateRepo">
+            <summary>
+            Create a temporary Repository for Comparison
+            Input: Name of the repository which is created at run time
+            Output: Temporary repository is created
+            </summary>
+        </member>
+        <member name="M:SVN_Automation.clsVerification.mtdGiveAccess">
+            <summary>
+            Providing access to created repository
+            Input: Repository path where its created at run time
+            Output: creating the access file to the repository
+            </summary>
+        </member>
+        <member name="M:SVN_Automation.clsVerification.mtdGetUrl">
+            <summary>
+            Get the URL for the created repository
+            Input: Temporary repository name
+            Output: URL for that repository
+            </summary>
+        </member>
+        <member name="M:SVN_Automation.clsVerification.mtdChkLive">
+            <summary>
+            Check out the files from Live SVN repository for particular date, here we had used commandprompt command to do so
+            Input: User details username, password, backup/restored date and live svn server url
+            Output: Checking out the files from Live SVN repository
+            </summary>
+        </member>
+        <member name="M:SVN_Automation.clsVerification.mtdChkBack">
+            <summary>
+            Check out the files from Backup/Restored SVN repository for particular date, here we had used commandprompt command to do so
+            Input: User details username, password, backup/restored date and Backup/Restored svn server url
+            Output: Checking out the files from Backup/Restored SVN repository
+            </summary>
+        </member>
+        <member name="M:SVN_Automation.clsVerification.mtdImpLive">
+            <summary>
+            Importing the check outed live repository file to local VisualSVN server for comparison 
+            Input: Check out files from live svn repository
+            Output: File are imported to local repository
+            </summary>
+        </member>
+        <member name="M:SVN_Automation.clsVerification.mtdImpBack">
+            <summary>
+            Importing the check outed backup/restored repository file to local VisualSVN server for comparison 
+            Input: Check out files from backup/restored svn repository
+            Output: File are imported to local repository
+            </summary>
+        </member>
+        <member name="M:SVN_Automation.clsVerification.mtdFindDiff">
+            <summary>
+            Finding the diffrence between two folders in the local repository
+            Input: Imported files in two folder "Live" and "Backup/Restored"
+            Output: Getting the difference between this two folders
+            </summary>
+        </member>
+        <member name="M:SVN_Automation.clsVerification.mtdDltLocal">
+            <summary>
+            
+            Input:
+            Output:
+            </summary>
+        </member>
+        <member name="M:SVN_Automation.clsVerification.mtdDltServer">
+            <summary>
+            
+            Input:
+            Output:
+            </summary>
+        </member>
+        <member name="P:SVN_Automation.clsVerification.UserName">
+            <summary>
+            Property for username
+            </summary>
+        </member>
+        <member name="P:SVN_Automation.clsVerification.Password">
+            <summary>
+            Property for Password
+            </summary>
+        </member>
+        <member name="P:SVN_Automation.clsVerification.LiveURL">
+            <summary>
+            Property for Live URL
+            </summary>
+        </member>
+        <member name="P:SVN_Automation.clsVerification.BackupURL">
+            <summary>
+            Property for Backup URL
+            </summary>
+        </member>
+        <member name="P:SVN_Automation.clsVerification.BackupDate">
+            <summary>
+            Property for Backup/Restored Date
+            </summary>
+        </member>
+        <member name="P:SVN_Automation.clsVerification.LocalDrive">
+            <summary>
+            Property for Local drive detials
+            </summary>
+        </member>
+        <member name="P:SVN_Automation.clsVerification.repourl">
+            <summary>
+            Property for repo URL that we are getting run time
+            </summary>
+        </member>
+        <member name="T:SVN_Automation.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:SVN_Automation.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:SVN_Automation.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+    </members>
+</doc>

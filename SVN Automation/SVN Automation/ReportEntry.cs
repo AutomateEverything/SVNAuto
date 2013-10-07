@@ -39,22 +39,45 @@ namespace SVN_Automation
 
             #endregion
 
+            clsVerification objReport = new clsVerification();
+
+            objReport.TextFile = "EasySVNdiff_DetailedLog" + DateTime.Now.ToString().Replace("/", "").Replace(" ", "").Replace(":", "") + ".txt";
 
             StringBuilder sbReport = new StringBuilder();
-            sbReport.Append("<!DOCTYPE html><html lang='en'><head><meta charset='utf-8' /><title>SVN Repository Backup Restoration Verification</title></head>");
-            sbReport.Append("<body style='font-family:Segoe UI, arial,verdana;'><table border='0' width='70%'><tr><td align='left'><img src='https://www.csscorp.com/sites/all/themes/csscorp/images/css_corp_logo.jpg'/></td><td align='left'><h2><p align='center' nowrap><font color='#545456'>SVN Repository Backup Restoration Verification</font></p></h2></td></tr></table>");
-            sbReport.Append("<table border='0' bgcolor='047CC1' cellpadding='1' cellspacing='1' width='70%' align='center'><tr height='15'><td colspan='2'><div style='color:#D4FFFF; font-weight:bold'> Project Info:</div></td></tr>");
-            sbReport.Append("<tr><td bgcolor='#99CCFF' width='50%'> Account Name</td><td bgcolor='white' width='50%'> " + txtAcName.Text + "</td></tr><tr><td bgcolor='#99CCFF'> Project Name</td><td bgcolor='white'> " + txtProjName.Text +"</td></tr>");
-            sbReport.Append("<tr><td bgcolor='#99CCFF'> Repository URL</td><td bgcolor='white'> " + objProjData.LiveURL +"</td></tr><tr><td bgcolor='#99CCFF'> GITS Case ID</td><td bgcolor='white'> " + txtGITS.Text +"</td></tr>");
-            sbReport.Append("<tr><td bgcolor='#99CCFF'> Back-Up Date</td><td bgcolor='white'> "+ objProjData.BackupDate +"</td></tr><tr><td bgcolor='#99CCFF'> Date of Restoration</td><td bgcolor='white'> " + dtRestored.Value + "</td></tr>");
-            sbReport.Append("<tr><td bgcolor='#99CCFF'> Date of Verification</td><td bgcolor='white'> " + System.DateTime.Today + "</td></tr><tr><td bgcolor='#99CCFF'> Backup location (including server name) / Local machine path</td><td bgcolor='white'> " +txtBackupLoc.Text + "</td></tr>");
-            sbReport.Append("<tr><td bgcolor='#99CCFF'> Restored location (including server name) / Local machine path</td><td bgcolor='white'> " + objProjData.BackupURL + "</td></tr><tr><td bgcolor='#99CCFF'> Date of Restoration</td><td bgcolor='white'> " + dtRestored.Value + "</td></tr>");
-            sbReport.Append("<tr><td bgcolor='#99CCFF'> CL Name (or the person who performs the verification)</td><td bgcolor='white'> " + txtCLName.Text + "</td></tr>");
-            sbReport.Append("<tr><td bgcolor='#99CCFF'> Tool used to perform the verification</td><td bgcolor='white'> EasySVNdiff</td></tr>");
-            sbReport.Append("</table><br/><br/><table border='0' bgcolor='047CC1' cellpadding='1' cellspacing='1' width='70%' align='center'><tr height='15'><td width='100%'><div style='color:#D4FFFF; font-weight:bold'> Verification Log:</div></td></tr>");
+            sbReport.Append("<!DOCTYPE html><html lang='en'><head><meta charset='utf-8' /><title>SVN Repository Backup Restoration Verification</title>");
+            sbReport.Append("<style type='text/css' media='screen,print'> body {font-family:Segoe UI, arial,verdana; width:900px; margin:0 auto;} .table-header{background:#047CC1;} .column-name{background:#99CCFF;}</style></head>");
+            sbReport.Append("<body><tr><td align='left' width='200px'><img src='https://www.csscorp.com/sites/all/themes/csscorp/images/css_corp_logo.jpg'/></td><td align='right'><h2><p align='center' nowrap><font color='#545456'>SVN Repository Backup Restoration Verification</font></p></h2></td></tr></table>");
+            sbReport.Append("<table border='0' class='table-header' cellpadding='1' cellspacing='1' width='100%' align='center'><tr height='15'><td colspan='2'><div style='color:#D4FFFF; font-weight:bold'> Project Info:</div></td></tr>");
+            sbReport.Append("<tr><td class='column-name' width='50%'> Account Name</td><td bgcolor='white' width='50%'> " + txtAcName.Text + "</td></tr><tr><td bgcolor='#99CCFF'> Project Name</td><td bgcolor='white'> " + txtProjName.Text + "</td></tr>");
+            sbReport.Append("<tr><td class='column-name'> Repository URL</td><td bgcolor='white'> " + objProjData.LiveURL + "</td></tr><tr><td bgcolor='#99CCFF'> GITS Case ID</td><td bgcolor='white'> " + txtGITS.Text + "</td></tr>");
+            sbReport.Append("<tr><td class='column-name'> Back-Up Date</td><td bgcolor='white'> " + objProjData.BackupDate + "</td></tr><tr><td bgcolor='#99CCFF'> Date of Restoration</td><td bgcolor='white'> " + dtRestored.Value + "</td></tr>");
+            sbReport.Append("<tr><td class='column-name'> Date of Verification</td><td bgcolor='white'> " + System.DateTime.Today + "</td></tr><tr><td bgcolor='#99CCFF'> Backup location (including server name) / Local machine path</td><td bgcolor='white'> " + txtBackupLoc.Text + "</td></tr>");
+            sbReport.Append("<tr><td class='column-name'> Restored location (including server name) / Local machine path</td><td bgcolor='white'> " + objProjData.BackupURL + "</td></tr><tr><td bgcolor='#99CCFF'> Date of Restoration</td><td bgcolor='white'> " + dtRestored.Value + "</td></tr>");
+            sbReport.Append("<tr><td class='column-name'> CL Name (or the person who performs the verification)</td><td bgcolor='white'> " + txtCLName.Text + "</td></tr>");
+            sbReport.Append("<tr><td class='column-name'> Tool used to perform the verification</td><td bgcolor='white'> EasySVNdiff</td></tr>");
+            sbReport.Append("</table><br/><br/><table border='0' bgcolor='047CC1' cellpadding='1' cellspacing='1' width='100%' align='center'><tr height='15'><td width='100%'><div style='color:#D4FFFF; font-weight:bold'> Verification Log: <a href='" + objReport.TextFile + "' style='color:#D4FFFF; float:right; font-size:10px;'>Detailed log </a> </div></td></tr>");
             sbReport.Append("<tr><td bgcolor='white'><div style='border:1 solid #002776;width:100%;font-family:courier new'> " + objProjData.LogSummary.Replace("\n","<br>") + "</div></td></tr>");
-            sbReport.Append("</table><br/><br/><table border='0' bgcolor='047CC1' cellpadding='1' cellspacing='1' width='70%' align='center'><tr><td width='100%' height='15'><div style='color:#D4FFFF; font-weight:bold'> Verification Result:</div></td></tr>");
+            sbReport.Append("</table><br/><br/><table border='0' bgcolor='047CC1' cellpadding='1' cellspacing='1' width='100%' align='center'><tr><td width='100%' height='15'><div style='color:#D4FFFF; font-weight:bold'> Verification Result:</div></td></tr>");
             sbReport.Append("<tr><td bgcolor='white'>");
+
+
+
+
+
+            //sbReport.Append("<!DOCTYPE html><html lang='en'><head><meta charset='utf-8' /><title>SVN Repository Backup Restoration Verification</title></head>");
+            //sbReport.Append("<body style='font-family:Segoe UI, arial,verdana; width:900px; margin:0 auto;'><table border='0' width='100%'><tr><td align='left'><img src='https://www.csscorp.com/sites/all/themes/csscorp/images/css_corp_logo.jpg'/></td><td align='left'><h2><p align='center' nowrap><font color='#545456'>SVN Repository Backup Restoration Verification</font></p></h2></td></tr></table>");
+            //sbReport.Append("<table border='0' bgcolor='047CC1' cellpadding='1' cellspacing='1' width='100%' align='center'><tr height='15'><td colspan='2'><div style='color:#D4FFFF; font-weight:bold'> Project Info:</div></td></tr>");
+            //sbReport.Append("<tr><td bgcolor='#99CCFF' width='50%'> Account Name</td><td bgcolor='white' width='50%'> " + txtAcName.Text + "</td></tr><tr><td bgcolor='#99CCFF'> Project Name</td><td bgcolor='white'> " + txtProjName.Text + "</td></tr>");
+            //sbReport.Append("<tr><td bgcolor='#99CCFF'> Repository URL</td><td bgcolor='white'> " + objProjData.LiveURL + "</td></tr><tr><td bgcolor='#99CCFF'> GITS Case ID</td><td bgcolor='white'> " + txtGITS.Text + "</td></tr>");
+            //sbReport.Append("<tr><td bgcolor='#99CCFF'> Back-Up Date</td><td bgcolor='white'> " + objProjData.BackupDate + "</td></tr><tr><td bgcolor='#99CCFF'> Date of Restoration</td><td bgcolor='white'> " + dtRestored.Value + "</td></tr>");
+            //sbReport.Append("<tr><td bgcolor='#99CCFF'> Date of Verification</td><td bgcolor='white'> " + System.DateTime.Today + "</td></tr><tr><td bgcolor='#99CCFF'> Backup location (including server name) / Local machine path</td><td bgcolor='white'> " + txtBackupLoc.Text + "</td></tr>");
+            //sbReport.Append("<tr><td bgcolor='#99CCFF'> Restored location (including server name) / Local machine path</td><td bgcolor='white'> " + objProjData.BackupURL + "</td></tr><tr><td bgcolor='#99CCFF'> Date of Restoration</td><td bgcolor='white'> " + dtRestored.Value + "</td></tr>");
+            //sbReport.Append("<tr><td bgcolor='#99CCFF'> CL Name (or the person who performs the verification)</td><td bgcolor='white'> " + txtCLName.Text + "</td></tr>");
+            //sbReport.Append("<tr><td bgcolor='#99CCFF'> Tool used to perform the verification</td><td bgcolor='white'> EasySVNdiff</td></tr>");
+            //sbReport.Append("</table><br/><br/><table border='0' bgcolor='047CC1' cellpadding='1' cellspacing='1' width='100%' align='center'><tr height='15'><td width='100%'><div style='color:#D4FFFF; font-weight:bold'> Verification Log: <a href='" + objReport.TextFile + "' style='color:#D4FFFF; float:right; font-size:10px;'>Detailed log </a> </div></td></tr>");
+            //sbReport.Append("<tr><td bgcolor='white'><div style='border:1 solid #002776;width:100%;font-family:courier new'> " + objProjData.LogSummary.Replace("\n", "<br>") + "</div></td></tr>");
+            //sbReport.Append("</table><br/><br/><table border='0' bgcolor='047CC1' cellpadding='1' cellspacing='1' width='100%' align='center'><tr><td width='100%' height='15'><div style='color:#D4FFFF; font-weight:bold'> Verification Result:</div></td></tr>");
+            //sbReport.Append("<tr><td bgcolor='white'>");
             
             if (objProjData.DiffResult==true)
             {
@@ -79,7 +102,7 @@ namespace SVN_Automation
             //Save the detailed log into a text file.
             if (chkSaveToFile.Checked == true)
             {
-                mydocpath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + @"\EasySVNdiff_DetailedLog" + DateTime.Now.ToString().Replace("/", "").Replace(" ", "").Replace(":", "") + ".txt";
+                mydocpath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + @"\"+ objReport.TextFile;
                 using (StreamWriter outfile = new StreamWriter(mydocpath))
                 {
                     outfile.WriteLine("EasySVNdiff Detailed Log:");

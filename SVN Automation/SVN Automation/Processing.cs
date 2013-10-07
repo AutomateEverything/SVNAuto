@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace SVN_Automation
 {
@@ -132,7 +133,8 @@ namespace SVN_Automation
                 Application.OpenForms["Processing"].Update();
                 txtVerificationLog.ScrollToCaret();
 
-                objVerify.mtdChkLive();
+                Parallel.Invoke(() => objVerify.mtdChkLive(), () => objVerify.mtdChkBack());
+                //objVerify.mtdChkLive();
 
                 txtVerificationLog.SelectionColor = Color.Gray;
                 txtVerificationLog.SelectedText = objVerify.ChkLiveCmd;
@@ -170,7 +172,7 @@ namespace SVN_Automation
                 Application.OpenForms["Processing"].Update();
                 txtVerificationLog.ScrollToCaret();
 
-                objVerify.mtdChkBack();
+                //objVerify.mtdChkBack();
 
                 txtVerificationLog.SelectionColor = Color.Gray;
                 txtVerificationLog.SelectedText = objVerify.ChkBackCmd;
@@ -208,7 +210,8 @@ namespace SVN_Automation
                 Application.OpenForms["Processing"].Update();
                 txtVerificationLog.ScrollToCaret();
 
-                objVerify.mtdImpLive();
+                Parallel.Invoke(() => objVerify.mtdImpLive(), () => objVerify.mtdImpBack());
+                //objVerify.mtdImpLive();
 
                 txtVerificationLog.SelectionColor = Color.Gray;
                 txtVerificationLog.SelectedText = objVerify.ImpLiveCmd;
@@ -236,7 +239,7 @@ namespace SVN_Automation
                 Application.OpenForms["Processing"].Update();
                 txtVerificationLog.ScrollToCaret();
 
-                objVerify.mtdImpBack();
+                //objVerify.mtdImpBack();
 
                 txtVerificationLog.SelectionColor = Color.Gray;
                 txtVerificationLog.SelectedText = objVerify.ImpBackCmd;

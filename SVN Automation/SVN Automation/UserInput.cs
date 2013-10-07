@@ -26,7 +26,7 @@ namespace SVN_Automation
         {
             lblDescription.Text = "Please wait...";
             lblDescription.Refresh();
-
+            UserInput.ActiveForm.Update();
             try
             {                    
 
@@ -52,6 +52,8 @@ namespace SVN_Automation
                 {
                     lblDescription.Text = "Please enter the following fields \r\n";
                     lblDescription.Text += RequiredFields;
+                    lblDescription.Refresh();
+                    UserInput.ActiveForm.Update();
                     return;
                 }                
 
@@ -68,6 +70,8 @@ namespace SVN_Automation
                 else
                 {
                     lblDescription.Text = "Please Check the user name, password and URL enter for comparition";
+                    lblDescription.Refresh();
+                    UserInput.ActiveForm.Update();
                 }
               
             }
