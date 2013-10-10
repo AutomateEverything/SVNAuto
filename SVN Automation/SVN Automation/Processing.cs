@@ -417,5 +417,11 @@ namespace SVN_Automation
             Close();
         }
 
+        private void btnAbout_Click(object sender, EventArgs e)
+        {
+            var about = new AboutBox();           
+            about.Show();
+        }
+
     }
 }

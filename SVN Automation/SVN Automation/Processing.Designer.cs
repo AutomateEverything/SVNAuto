@@ -35,6 +35,8 @@
             this.btnReport = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.rtbStatus = new System.Windows.Forms.RichTextBox();
+            this.btnAbout = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAbout)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -115,6 +117,19 @@
             this.rtbStatus.TabIndex = 13;
             this.rtbStatus.Text = "";
             // 
+            // btnAbout
+            // 
+            this.btnAbout.BackColor = System.Drawing.Color.White;
+            this.btnAbout.BackgroundImage = global::SVN_Automation.Properties.Resources.info__2_;
+            this.btnAbout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAbout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAbout.Location = new System.Drawing.Point(554, -4);
+            this.btnAbout.Name = "btnAbout";
+            this.btnAbout.Size = new System.Drawing.Size(38, 38);
+            this.btnAbout.TabIndex = 19;
+            this.btnAbout.TabStop = false;
+            this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click);
+            // 
             // Processing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -123,6 +138,7 @@
             this.BackgroundImage = global::SVN_Automation.Properties.Resources.bg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(592, 566);
+            this.Controls.Add(this.btnAbout);
             this.Controls.Add(this.rtbStatus);
             this.Controls.Add(this.btnDone);
             this.Controls.Add(this.btnReport);
@@ -136,6 +152,7 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Processing_FormClosing);
             this.Load += new System.EventHandler(this.Processing_Load_1);
             this.Shown += new System.EventHandler(this.Processing_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.btnAbout)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -149,5 +166,6 @@
         private System.Windows.Forms.Button btnReport;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.RichTextBox rtbStatus;
+        private System.Windows.Forms.PictureBox btnAbout;
     }
 }

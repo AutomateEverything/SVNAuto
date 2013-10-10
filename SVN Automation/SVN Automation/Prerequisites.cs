@@ -156,6 +156,14 @@ namespace SVN_Automation
             { }
         }
 
+        private void btnAbout_Click(object sender, EventArgs e)
+        {
+            var about = new AboutBox();            
+            about.Show();
+        }
+
+
+
 
 
 

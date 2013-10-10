@@ -233,5 +233,21 @@
               resource lookups using this strongly typed resource class.
             </summary>
         </member>
+        <member name="F:SVN_Automation.AboutBox.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SVN_Automation.AboutBox.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:SVN_Automation.AboutBox.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
     </members>
 </doc>

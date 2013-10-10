@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.IO;
 using System.Collections.Generic;
+using Microsoft.Win32;
 
 namespace SVN_Automation
 {
@@ -38,6 +39,12 @@ namespace SVN_Automation
             }
 
             #endregion
+
+            Microsoft.Win32.RegistryKey EasySVNdiff = Microsoft.Win32.Registry.CurrentUser.CreateSubKey("ReportUserDetails");
+            EasySVNdiff.SetValue("AccountName", txtAcName.Text);
+            EasySVNdiff.SetValue("ProjectName", txtProjName.Text);
+            EasySVNdiff.SetValue("CLName", txtCLName.Text);            
+            EasySVNdiff.Close();
 
             clsVerification objReport = new clsVerification();
 
@@ -214,6 +221,16 @@ namespace SVN_Automation
             rtbStatus.SelectionColor = Color.Black;
             rtbStatus.SelectedText = "Generate Report";            
             rtbStatus.Refresh();
+
+            string accName = "HKEY_CURRENT_USER\\RepoUserDetails";
+            txtAcName.Text = (string)Registry.GetValue(accName, "AccountName", "");
+
+            string projName = "HKEY_CURRENT_USER\\RepoUserDetails";
+            txtProjName.Text = (string)Registry.GetValue(projName, "ProjectName", "");
+
+            string clName = "HKEY_CURRENT_USER\\RepoUserDetails";
+            txtCLName.Text = (string)Registry.GetValue(clName, "CLName", "");            
+
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -227,6 +244,12 @@ namespace SVN_Automation
             Application.Exit();
 
         }
-   
+
+        private void btnAbout_Click(object sender, EventArgs e)
+        {
+            var about = new AboutBox();            
+            about.Show();
+        }
+
     }
 }

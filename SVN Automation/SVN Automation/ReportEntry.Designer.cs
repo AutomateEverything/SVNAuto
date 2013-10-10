@@ -46,6 +46,8 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.rtbStatus = new System.Windows.Forms.RichTextBox();
             this.chkSaveToFile = new System.Windows.Forms.CheckBox();
+            this.btnAbout = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAbout)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -156,7 +158,7 @@
             this.txtBackupLoc.Name = "txtBackupLoc";
             this.txtBackupLoc.Size = new System.Drawing.Size(328, 20);
             this.txtBackupLoc.TabIndex = 10;
-            this.txtBackupLoc.Text = "PRIMARYBACKUP";
+            this.txtBackupLoc.Text = "PRIMARYBACKUP";            
             this.txtBackupLoc.Enter += new System.EventHandler(this.txtBackupLoc_Enter);
             this.txtBackupLoc.Leave += new System.EventHandler(this.txtBackupLoc_Leave);
             // 
@@ -235,6 +237,19 @@
             this.chkSaveToFile.UseVisualStyleBackColor = false;
             this.chkSaveToFile.Enter += new System.EventHandler(this.chkSaveToFile_Enter);
             // 
+            // btnAbout
+            // 
+            this.btnAbout.BackColor = System.Drawing.Color.White;
+            this.btnAbout.BackgroundImage = global::SVN_Automation.Properties.Resources.info__2_;
+            this.btnAbout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAbout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAbout.Location = new System.Drawing.Point(454, 0);
+            this.btnAbout.Name = "btnAbout";
+            this.btnAbout.Size = new System.Drawing.Size(38, 38);
+            this.btnAbout.TabIndex = 27;
+            this.btnAbout.TabStop = false;
+            this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click);
+            // 
             // frmReportEntry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -243,6 +258,7 @@
             this.BackgroundImage = global::SVN_Automation.Properties.Resources.bg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(492, 429);
+            this.Controls.Add(this.btnAbout);
             this.Controls.Add(this.chkSaveToFile);
             this.Controls.Add(this.rtbStatus);
             this.Controls.Add(this.btnGenerate);
@@ -267,6 +283,7 @@
             this.Text = "EasySVNdiff: Report Generation";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmReportEntry_FormClosing);
             this.Load += new System.EventHandler(this.frmReportEntry_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.btnAbout)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -291,5 +308,6 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.RichTextBox rtbStatus;
         private System.Windows.Forms.CheckBox chkSaveToFile;
+        private System.Windows.Forms.PictureBox btnAbout;
     }
 }

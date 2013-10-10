@@ -10,7 +10,7 @@ using System.Management;
 using System.IO;
 using System.Drawing.Imaging;
 using System.Drawing.Design;
-
+using Microsoft.Win32;
 
 namespace SVN_Automation
 {
@@ -60,8 +60,15 @@ namespace SVN_Automation
                 #endregion
 
                 if (objUserData.CheckLoginLive() && objUserData.CheckLoginBack())
-                {    
-                    
+                {
+                    Microsoft.Win32.RegistryKey EasySVNdiff = Microsoft.Win32.Registry.CurrentUser.CreateSubKey("RepoUserDetails");
+                    EasySVNdiff.SetValue("Name", txtUserName.Text);
+                    EasySVNdiff.SetValue("LiveURL", txtLiveURL.Text);                    
+                    EasySVNdiff.SetValue("LocalDrive", txtLocalDrive.Text);
+                    EasySVNdiff.Close();
+
+                    //RegistryKey rk = Registry.CurrentUser;
+
                     var processing = new Processing(objUserData);
                     processing.Show();
                     this.Hide();
@@ -202,12 +209,27 @@ namespace SVN_Automation
             rtbStatus.SelectionColor = Color.DarkSeaGreen;
             rtbStatus.SelectedText = " > Find Diff > Generate Report";
             rtbStatus.Refresh();
+
+            string userName = "HKEY_CURRENT_USER\\RepoUserDetails";
+            txtUserName.Text = (string)Registry.GetValue(userName, "Name", "");
+
+            string liveURL = "HKEY_CURRENT_USER\\RepoUserDetails";
+            txtLiveURL.Text = (string)Registry.GetValue(liveURL, "LiveURL", "");
+
+            string localDrive = "HKEY_CURRENT_USER\\RepoUserDetails";
+            txtLocalDrive.Text = (string)Registry.GetValue(localDrive, "LocalDrive", "");
         }
 
         private void UserInput_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
             
+        }
+
+        private void btnAbout_Click(object sender, EventArgs e)
+        {
+            var about = new AboutBox();           
+            about.Show();
         }
       
 

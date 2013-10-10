@@ -48,6 +48,8 @@
             this.btnNext = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.rtbStatus = new System.Windows.Forms.RichTextBox();
+            this.btnAbout = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAbout)).BeginInit();
             this.SuspendLayout();
             // 
             // lblUserName
@@ -254,6 +256,19 @@
             this.rtbStatus.TabIndex = 25;
             this.rtbStatus.Text = "";
             // 
+            // btnAbout
+            // 
+            this.btnAbout.BackColor = System.Drawing.Color.White;
+            this.btnAbout.BackgroundImage = global::SVN_Automation.Properties.Resources.user_icon;
+            this.btnAbout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAbout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAbout.Location = new System.Drawing.Point(466, 1);
+            this.btnAbout.Name = "btnAbout";
+            this.btnAbout.Size = new System.Drawing.Size(27, 26);
+            this.btnAbout.TabIndex = 26;
+            this.btnAbout.TabStop = false;
+            this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click);
+            // 
             // UserInput
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -262,6 +277,7 @@
             this.BackgroundImage = global::SVN_Automation.Properties.Resources.bg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(492, 466);
+            this.Controls.Add(this.btnAbout);
             this.Controls.Add(this.rtbStatus);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnNext);
@@ -288,6 +304,7 @@
             this.Text = "EasySVNdiff: SVN Repositories information";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UserInput_FormClosing);
             this.Load += new System.EventHandler(this.UserInput_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.btnAbout)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -314,6 +331,7 @@
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.RichTextBox rtbStatus;
+        private System.Windows.Forms.PictureBox btnAbout;
     }
 }
 
