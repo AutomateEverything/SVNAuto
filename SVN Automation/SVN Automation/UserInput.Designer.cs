@@ -197,7 +197,7 @@
             this.dtpBackUpDate.Name = "dtpBackUpDate";
             this.dtpBackUpDate.Size = new System.Drawing.Size(113, 20);
             this.dtpBackUpDate.TabIndex = 10;
-            this.dtpBackUpDate.Value = new System.DateTime(2013, 9, 9, 0, 0, 0, 0);
+            this.dtpBackUpDate.Value = new System.DateTime(2013, 10, 16, 0, 0, 0, 0);
             this.dtpBackUpDate.Enter += new System.EventHandler(this.dtpBackUpDate_GotFocus);
             this.dtpBackUpDate.Leave += new System.EventHandler(this.dtpBackUpDate_Leave);
             // 

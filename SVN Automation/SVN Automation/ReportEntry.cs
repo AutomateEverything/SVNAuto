@@ -14,6 +14,10 @@ namespace SVN_Automation
     public partial class frmReportEntry : Form
     {
         clsVerification objProjData;
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="reportEntry"></param>
         public frmReportEntry(clsVerification reportEntry)
         {
             InitializeComponent();
@@ -222,13 +226,13 @@ namespace SVN_Automation
             rtbStatus.SelectedText = "Generate Report";            
             rtbStatus.Refresh();
 
-            string accName = "HKEY_CURRENT_USER\\RepoUserDetails";
+            string accName = "HKEY_CURRENT_USER\\ReportUserDetails";
             txtAcName.Text = (string)Registry.GetValue(accName, "AccountName", "");
 
-            string projName = "HKEY_CURRENT_USER\\RepoUserDetails";
+            string projName = "HKEY_CURRENT_USER\\ReportUserDetails";
             txtProjName.Text = (string)Registry.GetValue(projName, "ProjectName", "");
 
-            string clName = "HKEY_CURRENT_USER\\RepoUserDetails";
+            string clName = "HKEY_CURRENT_USER\\ReportUserDetails";
             txtCLName.Text = (string)Registry.GetValue(clName, "CLName", "");            
 
         }

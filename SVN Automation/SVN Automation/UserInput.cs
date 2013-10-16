@@ -32,12 +32,12 @@ namespace SVN_Automation
 
                 clsVerification objUserData = new clsVerification();
 
-                objUserData.UserName = txtUserName.Text;
-                objUserData.Password = txtPassword.Text;
-                objUserData.LiveURL = txtLiveURL.Text;
-                objUserData.BackupURL = txtBackUpURL.Text;
-                objUserData.BackupDate = dtpBackUpDate.Text;
-                objUserData.LocalDrive = txtLocalDrive.Text;                
+                objUserData.UserName = txtUserName.Text.Trim();
+                objUserData.Password = txtPassword.Text.Trim();
+                objUserData.LiveURL = txtLiveURL.Text.Trim();
+                objUserData.BackupURL = txtBackUpURL.Text.Trim();
+                objUserData.BackupDate = dtpBackUpDate.Text.Trim();
+                objUserData.LocalDrive = txtLocalDrive.Text.Trim();                
 
                 #region Valitaion Input Feilds
                 string RequiredFields = string.Empty;
@@ -59,7 +59,7 @@ namespace SVN_Automation
 
                 #endregion
 
-                if (objUserData.CheckLoginLive() && objUserData.CheckLoginBack())
+                if (objUserData.CheckLoginLive() && objUserData.CheckLoginBack() && objUserData.CheckPath())
                 {
                     Microsoft.Win32.RegistryKey EasySVNdiff = Microsoft.Win32.Registry.CurrentUser.CreateSubKey("RepoUserDetails");
                     EasySVNdiff.SetValue("Name", txtUserName.Text);
@@ -76,7 +76,7 @@ namespace SVN_Automation
 
                 else
                 {
-                    lblDescription.Text = "Please Check the user name, password and URL enter for comparition";
+                    lblDescription.Text = "Please Check the input fields";
                     lblDescription.Refresh();
                     UserInput.ActiveForm.Update();
                 }

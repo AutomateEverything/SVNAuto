@@ -60,6 +60,12 @@
             the contents of this method with the code editor.
             </summary>
         </member>
+        <member name="M:SVN_Automation.frmReportEntry.#ctor(SVN_Automation.clsVerification)">
+            <summary>
+            
+            </summary>
+            <param name="reportEntry"></param>
+        </member>
         <member name="F:SVN_Automation.UserInput.components">
             <summary>
             Required designer variable.
@@ -217,22 +223,6 @@
             Property for repo URL that we are getting run time
             </summary>
         </member>
-        <member name="T:SVN_Automation.Properties.Resources">
-            <summary>
-              A strongly-typed resource class, for looking up localized strings, etc.
-            </summary>
-        </member>
-        <member name="P:SVN_Automation.Properties.Resources.ResourceManager">
-            <summary>
-              Returns the cached ResourceManager instance used by this class.
-            </summary>
-        </member>
-        <member name="P:SVN_Automation.Properties.Resources.Culture">
-            <summary>
-              Overrides the current thread's CurrentUICulture property for all
-              resource lookups using this strongly typed resource class.
-            </summary>
-        </member>
         <member name="F:SVN_Automation.AboutBox.components">
             <summary>
             Required designer variable.
@@ -247,6 +237,22 @@
             <summary>
             Required method for Designer support - do not modify
             the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:SVN_Automation.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:SVN_Automation.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:SVN_Automation.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
             </summary>
         </member>
     </members>

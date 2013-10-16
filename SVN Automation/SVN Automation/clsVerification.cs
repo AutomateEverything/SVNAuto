@@ -80,6 +80,8 @@ namespace SVN_Automation
 
         public string FindDiff { get; set; }
 
+        public string DiffReport { get; set; } 
+
         public string FindDiffCmd { get; set; }
 
         public string DltLocal { get; set; }
@@ -123,6 +125,19 @@ namespace SVN_Automation
             string rootSVN = (string)Registry.GetValue(keyName1, "InstallDir", "") + "bin";
 
             Environment.SetEnvironmentVariable("path", rootSVN);
+        }
+
+        public bool CheckPath()
+        {
+            if (Directory.Exists(LocalDrive))
+            {
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("Please check the temporary folder path.", "Invalid Local Path!");
+                return false;
+            }
         }
         
         #region Check Login
@@ -549,12 +564,13 @@ namespace SVN_Automation
                 FindDiffCmd = "\n" + startSvnDiff.Arguments;
                 if (String.IsNullOrEmpty(d.ToString().Trim()))
                 {
-                    FindDiff = "\nBoth the Repositories are Same";
+                    FindDiff = "\n* * * * * * * * * * * * * * * * * * * * *\n\nBoth the Repositories are Same\n\n* * * * * * * * * * * * * * * * * * * * *\n";
                     DiffResult = true;
                 }
                 else
                 {
-                    FindDiff = "\n" + d.ToString().Trim() + "\n\nBoth the Repositories are Different\n";
+                    DiffReport = "\n" + d.ToString().Trim();
+                    FindDiff = "\n* * * * * * * * * * * * * * * * * * * * *\n\nBoth the Repositories are Different\n\n* * * * * * * * * * * * * * * * * * * * *\n";
                     DiffResult = false;
                 }
                 startSvnDiff = null;

@@ -26,6 +26,7 @@ namespace SVN_Automation
             //string strLogSummary = "";
             try
             {
+               
 
                 rtbStatus.SelectionColor = Color.DarkSeaGreen;
                 rtbStatus.SelectedText = " Pre-Requisite > User Inputs > ";
@@ -40,7 +41,7 @@ namespace SVN_Automation
                 txtVerificationLog.SelectionColor = Color.Black;
                 txtVerificationLog.SelectedText = "\n" + DateTime.Now.ToString();
                 txtVerificationLog.SelectionBackColor = txtVerificationLog.BackColor;
-                txtVerificationLog.SelectionColor = Color.Blue;
+                txtVerificationLog.SelectionColor = Color.DimGray;
                 txtVerificationLog.SelectedText = "  >> Trying to create User: " + objVerify.UserName;
                 strLogSummary = "\n" + DateTime.Now.ToString() + "  >> Trying to create User: " + objVerify.UserName;
                 txtVerificationLog.Refresh();
@@ -61,7 +62,7 @@ namespace SVN_Automation
                 txtVerificationLog.SelectionColor = Color.Black;
                 txtVerificationLog.SelectedText = "\n" + DateTime.Now.ToString();
                 txtVerificationLog.SelectionBackColor = txtVerificationLog.BackColor;
-                txtVerificationLog.SelectionColor = Color.Blue;
+                txtVerificationLog.SelectionColor = Color.DimGray;
                 txtVerificationLog.SelectedText = "  >> Creating temporary repository: " + objVerify.RepoName;
                 strLogSummary += "\n" + DateTime.Now.ToString() + "  >> Creating temporary repository: " + objVerify.RepoName;
                 txtVerificationLog.Refresh();
@@ -82,7 +83,7 @@ namespace SVN_Automation
                 txtVerificationLog.SelectionColor = Color.Black;
                 txtVerificationLog.SelectedText = "\n" + DateTime.Now.ToString();
                 txtVerificationLog.SelectionBackColor = txtVerificationLog.BackColor;
-                txtVerificationLog.SelectionColor = Color.Blue;
+                txtVerificationLog.SelectionColor = Color.DimGray;
                 txtVerificationLog.SelectedText = "  >> Providing access to: " + objVerify.RepoName;
                 strLogSummary += "\n" + DateTime.Now.ToString() + "  >> Providing access to: " + objVerify.RepoName;
                 txtVerificationLog.Refresh();
@@ -98,7 +99,7 @@ namespace SVN_Automation
                 txtVerificationLog.SelectionColor = Color.Black;
                 txtVerificationLog.SelectedText = "\n" + DateTime.Now.ToString();
                 txtVerificationLog.SelectionBackColor = txtVerificationLog.BackColor;
-                txtVerificationLog.SelectionColor = Color.Blue;
+                txtVerificationLog.SelectionColor = Color.DimGray;
                 txtVerificationLog.SelectedText = "  >> Getting SVN Repository URL of: " + objVerify.RepoName;
                 strLogSummary += "\n" + DateTime.Now.ToString() + "  >> Getting SVN Repository URL of: " + objVerify.RepoName;
                 txtVerificationLog.Refresh();
@@ -107,7 +108,7 @@ namespace SVN_Automation
 
                 objVerify.mtdGetUrl();
 
-                txtVerificationLog.SelectionColor = Color.Gray;
+                txtVerificationLog.SelectionColor = Color.MediumBlue;
                 txtVerificationLog.SelectedText = objVerify.GetURLCmd;
                 txtVerificationLog.Refresh();
                 Application.OpenForms["Processing"].Update();
@@ -126,7 +127,7 @@ namespace SVN_Automation
                 txtVerificationLog.SelectionColor = Color.Black;
                 txtVerificationLog.SelectedText = "\n" + DateTime.Now.ToString();
                 txtVerificationLog.SelectionBackColor = txtVerificationLog.BackColor;
-                txtVerificationLog.SelectionColor = Color.Blue;
+                txtVerificationLog.SelectionColor = Color.DimGray;
                 txtVerificationLog.SelectedText = "  >> Checking-out files from Live SVN Server for the date: " + objVerify.BackupDate;
                 strLogSummary += "\n" + DateTime.Now.ToString() + "  >> Checking-out files from Live SVN Server for the date: " + objVerify.BackupDate;
                 txtVerificationLog.Refresh();
@@ -136,7 +137,7 @@ namespace SVN_Automation
                 Parallel.Invoke(() => objVerify.mtdChkLive(), () => objVerify.mtdChkBack());
                 //objVerify.mtdChkLive();
 
-                txtVerificationLog.SelectionColor = Color.Gray;
+                txtVerificationLog.SelectionColor = Color.MediumBlue;
                 txtVerificationLog.SelectedText = objVerify.ChkLiveCmd;
                 txtVerificationLog.Refresh();
                 Application.OpenForms["Processing"].Update();
@@ -165,7 +166,7 @@ namespace SVN_Automation
                 txtVerificationLog.SelectionColor = Color.Black;
                 txtVerificationLog.SelectedText = "\n" + DateTime.Now.ToString();
                 txtVerificationLog.SelectionBackColor = txtVerificationLog.BackColor;
-                txtVerificationLog.SelectionColor = Color.Blue;
+                txtVerificationLog.SelectionColor = Color.DimGray;
                 txtVerificationLog.SelectedText = "  >> Checking-out files from Backup SVN Server for the same date...";
                 strLogSummary += "\n" + DateTime.Now.ToString() + "  >> Checking-out files from Backup SVN Server for the same date...";
                 txtVerificationLog.Refresh();
@@ -174,7 +175,7 @@ namespace SVN_Automation
 
                 //objVerify.mtdChkBack();
 
-                txtVerificationLog.SelectionColor = Color.Gray;
+                txtVerificationLog.SelectionColor = Color.MediumBlue;
                 txtVerificationLog.SelectedText = objVerify.ChkBackCmd;
                 txtVerificationLog.Refresh();
                 Application.OpenForms["Processing"].Update();
@@ -203,7 +204,7 @@ namespace SVN_Automation
                 txtVerificationLog.SelectionColor = Color.Black;
                 txtVerificationLog.SelectedText = "\n" + DateTime.Now.ToString();
                 txtVerificationLog.SelectionBackColor = txtVerificationLog.BackColor;
-                txtVerificationLog.SelectionColor = Color.Blue;
+                txtVerificationLog.SelectionColor = Color.DimGray;
                 txtVerificationLog.SelectedText = "  >> Importing Live repository files into Temp Local SVN Server...";
                 strLogSummary += "\n" + DateTime.Now.ToString() + "  >> Importing Live repository files into Temp Local SVN Server...";
                 txtVerificationLog.Refresh();
@@ -213,7 +214,7 @@ namespace SVN_Automation
                 Parallel.Invoke(() => objVerify.mtdImpLive(), () => objVerify.mtdImpBack());
                 //objVerify.mtdImpLive();
 
-                txtVerificationLog.SelectionColor = Color.Gray;
+                txtVerificationLog.SelectionColor = Color.MediumBlue;
                 txtVerificationLog.SelectedText = objVerify.ImpLiveCmd;
                 txtVerificationLog.Refresh();
                 Application.OpenForms["Processing"].Update();
@@ -232,7 +233,7 @@ namespace SVN_Automation
                 txtVerificationLog.SelectionColor = Color.Black;
                 txtVerificationLog.SelectedText = "\n" + DateTime.Now.ToString();
                 txtVerificationLog.SelectionBackColor = txtVerificationLog.BackColor;
-                txtVerificationLog.SelectionColor = Color.Blue;
+                txtVerificationLog.SelectionColor = Color.DimGray;
                 txtVerificationLog.SelectedText = "  >> Importing Backup repository files into Temp Local SVN Server...";
                 strLogSummary += "\n" + DateTime.Now.ToString() + "  >> Importing Backup repository files into Temp Local SVN Server...";
                 txtVerificationLog.Refresh();
@@ -241,7 +242,7 @@ namespace SVN_Automation
 
                 //objVerify.mtdImpBack();
 
-                txtVerificationLog.SelectionColor = Color.Gray;
+                txtVerificationLog.SelectionColor = Color.MediumBlue;
                 txtVerificationLog.SelectedText = objVerify.ImpBackCmd;
                 txtVerificationLog.Refresh();
                 Application.OpenForms["Processing"].Update();
@@ -259,7 +260,7 @@ namespace SVN_Automation
                 txtVerificationLog.SelectionColor = Color.Black;
                 txtVerificationLog.SelectedText = "\n" + DateTime.Now.ToString();
                 txtVerificationLog.SelectionBackColor = txtVerificationLog.BackColor;
-                txtVerificationLog.SelectionColor = Color.Blue;
+                txtVerificationLog.SelectionColor = Color.DimGray;
                 txtVerificationLog.SelectedText = "  >> Finding the Differences between both the repositories...";
                 strLogSummary += "\n" + DateTime.Now.ToString() + "  >> Finding the Differences between both the repositories...";
                 txtVerificationLog.Refresh();
@@ -268,17 +269,40 @@ namespace SVN_Automation
 
                 objVerify.mtdFindDiff();
 
-                txtVerificationLog.SelectionColor = Color.Gray;
+                txtVerificationLog.SelectionColor = Color.MediumBlue;
                 txtVerificationLog.SelectedText = objVerify.FindDiffCmd;
                 txtVerificationLog.Refresh();
                 Application.OpenForms["Processing"].Update();
                 txtVerificationLog.ScrollToCaret();
 
-                txtVerificationLog.SelectionColor = Color.Red;
-                txtVerificationLog.SelectedText = objVerify.FindDiff;
-                txtVerificationLog.Refresh();
-                Application.OpenForms["Processing"].Update();
-                txtVerificationLog.ScrollToCaret();
+                if (objVerify.DiffResult)
+                {
+                    txtVerificationLog.SelectionColor = Color.DarkGreen;
+                    txtVerificationLog.SelectionFont = new Font (txtVerificationLog.Font, FontStyle.Bold);
+                    txtVerificationLog.SelectionFont = new Font("Arial", 15);
+                    txtVerificationLog.SelectedText = objVerify.FindDiff;
+                    txtVerificationLog.Refresh();
+                    Application.OpenForms["Processing"].Update();
+                    txtVerificationLog.ScrollToCaret();
+                    txtVerificationLog.SelectionFont = new Font(txtVerificationLog.Font, FontStyle.Regular);
+                }
+                else
+                {
+                    txtVerificationLog.SelectionColor = Color.Red;
+                    txtVerificationLog.SelectedText = objVerify.DiffReport;
+                    txtVerificationLog.Refresh();
+                    Application.OpenForms["Processing"].Update();
+                    txtVerificationLog.ScrollToCaret();
+
+                    txtVerificationLog.SelectionColor = Color.Red;
+                    txtVerificationLog.SelectionFont = new Font(txtVerificationLog.Font, FontStyle.Bold);
+                    txtVerificationLog.SelectionFont = new Font("Arial", 15);
+                    txtVerificationLog.SelectedText = objVerify.FindDiff;
+                    txtVerificationLog.Refresh();
+                    Application.OpenForms["Processing"].Update();
+                    txtVerificationLog.ScrollToCaret();
+                    txtVerificationLog.SelectionFont = new Font(txtVerificationLog.Font, FontStyle.Regular);
+                }
                 #endregion
 
                 //Assign the important steps in log to LogSummary property
@@ -307,7 +331,7 @@ namespace SVN_Automation
                 txtVerificationLog.SelectionColor = Color.Black;
                 txtVerificationLog.SelectedText = "\n" + DateTime.Now.ToString();
                 txtVerificationLog.SelectionBackColor = txtVerificationLog.BackColor;
-                txtVerificationLog.SelectionColor = Color.Blue;
+                txtVerificationLog.SelectionColor = Color.DimGray;
                 txtVerificationLog.SelectedText = "  >> Deleting the Temporary local files/ folders...";
                 strLogSummary += "\n" + DateTime.Now.ToString() + "  >> Deleting the Temporary local files/ folders...";
                 txtVerificationLog.Refresh();
@@ -323,7 +347,7 @@ namespace SVN_Automation
                 txtVerificationLog.SelectionColor = Color.Black;
                 txtVerificationLog.SelectedText = "\n" + DateTime.Now.ToString();
                 txtVerificationLog.SelectionBackColor = txtVerificationLog.BackColor;
-                txtVerificationLog.SelectionColor = Color.Blue;
+                txtVerificationLog.SelectionColor = Color.DimGray;
                 txtVerificationLog.SelectedText = "  >> Deleting the Temporary repository...";
                 strLogSummary += "\n" + DateTime.Now.ToString() + "  >> Deleting the Temporary repository...";
                 txtVerificationLog.Refresh();
@@ -365,7 +389,7 @@ namespace SVN_Automation
                 txtVerificationLog.SelectionColor = Color.Black;
                 txtVerificationLog.SelectedText = "\n" + DateTime.Now.ToString();
                 txtVerificationLog.SelectionBackColor = txtVerificationLog.BackColor;
-                txtVerificationLog.SelectionColor = Color.Blue;
+                txtVerificationLog.SelectionColor = Color.DimGray;
                 txtVerificationLog.SelectedText = "  >> Deleting the Temporary local files/ folders...";
                 strLogSummary += "\n" + DateTime.Now.ToString() + "  >> Deleting the Temporary local files/ folders...";
                 txtVerificationLog.Refresh();
@@ -381,7 +405,7 @@ namespace SVN_Automation
                 txtVerificationLog.SelectionColor = Color.Black;
                 txtVerificationLog.SelectedText = "\n" + DateTime.Now.ToString();
                 txtVerificationLog.SelectionBackColor = txtVerificationLog.BackColor;
-                txtVerificationLog.SelectionColor = Color.Blue;
+                txtVerificationLog.SelectionColor = Color.DimGray;
                 txtVerificationLog.SelectedText = "  >> Deleting the Temporary repository...";
                 strLogSummary += "\n" + DateTime.Now.ToString() + "  >> Deleting the Temporary repository...";
                 txtVerificationLog.Refresh();

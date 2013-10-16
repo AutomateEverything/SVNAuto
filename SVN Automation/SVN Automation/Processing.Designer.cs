@@ -65,6 +65,7 @@
             // 
             // btnDone
             // 
+            this.btnDone.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnDone.BackColor = System.Drawing.Color.White;
             this.btnDone.BackgroundImage = global::SVN_Automation.Properties.Resources.button;
             this.btnDone.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -80,6 +81,8 @@
             // 
             // btnReport
             // 
+            this.btnReport.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnReport.AutoSize = true;
             this.btnReport.BackColor = System.Drawing.Color.White;
             this.btnReport.BackgroundImage = global::SVN_Automation.Properties.Resources.button;
             this.btnReport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -87,7 +90,7 @@
             this.btnReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReport.Location = new System.Drawing.Point(267, 531);
             this.btnReport.Name = "btnReport";
-            this.btnReport.Size = new System.Drawing.Size(113, 23);
+            this.btnReport.Size = new System.Drawing.Size(113, 25);
             this.btnReport.TabIndex = 11;
             this.btnReport.Text = "Get HTML Report";
             this.btnReport.UseVisualStyleBackColor = false;
@@ -95,13 +98,15 @@
             // 
             // btnCancel
             // 
+            this.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnCancel.AutoSize = true;
             this.btnCancel.BackColor = System.Drawing.Color.White;
             this.btnCancel.BackgroundImage = global::SVN_Automation.Properties.Resources.button;
             this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Location = new System.Drawing.Point(493, 531);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.Size = new System.Drawing.Size(75, 25);
             this.btnCancel.TabIndex = 12;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -119,6 +124,7 @@
             // 
             // btnAbout
             // 
+            this.btnAbout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAbout.BackColor = System.Drawing.Color.White;
             this.btnAbout.BackgroundImage = global::SVN_Automation.Properties.Resources.info__2_;
             this.btnAbout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
