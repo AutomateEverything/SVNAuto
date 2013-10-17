@@ -233,8 +233,10 @@ namespace SVN_Automation
             txtProjName.Text = (string)Registry.GetValue(projName, "ProjectName", "");
 
             string clName = "HKEY_CURRENT_USER\\ReportUserDetails";
-            txtCLName.Text = (string)Registry.GetValue(clName, "CLName", "");            
+            txtCLName.Text = (string)Registry.GetValue(clName, "CLName", "");
 
+            ToolTip toolTip = new ToolTip();
+            toolTip.SetToolTip(this.btnAbout, "About EasySVNdiff"); 
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

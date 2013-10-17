@@ -135,7 +135,7 @@ namespace SVN_Automation
             }
             else
             {
-                MessageBox.Show("Please check the temporary folder path.", "Invalid Local Path!");
+                MessageBox.Show("Please check the temporary folder path.", "Invalid Local Path!", MessageBoxButtons.OK, MessageBoxIcon.Warning);                
                 return false;
             }
         }
@@ -180,7 +180,7 @@ namespace SVN_Automation
 
                 if (login.Contains("E175013") || login.Contains("E155007") || login.Contains("E230001") || login.Contains("E175002") || login.Contains("E731004") || login.Contains("E120171") || login.Contains("E020024"))                
                 {
-                    MessageBox.Show("User credentials or Live Repository URL is invalid.", "Invalid Input!");
+                    MessageBox.Show("User credentials or Live Repository URL is invalid.", "Invalid Input!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return false;
                 }
                 else
@@ -233,7 +233,7 @@ namespace SVN_Automation
 
                 if (login.Contains("E175013") || login.Contains("E155007") || login.Contains("E230001") || login.Contains("E175002") || login.Contains("E731004") || login.Contains("E120171") || login.Contains("E020024"))                
                 {
-                    MessageBox.Show("User credentials or Backup Repository URL is invalid.", "Invalid Input!");
+                    MessageBox.Show("User credentials or Backup Repository URL is invalid.", "Invalid Input!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return false;
                 }
                 else

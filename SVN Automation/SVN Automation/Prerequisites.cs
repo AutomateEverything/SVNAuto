@@ -82,6 +82,9 @@ namespace SVN_Automation
                 LinkLabel.Link linkPower = new LinkLabel.Link();
                 linkPower.LinkData = "http://support.microsoft.com/kb/968929";
                 llblPower.Links.Add(linkPower);
+
+                ToolTip toolTip = new ToolTip();
+                toolTip.SetToolTip(this.btnAbout, "About EasySVNdiff");                
             }
             catch (Exception lo)
             { }

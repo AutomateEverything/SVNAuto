@@ -49,14 +49,18 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.rtbStatus = new System.Windows.Forms.RichTextBox();
             this.btnAbout = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.btnAbout)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblUserName
             // 
             this.lblUserName.AutoSize = true;
             this.lblUserName.BackColor = System.Drawing.Color.Transparent;
-            this.lblUserName.Location = new System.Drawing.Point(31, 51);
+            this.lblUserName.Location = new System.Drawing.Point(31, 76);
             this.lblUserName.Name = "lblUserName";
             this.lblUserName.Size = new System.Drawing.Size(57, 13);
             this.lblUserName.TabIndex = 0;
@@ -66,7 +70,7 @@
             // 
             this.txtUserName.BackColor = System.Drawing.Color.White;
             this.txtUserName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtUserName.Location = new System.Drawing.Point(198, 51);
+            this.txtUserName.Location = new System.Drawing.Point(198, 76);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(153, 20);
             this.txtUserName.TabIndex = 1;
@@ -77,7 +81,7 @@
             // 
             this.lblPwd.AutoSize = true;
             this.lblPwd.BackColor = System.Drawing.Color.Transparent;
-            this.lblPwd.Location = new System.Drawing.Point(31, 86);
+            this.lblPwd.Location = new System.Drawing.Point(31, 111);
             this.lblPwd.Name = "lblPwd";
             this.lblPwd.Size = new System.Drawing.Size(53, 13);
             this.lblPwd.TabIndex = 2;
@@ -86,7 +90,7 @@
             // txtPassword
             // 
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPassword.Location = new System.Drawing.Point(198, 83);
+            this.txtPassword.Location = new System.Drawing.Point(198, 108);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(153, 20);
@@ -98,7 +102,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(31, 125);
+            this.label3.Location = new System.Drawing.Point(31, 150);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(120, 13);
             this.label3.TabIndex = 4;
@@ -107,7 +111,7 @@
             // txtLiveURL
             // 
             this.txtLiveURL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtLiveURL.Location = new System.Drawing.Point(198, 118);
+            this.txtLiveURL.Location = new System.Drawing.Point(198, 143);
             this.txtLiveURL.Name = "txtLiveURL";
             this.txtLiveURL.Size = new System.Drawing.Size(238, 20);
             this.txtLiveURL.TabIndex = 5;
@@ -118,7 +122,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Location = new System.Drawing.Point(31, 161);
+            this.label4.Location = new System.Drawing.Point(31, 186);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(140, 13);
             this.label4.TabIndex = 6;
@@ -127,7 +131,7 @@
             // txtBackUpURL
             // 
             this.txtBackUpURL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtBackUpURL.Location = new System.Drawing.Point(198, 154);
+            this.txtBackUpURL.Location = new System.Drawing.Point(198, 179);
             this.txtBackUpURL.Name = "txtBackUpURL";
             this.txtBackUpURL.Size = new System.Drawing.Size(238, 20);
             this.txtBackUpURL.TabIndex = 7;
@@ -138,7 +142,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(31, 197);
+            this.label1.Location = new System.Drawing.Point(31, 222);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(70, 13);
             this.label1.TabIndex = 8;
@@ -148,7 +152,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(31, 232);
+            this.label2.Location = new System.Drawing.Point(31, 257);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(162, 13);
             this.label2.TabIndex = 10;
@@ -157,7 +161,7 @@
             // txtLocalDrive
             // 
             this.txtLocalDrive.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtLocalDrive.Location = new System.Drawing.Point(198, 229);
+            this.txtLocalDrive.Location = new System.Drawing.Point(198, 254);
             this.txtLocalDrive.Name = "txtLocalDrive";
             this.txtLocalDrive.Size = new System.Drawing.Size(153, 20);
             this.txtLocalDrive.TabIndex = 11;
@@ -169,7 +173,7 @@
             this.lblDescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(255)))), ((int)(((byte)(204)))));
             this.lblDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblDescription.ForeColor = System.Drawing.Color.DimGray;
-            this.lblDescription.Location = new System.Drawing.Point(142, 274);
+            this.lblDescription.Location = new System.Drawing.Point(142, 283);
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new System.Drawing.Size(338, 123);
             this.lblDescription.TabIndex = 14;
@@ -177,7 +181,7 @@
             // btnBrowse
             // 
             this.btnBrowse.BackColor = System.Drawing.Color.White;
-            this.btnBrowse.Location = new System.Drawing.Point(361, 227);
+            this.btnBrowse.Location = new System.Drawing.Point(361, 252);
             this.btnBrowse.Name = "btnBrowse";
             this.btnBrowse.Size = new System.Drawing.Size(75, 23);
             this.btnBrowse.TabIndex = 15;
@@ -193,7 +197,7 @@
             this.dtpBackUpDate.CalendarTitleForeColor = System.Drawing.Color.LightGoldenrodYellow;
             this.dtpBackUpDate.CustomFormat = "yyyy-MM-dd";
             this.dtpBackUpDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpBackUpDate.Location = new System.Drawing.Point(198, 193);
+            this.dtpBackUpDate.Location = new System.Drawing.Point(198, 218);
             this.dtpBackUpDate.Name = "dtpBackUpDate";
             this.dtpBackUpDate.Size = new System.Drawing.Size(113, 20);
             this.dtpBackUpDate.TabIndex = 10;
@@ -250,7 +254,7 @@
             // 
             this.rtbStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(255)))), ((int)(((byte)(204)))));
             this.rtbStatus.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtbStatus.Location = new System.Drawing.Point(34, 13);
+            this.rtbStatus.Location = new System.Drawing.Point(34, 46);
             this.rtbStatus.Name = "rtbStatus";
             this.rtbStatus.Size = new System.Drawing.Size(330, 20);
             this.rtbStatus.TabIndex = 25;
@@ -258,16 +262,38 @@
             // 
             // btnAbout
             // 
-            this.btnAbout.BackColor = System.Drawing.Color.White;
-            this.btnAbout.BackgroundImage = global::SVN_Automation.Properties.Resources.user_icon;
+            this.btnAbout.BackColor = System.Drawing.Color.Transparent;
+            this.btnAbout.BackgroundImage = global::SVN_Automation.Properties.Resources.about_1;
             this.btnAbout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAbout.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAbout.Location = new System.Drawing.Point(466, 1);
+            this.btnAbout.Location = new System.Drawing.Point(459, 4);
             this.btnAbout.Name = "btnAbout";
-            this.btnAbout.Size = new System.Drawing.Size(27, 26);
+            this.btnAbout.Size = new System.Drawing.Size(30, 30);
             this.btnAbout.TabIndex = 26;
             this.btnAbout.TabStop = false;
             this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.BackgroundImage = global::SVN_Automation.Properties.Resources.icon_big;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(34, 5);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(37, 37);
+            this.pictureBox2.TabIndex = 28;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImage = global::SVN_Automation.Properties.Resources.logo;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(77, 11);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(154, 29);
+            this.pictureBox1.TabIndex = 27;
+            this.pictureBox1.TabStop = false;
             // 
             // UserInput
             // 
@@ -277,6 +303,8 @@
             this.BackgroundImage = global::SVN_Automation.Properties.Resources.bg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(492, 466);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnAbout);
             this.Controls.Add(this.rtbStatus);
             this.Controls.Add(this.btnBack);
@@ -305,6 +333,8 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UserInput_FormClosing);
             this.Load += new System.EventHandler(this.UserInput_Load);
             ((System.ComponentModel.ISupportInitialize)(this.btnAbout)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -332,6 +362,8 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.RichTextBox rtbStatus;
         private System.Windows.Forms.PictureBox btnAbout;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

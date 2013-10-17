@@ -218,6 +218,9 @@ namespace SVN_Automation
 
             string localDrive = "HKEY_CURRENT_USER\\RepoUserDetails";
             txtLocalDrive.Text = (string)Registry.GetValue(localDrive, "LocalDrive", "");
+
+            ToolTip toolTip = new ToolTip();
+            toolTip.SetToolTip(this.btnAbout, "About EasySVNdiff"); 
         }
 
         private void UserInput_FormClosing(object sender, FormClosingEventArgs e)

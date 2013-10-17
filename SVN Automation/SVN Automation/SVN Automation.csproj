@@ -177,11 +177,8 @@
   <ItemGroup>
     <Content Include="icon.ico" />
     <Content Include="icon_big.ico" />
-    <None Include="Resources\info.png" />
-    <None Include="Resources\about-icon.png" />
-    <None Include="Resources\about-us-icon.jpg" />
-    <None Include="Resources\user-icon.png" />
-    <None Include="Resources\info %282%29.png" />
+    <None Include="Resources\logo.jpg" />
+    <None Include="Resources\about-1.png" />
     <Content Include="XMLFile1.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

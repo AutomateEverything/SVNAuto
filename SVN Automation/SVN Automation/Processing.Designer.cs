@@ -36,14 +36,18 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.rtbStatus = new System.Windows.Forms.RichTextBox();
             this.btnAbout = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.btnAbout)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(24, 49);
+            this.label1.Location = new System.Drawing.Point(24, 71);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(83, 13);
             this.label1.TabIndex = 1;
@@ -56,10 +60,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtVerificationLog.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(255)))), ((int)(((byte)(204)))));
             this.txtVerificationLog.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtVerificationLog.Location = new System.Drawing.Point(24, 65);
+            this.txtVerificationLog.Location = new System.Drawing.Point(24, 88);
             this.txtVerificationLog.Name = "txtVerificationLog";
             this.txtVerificationLog.ReadOnly = true;
-            this.txtVerificationLog.Size = new System.Drawing.Size(546, 431);
+            this.txtVerificationLog.Size = new System.Drawing.Size(546, 419);
             this.txtVerificationLog.TabIndex = 5;
             this.txtVerificationLog.Text = "";
             // 
@@ -116,7 +120,7 @@
             // 
             this.rtbStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(255)))), ((int)(((byte)(204)))));
             this.rtbStatus.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtbStatus.Location = new System.Drawing.Point(34, 14);
+            this.rtbStatus.Location = new System.Drawing.Point(34, 46);
             this.rtbStatus.Name = "rtbStatus";
             this.rtbStatus.Size = new System.Drawing.Size(330, 20);
             this.rtbStatus.TabIndex = 13;
@@ -125,16 +129,38 @@
             // btnAbout
             // 
             this.btnAbout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAbout.BackColor = System.Drawing.Color.White;
-            this.btnAbout.BackgroundImage = global::SVN_Automation.Properties.Resources.info__2_;
+            this.btnAbout.BackColor = System.Drawing.Color.Transparent;
+            this.btnAbout.BackgroundImage = global::SVN_Automation.Properties.Resources.about_1;
             this.btnAbout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAbout.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAbout.Location = new System.Drawing.Point(554, -4);
+            this.btnAbout.Location = new System.Drawing.Point(556, 4);
             this.btnAbout.Name = "btnAbout";
-            this.btnAbout.Size = new System.Drawing.Size(38, 38);
+            this.btnAbout.Size = new System.Drawing.Size(30, 30);
             this.btnAbout.TabIndex = 19;
             this.btnAbout.TabStop = false;
             this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.BackgroundImage = global::SVN_Automation.Properties.Resources.icon_big;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(34, 5);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(37, 37);
+            this.pictureBox2.TabIndex = 30;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImage = global::SVN_Automation.Properties.Resources.logo;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(77, 11);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(154, 29);
+            this.pictureBox1.TabIndex = 29;
+            this.pictureBox1.TabStop = false;
             // 
             // Processing
             // 
@@ -144,6 +170,8 @@
             this.BackgroundImage = global::SVN_Automation.Properties.Resources.bg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(592, 566);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnAbout);
             this.Controls.Add(this.rtbStatus);
             this.Controls.Add(this.btnDone);
@@ -159,6 +187,8 @@
             this.Load += new System.EventHandler(this.Processing_Load_1);
             this.Shown += new System.EventHandler(this.Processing_Load);
             ((System.ComponentModel.ISupportInitialize)(this.btnAbout)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -173,5 +203,7 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.RichTextBox rtbStatus;
         private System.Windows.Forms.PictureBox btnAbout;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

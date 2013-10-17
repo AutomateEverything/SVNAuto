@@ -230,13 +230,13 @@
             // 
             // btnAbout
             // 
-            this.btnAbout.BackColor = System.Drawing.Color.White;
-            this.btnAbout.BackgroundImage = global::SVN_Automation.Properties.Resources.info__2_;
+            this.btnAbout.BackColor = System.Drawing.Color.Transparent;
+            this.btnAbout.BackgroundImage = global::SVN_Automation.Properties.Resources.about_1;
             this.btnAbout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAbout.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAbout.Location = new System.Drawing.Point(454, 0);
+            this.btnAbout.Location = new System.Drawing.Point(459, 4);
             this.btnAbout.Name = "btnAbout";
-            this.btnAbout.Size = new System.Drawing.Size(38, 38);
+            this.btnAbout.Size = new System.Drawing.Size(30, 30);
             this.btnAbout.TabIndex = 18;
             this.btnAbout.TabStop = false;
             this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click);

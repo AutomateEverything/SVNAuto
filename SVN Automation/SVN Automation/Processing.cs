@@ -36,6 +36,9 @@ namespace SVN_Automation
                 rtbStatus.SelectedText = " > Generate Report";
                 rtbStatus.Refresh();
 
+                ToolTip toolTip = new ToolTip();
+                toolTip.SetToolTip(this.btnAbout, "About EasySVNdiff"); 
+
                 #region Create User
                 txtVerificationLog.SelectionBackColor = Color.Gainsboro;
                 txtVerificationLog.SelectionColor = Color.Black;
@@ -151,7 +154,7 @@ namespace SVN_Automation
 
                 if (String.IsNullOrEmpty(objVerify.ChkLive.Trim()) || objVerify.ChkLive.Contains("revision 0"))
                 {
-                    MessageBox.Show("The Live Repository is empty", "Check the Live Repository");
+                    MessageBox.Show("The Live Repository is empty", "Check the Live Repository", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     objVerify.mtdDltLocal();
                     objVerify.mtdDltServer();   
                     this.Hide();
@@ -189,7 +192,7 @@ namespace SVN_Automation
 
                 if (String.IsNullOrEmpty(objVerify.ChkBack.Trim()) || objVerify.ChkBack.Contains("revision 0"))
                 {
-                    MessageBox.Show("The Backup Repository is empty", "Check the Backup Repository");
+                    MessageBox.Show("The Backup Repository is empty", "Check the Backup Repository", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     objVerify.mtdDltLocal();
                     objVerify.mtdDltServer();                    
                     this.Hide();

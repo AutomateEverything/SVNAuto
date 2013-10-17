@@ -47,14 +47,18 @@
             this.rtbStatus = new System.Windows.Forms.RichTextBox();
             this.chkSaveToFile = new System.Windows.Forms.CheckBox();
             this.btnAbout = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.btnAbout)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(32, 56);
+            this.label1.Location = new System.Drawing.Point(32, 79);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(78, 13);
             this.label1.TabIndex = 0;
@@ -64,7 +68,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(32, 89);
+            this.label2.Location = new System.Drawing.Point(32, 112);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(71, 13);
             this.label2.TabIndex = 1;
@@ -74,7 +78,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(32, 122);
+            this.label3.Location = new System.Drawing.Point(32, 145);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(73, 13);
             this.label3.TabIndex = 2;
@@ -84,7 +88,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Location = new System.Drawing.Point(32, 152);
+            this.label4.Location = new System.Drawing.Point(32, 175);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(99, 13);
             this.label4.TabIndex = 3;
@@ -94,7 +98,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Location = new System.Drawing.Point(32, 185);
+            this.label5.Location = new System.Drawing.Point(32, 208);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(78, 13);
             this.label5.TabIndex = 4;
@@ -104,7 +108,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Location = new System.Drawing.Point(32, 218);
+            this.label6.Location = new System.Drawing.Point(32, 241);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(51, 13);
             this.label6.TabIndex = 5;
@@ -113,7 +117,7 @@
             // txtAcName
             // 
             this.txtAcName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtAcName.Location = new System.Drawing.Point(137, 51);
+            this.txtAcName.Location = new System.Drawing.Point(137, 74);
             this.txtAcName.Name = "txtAcName";
             this.txtAcName.Size = new System.Drawing.Size(328, 20);
             this.txtAcName.TabIndex = 6;
@@ -123,7 +127,7 @@
             // txtProjName
             // 
             this.txtProjName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtProjName.Location = new System.Drawing.Point(137, 84);
+            this.txtProjName.Location = new System.Drawing.Point(137, 107);
             this.txtProjName.Name = "txtProjName";
             this.txtProjName.Size = new System.Drawing.Size(328, 20);
             this.txtProjName.TabIndex = 7;
@@ -133,7 +137,7 @@
             // txtGITS
             // 
             this.txtGITS.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtGITS.Location = new System.Drawing.Point(135, 119);
+            this.txtGITS.Location = new System.Drawing.Point(135, 142);
             this.txtGITS.Name = "txtGITS";
             this.txtGITS.Size = new System.Drawing.Size(328, 20);
             this.txtGITS.TabIndex = 8;
@@ -144,7 +148,7 @@
             // 
             this.dtRestored.CalendarTitleBackColor = System.Drawing.Color.YellowGreen;
             this.dtRestored.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtRestored.Location = new System.Drawing.Point(137, 150);
+            this.dtRestored.Location = new System.Drawing.Point(137, 173);
             this.dtRestored.Name = "dtRestored";
             this.dtRestored.Size = new System.Drawing.Size(117, 20);
             this.dtRestored.TabIndex = 9;
@@ -154,18 +158,18 @@
             // txtBackupLoc
             // 
             this.txtBackupLoc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtBackupLoc.Location = new System.Drawing.Point(137, 181);
+            this.txtBackupLoc.Location = new System.Drawing.Point(137, 204);
             this.txtBackupLoc.Name = "txtBackupLoc";
             this.txtBackupLoc.Size = new System.Drawing.Size(328, 20);
             this.txtBackupLoc.TabIndex = 10;
-            this.txtBackupLoc.Text = "PRIMARYBACKUP";            
+            this.txtBackupLoc.Text = "PRIMARYBACKUP";
             this.txtBackupLoc.Enter += new System.EventHandler(this.txtBackupLoc_Enter);
             this.txtBackupLoc.Leave += new System.EventHandler(this.txtBackupLoc_Leave);
             // 
             // txtCLName
             // 
             this.txtCLName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCLName.Location = new System.Drawing.Point(137, 214);
+            this.txtCLName.Location = new System.Drawing.Point(137, 237);
             this.txtCLName.Name = "txtCLName";
             this.txtCLName.Size = new System.Drawing.Size(328, 20);
             this.txtCLName.TabIndex = 11;
@@ -178,7 +182,7 @@
             this.lblDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblDescription.ForeColor = System.Drawing.Color.DimGray;
             this.lblDescription.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblDescription.Location = new System.Drawing.Point(135, 246);
+            this.lblDescription.Location = new System.Drawing.Point(135, 269);
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new System.Drawing.Size(338, 81);
             this.lblDescription.TabIndex = 12;
@@ -217,7 +221,7 @@
             // 
             this.rtbStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(255)))), ((int)(((byte)(204)))));
             this.rtbStatus.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtbStatus.Location = new System.Drawing.Point(33, 12);
+            this.rtbStatus.Location = new System.Drawing.Point(34, 46);
             this.rtbStatus.Name = "rtbStatus";
             this.rtbStatus.Size = new System.Drawing.Size(330, 20);
             this.rtbStatus.TabIndex = 20;
@@ -229,7 +233,7 @@
             this.chkSaveToFile.BackColor = System.Drawing.Color.White;
             this.chkSaveToFile.Checked = true;
             this.chkSaveToFile.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkSaveToFile.Location = new System.Drawing.Point(137, 346);
+            this.chkSaveToFile.Location = new System.Drawing.Point(137, 361);
             this.chkSaveToFile.Name = "chkSaveToFile";
             this.chkSaveToFile.Size = new System.Drawing.Size(223, 17);
             this.chkSaveToFile.TabIndex = 21;
@@ -239,16 +243,38 @@
             // 
             // btnAbout
             // 
-            this.btnAbout.BackColor = System.Drawing.Color.White;
-            this.btnAbout.BackgroundImage = global::SVN_Automation.Properties.Resources.info__2_;
+            this.btnAbout.BackColor = System.Drawing.Color.Transparent;
+            this.btnAbout.BackgroundImage = global::SVN_Automation.Properties.Resources.about_1;
             this.btnAbout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAbout.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAbout.Location = new System.Drawing.Point(454, 0);
+            this.btnAbout.Location = new System.Drawing.Point(459, 4);
             this.btnAbout.Name = "btnAbout";
-            this.btnAbout.Size = new System.Drawing.Size(38, 38);
+            this.btnAbout.Size = new System.Drawing.Size(30, 30);
             this.btnAbout.TabIndex = 27;
             this.btnAbout.TabStop = false;
             this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.BackgroundImage = global::SVN_Automation.Properties.Resources.icon_big;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(34, 5);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(37, 37);
+            this.pictureBox2.TabIndex = 30;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImage = global::SVN_Automation.Properties.Resources.logo;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(77, 11);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(154, 29);
+            this.pictureBox1.TabIndex = 29;
+            this.pictureBox1.TabStop = false;
             // 
             // frmReportEntry
             // 
@@ -258,6 +284,8 @@
             this.BackgroundImage = global::SVN_Automation.Properties.Resources.bg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(492, 429);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnAbout);
             this.Controls.Add(this.chkSaveToFile);
             this.Controls.Add(this.rtbStatus);
@@ -284,6 +312,8 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmReportEntry_FormClosing);
             this.Load += new System.EventHandler(this.frmReportEntry_Load);
             ((System.ComponentModel.ISupportInitialize)(this.btnAbout)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -309,5 +339,7 @@
         private System.Windows.Forms.RichTextBox rtbStatus;
         private System.Windows.Forms.CheckBox chkSaveToFile;
         private System.Windows.Forms.PictureBox btnAbout;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
