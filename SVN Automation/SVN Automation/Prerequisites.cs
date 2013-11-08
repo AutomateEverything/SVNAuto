@@ -14,12 +14,18 @@ namespace SVN_Automation
     public partial class Prerequisites : Form
     {
         
-
+        /// <summary>
+        /// Prequest form will check whether the needed softwares are installed or not and help the user to install.
+        /// </summary>
         public Prerequisites()
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Next button is used to navigate to next form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnNext_Click(object sender, EventArgs e)
         {
             //UserInput.ActiveForm.Show();
@@ -28,7 +34,11 @@ namespace SVN_Automation
             userinput.Show();
             this.Hide();          
         }
-
+        /// <summary>
+        /// Cancel button is used to close the application
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCancel_Click_1(object sender, EventArgs e)
         {
             Application.Exit();

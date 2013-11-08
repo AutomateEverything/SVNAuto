@@ -21,6 +21,25 @@
             the contents of this method with the code editor.
             </summary>
         </member>
+        <member name="M:SVN_Automation.Prerequisites.#ctor">
+            <summary>
+            Prequest form will check whether the needed softwares are installed or not and help the user to install.
+            </summary>
+        </member>
+        <member name="M:SVN_Automation.Prerequisites.btnNext_Click(System.Object,System.EventArgs)">
+            <summary>
+            Next button is used to navigate to next form
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:SVN_Automation.Prerequisites.btnCancel_Click_1(System.Object,System.EventArgs)">
+            <summary>
+            Cancel button is used to close the application
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
         <member name="M:SVN_Automation.Program.Main">
             <summary>
             The main entry point for the application.
@@ -66,6 +85,18 @@
             </summary>
             <param name="reportEntry"></param>
         </member>
+        <member name="M:SVN_Automation.UserInput.#ctor">
+            <summary>
+            User input form is used to get the details from the user to process the verification
+            </summary>
+        </member>
+        <member name="M:SVN_Automation.UserInput.btnNext_Click_1(System.Object,System.EventArgs)">
+            <summary>
+            Next button is used to navigate to next form, before that it will validate the inputs given by the user.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
         <member name="F:SVN_Automation.UserInput.components">
             <summary>
             Required designer variable.
@@ -85,7 +116,7 @@
         </member>
         <member name="T:SVN_Automation.clsVerification">
             <summary>
-            Class file for process
+            Class file for application
             </summary>
         </member>
         <member name="M:SVN_Automation.clsVerification.setEvnVariable">
@@ -94,6 +125,12 @@
             Input: Finding the visualSVN path by using registry and adding "bin" to that path
             Output: Setting the environment for SVN
             </summary>
+        </member>
+        <member name="M:SVN_Automation.clsVerification.CheckPath">
+            <summary>
+            validate the temporary path given by the user
+            </summary>
+            <returns></returns>
         </member>
         <member name="M:SVN_Automation.clsVerification.CheckLoginLive">
             <summary>

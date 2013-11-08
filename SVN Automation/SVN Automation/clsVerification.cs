@@ -13,7 +13,7 @@ using Microsoft.Win32;
 namespace SVN_Automation
 {
     /// <summary>
-    /// Class file for process
+    /// Class file for application
     /// </summary>
     public class clsVerification
     {
@@ -101,6 +101,7 @@ namespace SVN_Automation
             setEvnVariable();
             CheckLoginLive();
             CheckLoginBack();
+            CheckPath();
             mtdCreateUser();
             mtdCreateRepo();
             mtdGiveAccess();
@@ -126,7 +127,10 @@ namespace SVN_Automation
 
             Environment.SetEnvironmentVariable("path", rootSVN);
         }
-
+        /// <summary>
+        /// validate the temporary path given by the user
+        /// </summary>
+        /// <returns></returns>
         public bool CheckPath()
         {
             if (Directory.Exists(LocalDrive))
@@ -476,7 +480,7 @@ namespace SVN_Automation
                 startImpLive.CreateNoWindow = true;
                 startImpLive.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
                 startImpLive.FileName = "cmd.exe";
-                startImpLive.Arguments = "/C svn import -m \"Import live files to server\" \"" + LocalDrive + "\\svn-compare\\checkout\" " + repourl + "Checkout --username " + UserName.Trim() + " --password " + Password.Trim();;
+                startImpLive.Arguments = "/C svn import -m \"Import live files to server\" \"" + LocalDrive + "\\svn-compare\\checkout\" " + repourl + "Checkout --username " + UserName.Trim() + " --password " + Password.Trim();
                 impLive.StartInfo = startImpLive;
 
                 impLive.StartInfo.RedirectStandardOutput = true;

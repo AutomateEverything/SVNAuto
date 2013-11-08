@@ -16,12 +16,19 @@ namespace SVN_Automation
 {
     public partial class UserInput : Form
     {
+        /// <summary>
+        /// User input form is used to get the details from the user to process the verification
+        /// </summary>
         public UserInput()
         {
             InitializeComponent();
             lblDescription.Text = "";                  
         }
-
+        /// <summary>
+        /// Next button is used to navigate to next form, before that it will validate the inputs given by the user.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnNext_Click_1(object sender, EventArgs e)
         {
             lblDescription.Text = "Please wait...";
