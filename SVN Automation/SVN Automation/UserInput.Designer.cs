@@ -171,10 +171,11 @@
             // lblDescription
             // 
             this.lblDescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(255)))), ((int)(((byte)(204)))));
-            this.lblDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblDescription.ForeColor = System.Drawing.Color.DimGray;
             this.lblDescription.Location = new System.Drawing.Point(142, 283);
+            this.lblDescription.Margin = new System.Windows.Forms.Padding(4);
             this.lblDescription.Name = "lblDescription";
+            this.lblDescription.Padding = new System.Windows.Forms.Padding(4);
             this.lblDescription.Size = new System.Drawing.Size(338, 123);
             this.lblDescription.TabIndex = 14;
             // 
