@@ -67,7 +67,7 @@ namespace SVN_Automation
             sbReport.Append("<tr><td class='column-name'> CL Name (or the person who performs the verification)</td><td bgcolor='white'> " + txtCLName.Text + "</td></tr>");
             sbReport.Append("<tr><td class='column-name'> Tool used to perform the verification</td><td bgcolor='white'> EasySVNdiff</td></tr>");
             sbReport.Append("</table><br/><br/><table border='0' bgcolor='047CC1' cellpadding='1' cellspacing='1' width='100%' align='center'><tr height='15'><td width='100%'><div style='color:#D4FFFF; font-weight:bold'> Verification Log: <a href='" + objReport.TextFile + "' style='color:#D4FFFF; float:right; font-size:10px;'>Detailed log </a> </div></td></tr>");
-            sbReport.Append("<tr><td bgcolor='white'><div style='border:1 solid #002776;width:100%;font-family:courier new'> " + objProjData.LogSummary.Replace("\n","<br>") + "</div></td></tr>");
+            sbReport.Append("<tr><td bgcolor='white'><div style='border:1 solid #002776;width:100%;font-family:courier new; font-size:12px;'> " + objProjData.LogSummary.Replace("\n","<br>") + "</div></td></tr>");
             sbReport.Append("</table><br/><br/><table border='0' bgcolor='047CC1' cellpadding='1' cellspacing='1' width='100%' align='center'><tr><td width='100%' height='15'><div style='color:#D4FFFF; font-weight:bold'> Verification Result:</div></td></tr>");
             sbReport.Append("<tr><td bgcolor='white'>");
 
@@ -99,7 +99,7 @@ namespace SVN_Automation
                 sbReport.Append("<div style='border:1 solid #002776;width:100%;color:red'><b>Both the following SVN repositories are DIFFERENT.</b></div><br>");
             }
             
-            sbReport.Append("<table border='1' borderColorLight='#EAEAEE' borderColorDark='#EAEAEE'><tr><td bgcolor='#8cc8ea'>Live Repository URL </td><td><a href='" + objProjData.LiveURL + "'>" + objProjData.LiveURL + "</a></td></tr><tr><td bgcolor='#8cc8ea'>Backup Restored Repository URL </td><td><a href='" + objProjData.BackupURL + "'>" + objProjData.BackupURL + "</a><br>");
+            sbReport.Append("<table border='1' borderColorLight='#EAEAEE' borderColorDark='#EAEAEE'><tr><td bgcolor='#8cc8ea'>Live Repository URL </td><td><a href='" + objProjData.LiveURL + "'>" + objProjData.LiveURL + "</a></td></tr><tr><td bgcolor='#8cc8ea'>Backup-Restored Repository URL </td><td><a href='" + objProjData.BackupURL + "'>" + objProjData.BackupURL + "</a><br>");
             sbReport.Append("</td></tr></table><br></td></tr></table><br><br><hr style='color:gray;height:1px' noshade/><div style='background-color:#666666;color:#c2b497;font-size:11px;text-align:center;line-height:25px;'>This is an auto-generated report by EasySVNdiff tool. &copy; CSS Corp.</div></body></html>");
 
             string mydocpath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + @"\EasySVNdiff_Report" + DateTime.Now.ToString().Replace("/", "").Replace(" ", "").Replace(":", "") + ".html";

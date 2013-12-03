@@ -309,7 +309,7 @@ namespace SVN_Automation
                 #endregion
 
                 //Assign the important steps in log to LogSummary property
-                objVerify.LogSummary += strLogSummary;
+                //objVerify.LogSummary += strLogSummary;
 
             }
             catch (Exception loadf)
@@ -368,7 +368,7 @@ namespace SVN_Automation
                 txtVerificationLog.ScrollToCaret();
 
                 //Assign the important steps in log to LogSummary property
-                objVerify.LogSummary = strLogSummary;
+                //objVerify.LogSummary = strLogSummary;
             }
             catch (Exception re)
             { }
@@ -426,7 +426,7 @@ namespace SVN_Automation
                 txtVerificationLog.ScrollToCaret();
 
                 //Assign the important steps in log to LogSummary property
-                objVerify.LogSummary += strLogSummary;
+                //objVerify.LogSummary += strLogSummary;
 
                 Application.Exit();
             }

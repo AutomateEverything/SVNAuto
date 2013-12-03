@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.Management;
 using System.IO;
 using Microsoft.Win32;
+using System.Text.RegularExpressions;
 
 namespace SVN_Automation
 {
@@ -94,7 +95,17 @@ namespace SVN_Automation
 
         public bool DiffResult { get; set; }
 
-        public string TextFile { get; set; }       
+        public string TextFile { get; set; }
+
+        public string totalLiveFile { get; set; }
+
+        public string liveVersion { get; set; }
+
+        public string totalBackFile { get; set; }
+
+        public string backVersion { get; set; }
+
+        public string diffFiles { get; set; } 
 
         public void execSVNcmd()
         {
@@ -113,7 +124,6 @@ namespace SVN_Automation
             mtdFindDiff();
             mtdDltLocal();
             mtdDltServer();
-
         }
         /// <summary>
         /// TO set the Environmental variable for SVN to executes its commands.
@@ -421,6 +431,9 @@ namespace SVN_Automation
                 ChkLiveCmd = "\n" + startInfo.Arguments.Replace(" --password " + Password, " --password *******");
                 ChkLive = "\n" + proc.ToString().Trim();
 
+                liveVersion = FindVersion(ChkLive).ToString().Split(' ').Last().Replace(".", "");
+                totalLiveFile = TotalFiles(ChkLive).ToString();
+
                 startInfo = null;
                 process = null;
             }
@@ -457,6 +470,9 @@ namespace SVN_Automation
                 }
                 ChkBackCmd = "\n" + startChkBackup.Arguments.Replace(" --password " + Password, " --password *******");
                 ChkBack = "\n" + chkb.ToString().Trim();
+
+                backVersion = FindVersion(ChkBack).ToString().Split(' ').Last().Replace(".","");
+                totalBackFile = TotalFiles(ChkBack).ToString();
 
                 startChkBackup = null;
                 chkBackup = null;
@@ -570,12 +586,15 @@ namespace SVN_Automation
                 {
                     FindDiff = "\n* * * * * * * * * * * * * * * * * * * * *\n\nBoth the Repositories are Same\n\n* * * * * * * * * * * * * * * * * * * * *\n";
                     DiffResult = true;
+                    LogSummary = "\nConnecting to SVN Repository with Username: " + UserName + "\nChecking-out Live Repository Files from Repository: " + LiveURL + "\nLive Repository Checked-out Revision: " + liveVersion + "\nTotal Files Checked-out from Live Repository: " + totalLiveFile + " Files \nChecking-out Backup-Restored Repository Files from Repository: " + BackupURL + "\nBackup-Restored Repository Checked-out Revision: " + backVersion + "\nTotal Files Checked-out from Backup-Restored Repository: " + totalBackFile + " Files \n\nBoth Repositories are Same";
                 }
                 else
                 {
                     DiffReport = "\n" + d.ToString().Trim();
                     FindDiff = "\n* * * * * * * * * * * * * * * * * * * * *\n\nBoth the Repositories are Different\n\n* * * * * * * * * * * * * * * * * * * * *\n";
                     DiffResult = false;
+                    diffFiles = FindFile(DiffReport);
+                    LogSummary = "\nConnecting to SVN Repository with Username: " + UserName + "\nChecking-out Live Repository Files from Repository: " + LiveURL + "\nLive Repository Checked-out Revision: " + liveVersion + "\nTotal Files Checked-out from Live Repository: " + totalLiveFile + " Files \nChecking-out Backup-Restored Repository Files from Repository: " + BackupURL + "\nBackup-Restored Repository Checked-out Revision: " + backVersion + "\nTotal Files Checked-out from Backup-Restored Repository: " + totalBackFile + " Files \n\nFiles Differs:\n" + diffFiles;
                 }
                 startSvnDiff = null;
                 svnDiff = null;
@@ -637,8 +656,52 @@ namespace SVN_Automation
             }
         }
 
+        public static Match FindVersion(string text)
+        {
+            int count = 0;
+            List<string> lines = new List<string>();
+            Match match = Regex.Match(text, "^.*$", RegexOptions.Multiline | RegexOptions.RightToLeft);
 
-        
+            while (match.Success && lines.Count < count)
+            {
+                lines.Insert(0, match.Value);
+                match = match.NextMatch();
+            }
+
+            return match;
+        }
+
+        public int TotalFiles(string output)
+        {
+            int numLines = output.Split('\n').Length - 2;
+            return numLines; 
+        }
+
+        public string FindFile(string text)
+        {
+            string file = ""; 
+            string fileName = "";
+
+            List<string> lines = new List<string>();
+            Match match = Regex.Match(text, "^.*$", RegexOptions.Multiline | RegexOptions.RightToLeft);
+
+            while (match.Success)
+            {
+                lines.Insert(0, match.Value);
+                match = match.NextMatch();
+                file = match.ToString();
+                if (file.Contains("Index: "))
+                {
+                    //MessageBox.Show(file);
+                    fileName += file.Split(' ').Last() + "\n";
+                }
+            }
+
+            //return match;
+
+            return fileName;
+
+        }
     }
 }
 
